@@ -30,7 +30,7 @@ export default function Contact(){
         <Box>
           <Heading fontSize={{ base: 'md', md: 'lg' }}>Kontaktdaten</Heading>
           <Box mt={4}>
-            +41 79 123 45 67
+            +41 76 819 32 73
           </Box>
           <Box mt={2}>info@alpen-automobile.ch</Box>
         </Box>
