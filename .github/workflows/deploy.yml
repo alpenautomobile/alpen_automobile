@@ -1,0 +1,51 @@
+name: Deploy to Hostpoint
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get repository code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build website
+        run: npm run build
+
+      - name: Configure SSH
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.HOSTPOINT_SSH_KEY }}
+          HOSTPOINT_HOST: ${{ secrets.HOSTPOINT_HOST }}
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -H "$HOSTPOINT_HOST" >> ~/.ssh/known_hosts
+
+      - name: Upload website to Hostpoint
+        env:
+          HOSTPOINT_USER: ${{ secrets.HOSTPOINT_USER }}
+          HOSTPOINT_HOST: ${{ secrets.HOSTPOINT_HOST }}
+          HOSTPOINT_TARGET: ${{ secrets.HOSTPOINT_TARGET }}
+        run: |
+          rsync -az --delete \
+            -e "ssh -i ~/.ssh/id_ed25519 -p 22 -o MACs=hmac-sha2-512" \
+            dist/ \
+            "$HOSTPOINT_USER@$HOSTPOINT_HOST:$HOSTPOINT_TARGET/"
