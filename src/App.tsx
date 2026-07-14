@@ -1,5 +1,5 @@
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import Home from './pages/Home'
 import Inventory from './pages/Inventory'
 import Services from './pages/Services'
@@ -11,6 +11,12 @@ import NavBar from './components/NavBar'
 import Footer from './components/Footer'
 
 export default function App() {
+  const location = useLocation()
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+  }, [location.pathname])
+
   return (
     <div className="app-shell">
       <NavBar />
