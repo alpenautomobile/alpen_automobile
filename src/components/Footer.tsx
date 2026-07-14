@@ -53,7 +53,7 @@ export default function Footer(){
               <Box as="span" display="inline-flex" alignItems="center" color="whiteAlpha.800" transition="color 0.2s ease" _hover={{ color: '#b21a18' }}>
                 <FiPhone size={20} />
               </Box>
-              <Text fontSize={{ base: 'sm', md: 'md' }} fontWeight="300" color="inherit">+41 79 123 45 67</Text>
+              <Text fontSize={{ base: 'sm', md: 'md' }} fontWeight="300" color="inherit">+41 76 819 32 73</Text>
             </Box>
             <Box display="flex" alignItems="center" gap={2} minW={{ base: '190px', md: 'auto' }}>
               <Box as="span" display="inline-flex" alignItems="center" color="whiteAlpha.800" transition="color 0.2s ease" _hover={{ color: '#b21a18' }}>
@@ -91,7 +91,7 @@ export default function Footer(){
               <Box as="span" display="inline-flex" alignItems="center" color="whiteAlpha.800" transition="color 0.2s ease" _hover={{ color: '#b21a18' }}>
                 <FiPhone size={18} />
               </Box>
-              <Text fontSize={{ base: 'sm', md: 'md' }} fontWeight="200" color="inherit">+41 79 123 45 67</Text>
+              <Text fontSize={{ base: 'sm', md: 'md' }} fontWeight="200" color="inherit">+41 76 819 32 73</Text>
             </Box>
             <Box display="flex" alignItems="center" gap={2}>
               <Box as="span" display="inline-flex" alignItems="center" color="whiteAlpha.800" transition="color 0.2s ease" _hover={{ color: '#b21a18' }}>
