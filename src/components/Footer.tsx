@@ -28,7 +28,7 @@ export default function Footer(){
           width="100%"
         >
           <HStack spacing={10} justify="center" width="100%" flexWrap="wrap">
-            <Box as="a" href="https://wa.me/41791234567" target="_blank" rel="noreferrer" display="flex" alignItems="center" gap={2}>
+            <Box as="a" href="https://wa.me/41768193273" target="_blank" rel="noreferrer" display="flex" alignItems="center" gap={2}>
               <Box as="span" display="inline-flex" alignItems="center" color="whiteAlpha.800" transition="color 0.2s ease" _hover={{ color: '#b21a18' }}>
                 <FaWhatsapp size={20} />
               </Box>
@@ -113,7 +113,7 @@ export default function Footer(){
               </Box>
               <Text fontSize={{ base: 'sm', md: 'md' }} fontWeight="200">YouTube</Text>
             </Box>
-            <Box as="a" href="https://wa.me/41791234567" target="_blank" rel="noreferrer" display="flex" alignItems="center" gap={2}>
+            <Box as="a" href="https://wa.me/41768193273" target="_blank" rel="noreferrer" display="flex" alignItems="center" gap={2}>
               <Box as="span" display="inline-flex" alignItems="center" color="whiteAlpha.800" transition="color 0.2s ease" _hover={{ color: '#b21a18' }}>
                 <FaWhatsapp size={18} />
               </Box>
