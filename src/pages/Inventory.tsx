@@ -103,124 +103,102 @@ export default function Inventory() {
       borderColor="whiteAlpha.300"
     >
       <Stack spacing={10}>
-        {/* <Box>
-          <Heading fontSize={{ base: 'xl', md: 'xl' }} color="white">
-            BMW M330d xDrive SAG Touring M-Sport Pro Individual
-          </Heading>
-        </Box> */}
-
         <Box
           bg="#181818"
           borderRadius="3xl"
           overflow="hidden"
           boxShadow="2xl"
           ref={galleryRef}
-          // border="1px solid"
-          // borderColor="whiteAlpha.300"
         >
-
-        <Box
-          bg="#181818"
-          // bg="#0f0f0f"
-          borderRadius="3xl"
-          border="1px solid"
-          borderColor="whiteAlpha.200"
-          p={{ base: 4, md: 6 }}
-          mb={4}
-        >
-          <Flex direction={{ base: 'column', md: 'row' }} justify="space-between" align={{ base: 'flex-start', md: 'center' }} gap={4}>
-            <Box>
-              <Heading fontSize={{ base: '1xl', md: '3xl' }} color="white" mb={2}>
-                {vehicle.title}
-              </Heading>
-              {/* <Text color="gray.300" fontSize="md" mb={2}>
-                {vehicle.subtitle}
-              </Text> */}
-            </Box>
-            <Text color="#b21a18" fontSize={{ base: 'xl', md: '3xl' }} fontWeight="700">
-              CHF {vehicle.price.toLocaleString('de-CH')}
-            </Text>
-          </Flex>
-
-          <Flex wrap="wrap" gap={3} mt={4}>
-            <Badge variant="solid" bg="whiteAlpha.100" color="white" px={3} py={1} borderRadius="full">
-              {vehicle.badge_1}
-            </Badge>
-            <Badge variant="solid" bg="whiteAlpha.100" color="white" px={3} py={1} borderRadius="full">
-              {vehicle.badge_2}
-            </Badge>
-            {/* <Badge variant="solid" bg="whiteAlpha.100" color="white" px={3} py={1} borderRadius="full">
-              {vehicle.fuel}
-            </Badge>
-            <Badge variant="solid" bg="whiteAlpha.100" color="white" px={3} py={1} borderRadius="full">
-              {vehicle.color}
-            </Badge> */}
-            <Badge variant="solid" bg="whiteAlpha.100" color="white" px={3} py={1} borderRadius="full">
-              {vehicle.transmission}
-            </Badge>
-          </Flex>
-        </Box>
-
-
-          <Box>
-            <Box position="relative" h={{ base: '320px', md: '520px' }} borderRadius="3xl" overflow="hidden">
-              <Box position="absolute" inset={0} overflow="hidden">
-                <Image src={selectedImage.src} alt={selectedImage.alt} objectFit="cover" w="100%" h="100%" />
+          <Box
+            bg="#181818"
+            borderRadius="3xl"
+            border="1px solid"
+            borderColor="whiteAlpha.200"
+            p={{ base: 4, md: 6 }}
+            mb={4}
+          >
+            <Flex direction={{ base: 'column', md: 'row' }} justify="space-between" align={{ base: 'flex-start', md: 'center' }} gap={4}>
+              <Box>
+                <Heading fontSize={{ base: '1xl', md: '3xl' }} color="white" mb={2}>
+                  {vehicle.title}
+                </Heading>
               </Box>
+              <Text color="#b21a18" fontSize={{ base: 'xl', md: '3xl' }} fontWeight="700">
+                CHF {vehicle.price.toLocaleString('de-CH')}
+              </Text>
+            </Flex>
 
-              <IconButton
-                aria-label="Vorheriges Bild"
-                icon={<ChevronLeftIcon />}
-                position="absolute"
-                top="50%"
-                left={4}
-                transform="translateY(-50%)"
-                color="white"
-                bg="#181818"
-                _hover={{ bg: 'rgba(255,255,255,0.18)' }}
-                border="1px solid rgba(255,255,255,0.22)"
-                boxShadow="0 12px 30px rgba(0,0,0,0.35)"
-                borderRadius="full"
-                size="lg"
-                onClick={showPreviousImage}
-                zIndex={2}
-              />
-              <IconButton
-                aria-label="Nächstes Bild"
-                icon={<ChevronRightIcon />}
-                position="absolute"
-                top="50%"
-                right={4}
-                transform="translateY(-50%)"
-                color="white"
-                bg="rgba(0,0,0,0.72)"
-                _hover={{ bg: 'rgba(255,255,255,0.18)' }}
-                border="1px solid rgba(255,255,255,0.22)"
-                boxShadow="0 12px 30px rgba(0,0,0,0.35)"
-                borderRadius="full"
-                size="lg"
-                onClick={showNextImage}
-                zIndex={2}
-              />
-              <IconButton
-                aria-label="Vollbild anzeigen"
-                icon={<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M6 16H4v4h4v-2H6v-2zm0-8h2V6h2V4H4v4zm12 8h-2v2h-2v2h4v-4zm-2-8V4h-4v2h2v2h2z"/></svg>}
-                position="absolute"
-                bottom={4}
-                right={4}
-                color="white"
-                bg="rgba(0,0,0,0.72)"
-                _hover={{ bg: 'rgba(255,255,255,0.18)' }}
-                border="1px solid rgba(255,255,255,0.22)"
-                boxShadow="0 12px 30px rgba(0,0,0,0.35)"
-                borderRadius="full"
-                size="lg"
-                onClick={handleFullscreen}
-                zIndex={2}
-              />
-            </Box>
+            <Flex wrap="wrap" gap={3} mt={4}>
+              <Badge variant="solid" bg="whiteAlpha.100" color="white" px={3} py={1} borderRadius="full">
+                {vehicle.badge_1}
+              </Badge>
+              <Badge variant="solid" bg="whiteAlpha.100" color="white" px={3} py={1} borderRadius="full">
+                {vehicle.badge_2}
+              </Badge>
+              <Badge variant="solid" bg="whiteAlpha.100" color="white" px={3} py={1} borderRadius="full">
+                {vehicle.transmission}
+              </Badge>
+            </Flex>
           </Box>
+          <Box>
+          <Box position="relative" h={{ base: '320px', md: '520px' }} borderRadius="3xl" overflow="hidden">
+            <Box position="absolute" inset={0} overflow="hidden">
+              <Image src={selectedImage.src} alt={selectedImage.alt} objectFit="cover" w="100%" h="100%" />
+            </Box>
 
+            <IconButton
+              aria-label="Vorheriges Bild"
+              icon={<ChevronLeftIcon />}
+              position="absolute"
+              top="50%"
+              left={4}
+              transform="translateY(-50%)"
+              color="white"
+              bg="#181818"
+              _hover={{ bg: 'rgba(255,255,255,0.18)' }}
+              border="1px solid rgba(255,255,255,0.22)"
+              boxShadow="0 12px 30px rgba(0,0,0,0.35)"
+              borderRadius="full"
+              size="lg"
+              onClick={showPreviousImage}
+              zIndex={2}
+            />
+            <IconButton
+              aria-label="Nächstes Bild"
+              icon={<ChevronRightIcon />}
+              position="absolute"
+              top="50%"
+              right={4}
+              transform="translateY(-50%)"
+              color="white"
+              bg="rgba(0,0,0,0.72)"
+              _hover={{ bg: 'rgba(255,255,255,0.18)' }}
+              border="1px solid rgba(255,255,255,0.22)"
+              boxShadow="0 12px 30px rgba(0,0,0,0.35)"
+              borderRadius="full"
+              size="lg"
+              onClick={showNextImage}
+              zIndex={2}
+            />
+            <IconButton
+              aria-label="Vollbild anzeigen"
+              icon={<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M6 16H4v4h4v-2H6v-2zm0-8h2V6h2V4H4v4zm12 8h-2v2h-2v2h4v-4zm-2-8V4h-4v2h2v2h2z"/></svg>}
+              position="absolute"
+              bottom={4}
+              right={4}
+              color="white"
+              bg="rgba(0,0,0,0.72)"
+              _hover={{ bg: 'rgba(255,255,255,0.18)' }}
+              border="1px solid rgba(255,255,255,0.22)"
+              boxShadow="0 12px 30px rgba(0,0,0,0.35)"
+              borderRadius="full"
+              size="lg"
+              onClick={handleFullscreen}
+              zIndex={2}
+            />
+          </Box>
+        </Box>
           <Box mt={4}>
             <SimpleGrid columns={{ base: 3, md: 5 }} spacing={3}>
               {galleryImages.map((image) => (
@@ -247,7 +225,6 @@ export default function Inventory() {
             </SimpleGrid>
           </Box>
         </Box>
-
         <Modal isOpen={isFullscreenOpen} onClose={closeFullscreen} size="full">
           <ModalOverlay bg="blackAlpha.900" />
           <ModalContent bg="transparent" boxShadow="none" maxW="100vw" minH="100vh" overflow="hidden">

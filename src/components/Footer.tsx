@@ -16,51 +16,46 @@ export default function Footer(){
       <Container
         maxW="100%"
         px="6%"
-        py={3}
+        py={{ base: 2, md: 3 }}
         display="flex"
         flexDirection="column"
-        gap={4}
+        gap={{ base: 2, md: 4 }}
       >
         <Box
           display={{ base: 'flex', md: 'none' }}
           flexDirection="column"
           alignItems="center"
-          gap={4}
+          gap={2}
           width="100%"
         >
-          <HStack spacing={10} justify="center" width="100%" flexWrap="wrap">
+          <HStack spacing={{ base: 8, md: 10 }} justify="center" width="100%" flexWrap="wrap">
             <Box as="a" href="https://wa.me/41768193273" target="_blank" rel="noreferrer" display="flex" alignItems="center" gap={2}>
               <Box as="span" display="inline-flex" alignItems="center" color="whiteAlpha.800" transition="color 0.2s ease" _hover={{ color: '#b21a18' }}>
-                <FaWhatsapp size={20} />
+                <FaWhatsapp size={16} />
               </Box>
               {/* <Text fontSize="sm">WhatsApp</Text> */}
             </Box>
             <Box as="a" href="https://www.instagram.com" target="_blank" rel="noreferrer" display="flex" alignItems="center" gap={2}>
               <Box as="span" display="inline-flex" alignItems="center" color="whiteAlpha.800" transition="color 0.2s ease" _hover={{ color: '#b21a18' }}>
-                <FaInstagram size={20} />
+                <FaInstagram size={16} />
               </Box>
               {/* <Text fontSize="sm">Instagram</Text> */}
             </Box>
             <Box as="a" href="https://www.youtube.com" target="_blank" rel="noreferrer" display="flex" alignItems="center" gap={2}>
               <Box as="span" display="inline-flex" alignItems="center" color="whiteAlpha.800" transition="color 0.2s ease" _hover={{ color: '#b21a18' }}>
-                <FaYoutube size={20} />
+                <FaYoutube size={16} />
               </Box>
               {/* <Text fontSize="sm">YouTube</Text> */}
             </Box>
           </HStack>
 
-          <HStack spacing={{ base: 3, md: 4 }} justify="center" width="100%" flexWrap="wrap">
-            <Box as="a" href="tel:+41768193273" display="flex" alignItems="center" gap={2} minW={{ base: '160px', md: 'auto' }} _hover={{ textDecoration: 'none' }}>
-              <Box as="span" display="inline-flex" alignItems="center" color="whiteAlpha.800" transition="color 0.2s ease" _hover={{ color: '#b21a18' }}>
-                <FiPhone size={20} />
-              </Box>
-              <Text fontSize={{ base: 'sm', md: 'md' }} fontWeight="300" color="inherit">+41 76 819 32 73</Text>
+          <HStack spacing={{ base: 4, md: 4 }} justify="center" width="100%" flexWrap="wrap" alignItems="center">
+            <Box as="a" href="tel:+41768193273" display="flex" alignItems="center" gap={1} _hover={{ textDecoration: 'none' }}>
+              <Text fontSize={{ base: 'xs', md: 'md' }} fontWeight="300" color="inherit">+41 76 819 32 73</Text>
             </Box>
-            <Box as="a" href="mailto:info@alpen-automobile.ch" display="flex" alignItems="center" gap={2} minW={{ base: '190px', md: 'auto' }} _hover={{ textDecoration: 'none' }}>
-              <Box as="span" display="inline-flex" alignItems="center" color="whiteAlpha.800" transition="color 0.2s ease" _hover={{ color: '#b21a18' }}>
-                <FiMail size={20} />
-              </Box>
-              <Text fontSize={{ base: 'sm', md: 'md' }} color="inherit">info@alpen-automobile.ch</Text>
+            <Text display={{ base: 'inline-flex', md: 'none' }} color="whiteAlpha.600" fontSize="xs">|</Text>
+            <Box as="a" href="mailto:info@alpen-automobile.ch" display="flex" alignItems="center" gap={1} _hover={{ textDecoration: 'none' }}>
+              <Text fontSize={{ base: 'xs', md: 'md' }} color="inherit">info@alpen-automobile.ch</Text>
             </Box>
           </HStack>
 
@@ -87,17 +82,11 @@ export default function Footer(){
               © 2026 Alpen Automobile. Alle Rechte vorbehalten.
             </Text>
           </Box>
-          <Box display="flex" alignItems="center" justifyContent="center" gap={6}>
-            <Box as="a" href="tel:+41768193273" display="flex" alignItems="center" gap={2} _hover={{ textDecoration: 'none' }}>
-              <Box as="span" display="inline-flex" alignItems="center" color="whiteAlpha.800" transition="color 0.2s ease" _hover={{ color: '#b21a18' }}>
-                <FiPhone size={18} />
-              </Box>
+          <Box display="flex" alignItems="center" justifyContent="center" gap={8}>
+            <Box as="a" href="tel:+41768193273" display="flex" alignItems="center" gap={1} _hover={{ textDecoration: 'none' }}>
               <Text fontSize={{ base: 'sm', md: 'md' }} fontWeight="200" color="inherit">+41 76 819 32 73</Text>
             </Box>
-            <Box as="a" href="mailto:info@alpen-automobile.ch" display="flex" alignItems="center" gap={2} _hover={{ textDecoration: 'none' }}>
-              <Box as="span" display="inline-flex" alignItems="center" color="whiteAlpha.800" transition="color 0.2s ease" _hover={{ color: '#b21a18' }}>
-                <FiMail size={18} />
-              </Box>
+            <Box as="a" href="mailto:info@alpen-automobile.ch" display="flex" alignItems="center" gap={1} _hover={{ textDecoration: 'none' }}>
               <Text fontSize={{ base: 'sm', md: 'md' }} fontWeight="200" color="inherit">info@alpen-automobile.ch</Text>
             </Box>
           </Box>
