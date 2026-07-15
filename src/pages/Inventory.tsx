@@ -8,11 +8,16 @@ import {
   Heading,
   IconButton,
   Image,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalOverlay,
   SimpleGrid,
   Stack,
   Text,
 } from '@chakra-ui/react'
-import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons'
+import { ChevronLeftIcon, ChevronRightIcon, CloseIcon } from '@chakra-ui/icons'
 
 const vehicle = {
   title: 'Audi Q5 S line',
@@ -50,17 +55,36 @@ export default function Inventory() {
     setSelectedImageId(galleryImages[nextIndex].id)
   }
 
-  const handleFullscreen = () => {
-    if (galleryRef.current) {
-      const elem = galleryRef.current
-      if (elem.requestFullscreen) {
-        elem.requestFullscreen()
-      } else if ((elem as any).webkitRequestFullscreen) {
-        ;(elem as any).webkitRequestFullscreen()
-      } else if ((elem as any).msRequestFullscreen) {
-        ;(elem as any).msRequestFullscreen()
-      }
+  const [isFullscreenOpen, setIsFullscreenOpen] = useState(false)
+
+  const handleFullscreen = async () => {
+    if (!galleryRef.current) {
+      setIsFullscreenOpen(true)
+      return
     }
+
+    const elem = galleryRef.current as any
+    try {
+      if (elem.requestFullscreen) {
+        await elem.requestFullscreen()
+        return
+      }
+      if (elem.webkitRequestFullscreen) {
+        elem.webkitRequestFullscreen()
+        return
+      }
+      if (elem.msRequestFullscreen) {
+        elem.msRequestFullscreen()
+        return
+      }
+      setIsFullscreenOpen(true)
+    } catch (error) {
+      setIsFullscreenOpen(true)
+    }
+  }
+
+  const closeFullscreen = () => {
+    setIsFullscreenOpen(false)
   }
 
   return (
@@ -160,7 +184,25 @@ export default function Inventory() {
           </Box>
         </Box>
 
-      
+        <Modal isOpen={isFullscreenOpen} onClose={closeFullscreen} size="full">
+          <ModalOverlay bg="blackAlpha.900" />
+          <ModalContent bg="transparent" boxShadow="none" maxW="100vw" minH="100vh" overflow="hidden">
+            <ModalCloseButton color="white" mt={4} mr={4} zIndex={3} />
+            <ModalBody p={0} bg="black">
+              <Box position="relative" h="100vh">
+                <Image
+                  src={selectedImage.src}
+                  alt={selectedImage.alt}
+                  objectFit="contain"
+                  w="100%"
+                  h="100%"
+                  maxH="100vh"
+                  bg="black"
+                />
+              </Box>
+            </ModalBody>
+          </ModalContent>
+        </Modal>
       </Stack>
     </Container>
   )
