@@ -180,7 +180,7 @@ export default function Inventory() {
             </Box>
           </Box>
 
-          <Box>
+          <Box mt={4}>
             <SimpleGrid columns={{ base: 3, md: 5 }} spacing={3}>
               {galleryImages.map((image) => (
                 <Box

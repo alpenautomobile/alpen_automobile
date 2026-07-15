@@ -53,7 +53,7 @@ export default function Footer(){
           </HStack>
 
           <HStack spacing={{ base: 3, md: 4 }} justify="center" width="100%" flexWrap="wrap">
-            <Box display="flex" alignItems="center" gap={2} minW={{ base: '160px', md: 'auto' }}>
+            <Box as="a" href="tel:+41768193273" display="flex" alignItems="center" gap={2} minW={{ base: '160px', md: 'auto' }} _hover={{ textDecoration: 'none' }}>
               <Box as="span" display="inline-flex" alignItems="center" color="whiteAlpha.800" transition="color 0.2s ease" _hover={{ color: '#b21a18' }}>
                 <FiPhone size={20} />
               </Box>
@@ -91,7 +91,7 @@ export default function Footer(){
             </Text>
           </Box>
           <Box display="flex" alignItems="center" justifyContent="center" gap={6}>
-            <Box display="flex" alignItems="center" gap={2}>
+            <Box as="a" href="tel:+41768193273" display="flex" alignItems="center" gap={2} _hover={{ textDecoration: 'none' }}>
               <Box as="span" display="inline-flex" alignItems="center" color="whiteAlpha.800" transition="color 0.2s ease" _hover={{ color: '#b21a18' }}>
                 <FiPhone size={18} />
               </Box>
