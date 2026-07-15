@@ -107,7 +107,7 @@ export default function NavBar(){
               _focus={{ boxShadow: 'none' }}
             />
             <DrawerHeader
-              minH="90px"
+              minH="80px"
               pt={6}
               pb={4}
               borderBottom="1px solid"
@@ -116,35 +116,35 @@ export default function NavBar(){
               alignItems="center"
               justifyContent="center"
             >
-              <Image src="/logo_design_5.png" alt="Alpen" h="44px" w="auto" />
+              <Image src="/logo_design_5.png" alt="Alpen" h="50px" w="auto" />
             </DrawerHeader>
             <DrawerBody p={4}>
               <VStack spacing={0} align="stretch">
                 {navItems.map((item) => {
                   const isActiveItem = location.pathname === item.to
                   return (
-                    <Button
-                      key={item.to}
+                    <Box
                       as={RouterLink}
+                      key={item.to}
                       to={item.to}
-                      variant="ghost"
-                      justifyContent="flex-start"
+                      display="inline-flex"
+                      alignItems="center"
+                      width="fit-content"
                       pl={0}
-                      py={4}
+                      py={3}
                       fontSize={{ base: 'md', md: 'lg' }}
-                      fontWeight={isActiveItem ? '700' : '600'}
-                      color={isActiveItem ? '#b21a18' : 'whiteAlpha.900'}
+                      fontWeight="500"
+                      color={isActiveItem ? 'white' : 'whiteAlpha.900'}
                       bg="transparent"
-                      transition="transform 0.2s ease, background-color 0.2s ease, color 0.2s ease"
-                      borderBottom={isActiveItem ? '2px solid' : '2px solid transparent'}
+                      transition="transform 0.2s ease, color 0.2s ease, textShadow 0.2s ease"
+                      borderBottom="2px solid"
                       borderBottomColor={isActiveItem ? '#b21a18' : 'transparent'}
-                      borderColor="transparent"
-                      _hover={{ bg: 'whiteAlpha.100', color: 'white', transform: 'translateX(3px) scale(1.01)' }}
+                      _hover={{ color: 'white', transform: 'translateX(3px) scale(1.01)', textShadow: '0 1px 8px rgba(255,255,255,0.18)' }}
                       _focus={{ boxShadow: 'none' }}
                       onClick={onClose}
                     >
                       {item.label}
-                    </Button>
+                    </Box>
                   )
                 })}
               </VStack>
