@@ -137,7 +137,7 @@ export default function Inventory() {
                 {vehicle.subtitle}
               </Text> */}
             </Box>
-            <Text color="#b21a18" fontSize={{ base: '2xl', md: '3xl' }} fontWeight="700">
+            <Text color="#b21a18" fontSize={{ base: 'xl', md: '3xl' }} fontWeight="700">
               CHF {vehicle.price.toLocaleString('de-CH')}
             </Text>
           </Flex>
