@@ -19,7 +19,7 @@ export default function Footer(){
       <Container
         maxW="100%"
         px="6%"
-        py={{ base: 2, md: 3 }}
+        py={{ base: 3, md: 3 }}
         display="flex"
         flexDirection="column"
         gap={{ base: 2, md: 4 }}
