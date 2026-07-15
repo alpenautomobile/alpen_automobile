@@ -29,13 +29,15 @@ export default function NavBar(){
     >
       <Container maxW="100%" px="6%" h="100%">
         <Flex align="center" justify="space-between" h="100%" gap={2}>
-          <Image
-            src="/header_logo.png"
-            alt="Alpen"
-            className="logo"
-            h={{ base: '30px', md: '36px' }}
-            w={{ base: '124px', md: '150px' }}
-          />
+          <Link as={RouterLink} to="/" display="inline-flex" alignItems="center" _hover={{ opacity: 0.9 }}>
+            <Image
+              src="/header_logo.png"
+              alt="Alpen"
+              className="logo"
+              h={{ base: '30px', md: '36px' }}
+              w={{ base: '124px', md: '150px' }}
+            />
+          </Link>
 
         <HStack
           as="ul"

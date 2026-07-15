@@ -1,5 +1,6 @@
 import React from 'react'
 import { Box, Container, Heading, Text, Button, Flex, VStack } from '@chakra-ui/react'
+import { Link as RouterLink } from 'react-router-dom'
 import { FiChevronRight } from 'react-icons/fi'
 
 export default function Content() {
@@ -45,7 +46,9 @@ export default function Content() {
 
               <Flex pt={4}>
                 <Button
-                    role="group"
+                  as={RouterLink}
+                  to="/inventory"
+                  role="group"
                   rightIcon={
                     <Box
                       display="inline-flex"
@@ -55,17 +58,16 @@ export default function Content() {
                       h="30px"
                       borderRadius="full"
                       border="1px solid rgba(255,255,255,0.9)"
-                        transition="transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease"
-                        _groupHover={{ transform: 'translateX(3px) scale(1.08)' }}
+                      transition="transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease"
+                      _groupHover={{ transform: 'translateX(3px) scale(1.08)' }}
                     >
-                        <FiChevronRight size="16px" color="white" />
+                      <FiChevronRight size="16px" color="white" />
                     </Box>
                   }
                   iconSpacing={4}
                   bg="#b21a18"
                   color="white"
                   fontSize={{ base: 'sm', md: '0.88rem' }}
-                  // fontWeight="700"
                   textTransform="uppercase"
                   letterSpacing="0.18em"
                   px={4}
