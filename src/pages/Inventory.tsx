@@ -130,7 +130,7 @@ export default function Inventory() {
         >
           <Flex direction={{ base: 'column', md: 'row' }} justify="space-between" align={{ base: 'flex-start', md: 'center' }} gap={4}>
             <Box>
-              <Heading fontSize={{ base: '2xl', md: '3xl' }} color="white" mb={2}>
+              <Heading fontSize={{ base: '1xl', md: '3xl' }} color="white" mb={2}>
                 {vehicle.title}
               </Heading>
               <Text color="gray.300" fontSize="md" mb={2}>
