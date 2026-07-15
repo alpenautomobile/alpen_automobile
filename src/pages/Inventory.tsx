@@ -24,8 +24,8 @@ const vehicle = {
   subtitle: '2021 · 42.000 km',
   price: 57900,
   image: '/card1.jpg',
-  badge: 'Sofort verfügbar',
-  condition: 'Gebraucht',
+  badge_1: '2021',
+  badge_2: ' 42.000 km',
   fuel: 'Hybrid',
   color: 'Schwarz',
   transmission: 'Automatik',
@@ -133,9 +133,9 @@ export default function Inventory() {
               <Heading fontSize={{ base: '1xl', md: '3xl' }} color="white" mb={2}>
                 {vehicle.title}
               </Heading>
-              <Text color="gray.300" fontSize="md" mb={2}>
+              {/* <Text color="gray.300" fontSize="md" mb={2}>
                 {vehicle.subtitle}
-              </Text>
+              </Text> */}
             </Box>
             <Text color="#b21a18" fontSize={{ base: '2xl', md: '3xl' }} fontWeight="700">
               CHF {vehicle.price.toLocaleString('de-CH')}
@@ -144,17 +144,17 @@ export default function Inventory() {
 
           <Flex wrap="wrap" gap={3} mt={4}>
             <Badge variant="solid" bg="whiteAlpha.100" color="white" px={3} py={1} borderRadius="full">
-              {vehicle.badge}
+              {vehicle.badge_1}
             </Badge>
             <Badge variant="solid" bg="whiteAlpha.100" color="white" px={3} py={1} borderRadius="full">
-              {vehicle.condition}
+              {vehicle.badge_2}
             </Badge>
-            <Badge variant="solid" bg="whiteAlpha.100" color="white" px={3} py={1} borderRadius="full">
+            {/* <Badge variant="solid" bg="whiteAlpha.100" color="white" px={3} py={1} borderRadius="full">
               {vehicle.fuel}
             </Badge>
             <Badge variant="solid" bg="whiteAlpha.100" color="white" px={3} py={1} borderRadius="full">
               {vehicle.color}
-            </Badge>
+            </Badge> */}
             <Badge variant="solid" bg="whiteAlpha.100" color="white" px={3} py={1} borderRadius="full">
               {vehicle.transmission}
             </Badge>
