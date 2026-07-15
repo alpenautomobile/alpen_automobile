@@ -7,36 +7,13 @@ export default function Content() {
     <Box
       className="page"
       position="relative"
-      bgImage="url('/TOP 8.png')"
+      bgImage="url('/content_page.png')"
       bgSize="cover"
       bgPosition="center"
       bgRepeat="no-repeat"
       h={{ base: 'auto', md: '55vh' }}
       minH="420px"
     >
-      {/* <Box
-        position="fixed"
-        top="100px"
-        left="0"
-        w="100%"
-        h={{ base: '24px', md: '34px' }}
-        zIndex="1"
-        pointerEvents="none"
-      >
-        <svg
-          width="100%"
-          height="100%"
-          viewBox="0 5 1440 135"
-          preserveAspectRatio="none"
-          aria-hidden="true"
-        >
-          <path
-            d="M 0 0 H 1440 V 72 H 400 C 295 72, 330 122, 255 122 H 0 Z"
-            fill="white"
-          />
-        </svg>
-      </Box> */}
-
       <Box
         className="contentBox"
         position="relative"
@@ -64,14 +41,7 @@ export default function Content() {
               verfügt über eine nachvollziehbare Historie 
               und eine vollständige Dokumentation.
 
-              </Text>
-              
-              {/* <Text
-                fontSize={{ base: 'sm', md: 'lg' }}
-                color="whiteAlpha.900"
-              >
-                Ausstattung, die begeistert.
-              </Text> */}
+              </Text>           
 
               <Flex pt={4}>
                 <Button

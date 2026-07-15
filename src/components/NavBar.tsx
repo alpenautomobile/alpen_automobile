@@ -28,7 +28,7 @@ export default function NavBar(){
       <Container maxW="100%" px="6%" h="100%">
         <Flex align="center" justify="space-between" h="100%" gap={2}>
           <Image
-            src="/logo_design_3.png"
+            src="/header_logo.png"
             alt="Alpen"
             className="logo"
             h={{ base: '30px', md: '36px' }}

@@ -77,7 +77,7 @@ export default function Footer(){
         >
           <Box display="flex" alignItems="center" gap={2}>
             <Image
-              src="/alpen_automobile_transparent_2.png"
+              src="/footer_logo.png"
               alt="Alpen Automobile"
               maxW={{ base: '77px', md: '92px' }}
               objectFit="contain"
