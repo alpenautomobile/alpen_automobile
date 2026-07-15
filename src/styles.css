@@ -43,6 +43,43 @@ body {
   padding-bottom: 0;
 }
 
+@media (min-width: 768px) {
+  html,
+  body,
+  #root {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .app-shell {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .page-content {
+    overflow: hidden;
+    padding-bottom: 120px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  html,
+  body,
+  #root {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .app-shell {
+    overflow: visible;
+  }
+
+  .page-content {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
 a { text-decoration: none; }
 
 .app-shell {

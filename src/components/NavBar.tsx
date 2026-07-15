@@ -24,6 +24,8 @@ export default function NavBar(){
       zIndex={40}
       h={{ base: '50px', md: '80px' }}
       bg="#181818"
+      borderBottom="1px solid"
+      borderColor="whiteAlpha.300"
     >
       <Container maxW="100%" px="6%" h="100%">
         <Flex align="center" justify="space-between" h="100%" gap={2}>
