@@ -252,8 +252,8 @@ export default function Inventory() {
           <ModalOverlay bg="blackAlpha.900" />
           <ModalContent bg="transparent" boxShadow="none" maxW="100vw" minH="100vh" overflow="hidden">
             <ModalCloseButton color="white" mt={4} mr={4} zIndex={3} />
-            <ModalBody p={0} bg="#181818">
-              <Box position="relative" h="100vh">
+            <ModalBody p={0} bg="#181818" overflow="auto" css={{ WebkitOverflowScrolling: 'touch', touchAction: 'auto' }}>
+              <Box position="relative" minH="100vh" display="flex" justifyContent="center" alignItems="center">
                 <Image
                   src={selectedImage.src}
                   alt={selectedImage.alt}
@@ -262,6 +262,8 @@ export default function Inventory() {
                   h="100%"
                   maxH="100vh"
                   bg="#181818"
+                  userSelect="none"
+                  sx={{ touchAction: 'auto' }}
                 />
               </Box>
             </ModalBody>

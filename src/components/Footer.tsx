@@ -59,7 +59,7 @@ export default function Footer(){
               </Box>
               <Text fontSize={{ base: 'sm', md: 'md' }} fontWeight="300" color="inherit">+41 76 819 32 73</Text>
             </Box>
-            <Box display="flex" alignItems="center" gap={2} minW={{ base: '190px', md: 'auto' }}>
+            <Box as="a" href="mailto:info@alpen-automobile.ch" display="flex" alignItems="center" gap={2} minW={{ base: '190px', md: 'auto' }} _hover={{ textDecoration: 'none' }}>
               <Box as="span" display="inline-flex" alignItems="center" color="whiteAlpha.800" transition="color 0.2s ease" _hover={{ color: '#b21a18' }}>
                 <FiMail size={20} />
               </Box>
@@ -97,7 +97,7 @@ export default function Footer(){
               </Box>
               <Text fontSize={{ base: 'sm', md: 'md' }} fontWeight="200" color="inherit">+41 76 819 32 73</Text>
             </Box>
-            <Box display="flex" alignItems="center" gap={2}>
+            <Box as="a" href="mailto:info@alpen-automobile.ch" display="flex" alignItems="center" gap={2} _hover={{ textDecoration: 'none' }}>
               <Box as="span" display="inline-flex" alignItems="center" color="whiteAlpha.800" transition="color 0.2s ease" _hover={{ color: '#b21a18' }}>
                 <FiMail size={18} />
               </Box>
