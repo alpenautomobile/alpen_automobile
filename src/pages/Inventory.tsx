@@ -93,7 +93,7 @@ export default function Inventory() {
       maxW="100%"
       px={{ base: '6%', md: '6%' }}
       py={4}
-      bg="#0f0f0f"
+      bg="#181818"
       minH="0"
       flex="1"
       overflowX="hidden"
@@ -113,15 +113,15 @@ export default function Inventory() {
         </Box>
 
         <Box
-          bg="#0f0f0f"
+          bg="#181818"
           borderRadius="3xl"
           overflow="hidden"
           boxShadow="2xl"
           ref={galleryRef}
-          border="1px solid"
-          borderColor="whiteAlpha.300"
+          // border="1px solid"
+          // borderColor="whiteAlpha.300"
         >
-          <Box p={4}>
+          <Box>
             <Box position="relative" h={{ base: '320px', md: '520px' }} borderRadius="3xl" overflow="hidden">
               <Box position="absolute" inset={0} overflow="hidden">
                 <Image src={selectedImage.src} alt={selectedImage.alt} objectFit="cover" w="100%" h="100%" />
@@ -135,7 +135,7 @@ export default function Inventory() {
                 left={4}
                 transform="translateY(-50%)"
                 color="white"
-                bg="#0f0f0f"
+                bg="#181818"
                 _hover={{ bg: 'rgba(255,255,255,0.18)' }}
                 border="1px solid rgba(255,255,255,0.22)"
                 boxShadow="0 12px 30px rgba(0,0,0,0.35)"
@@ -180,7 +180,7 @@ export default function Inventory() {
             </Box>
           </Box>
 
-          <Box p={4} bg="#0f0f0f" >
+          <Box>
             <SimpleGrid columns={{ base: 3, md: 5 }} spacing={3}>
               {galleryImages.map((image) => (
                 <Box
@@ -208,7 +208,7 @@ export default function Inventory() {
         </Box>
 
         <Box
-          bg="#0f0f0f"
+          bg="#181818"
           // bg="#0f0f0f"
           borderRadius="3xl"
           border="1px solid"
@@ -252,7 +252,7 @@ export default function Inventory() {
           <ModalOverlay bg="blackAlpha.900" />
           <ModalContent bg="transparent" boxShadow="none" maxW="100vw" minH="100vh" overflow="hidden">
             <ModalCloseButton color="white" mt={4} mr={4} zIndex={3} />
-            <ModalBody p={0} bg="#0f0f0f">
+            <ModalBody p={0} bg="#181818">
               <Box position="relative" h="100vh">
                 <Image
                   src={selectedImage.src}
@@ -261,7 +261,7 @@ export default function Inventory() {
                   w="100%"
                   h="100%"
                   maxH="100vh"
-                  bg="#0f0f0f"
+                  bg="#181818"
                 />
               </Box>
             </ModalBody>
