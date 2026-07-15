@@ -199,31 +199,31 @@ export default function Inventory() {
             />
           </Box>
         </Box>
-          <Box mt={4}>
-            <SimpleGrid columns={{ base: 3, md: 5 }} spacing={3}>
-              {galleryImages.map((image) => (
-                <Box
-                  key={image.id}
-                  as="button"
-                  minH="80px"
-                  borderRadius="2xl"
-                  overflow="hidden"
-                  border={selectedImageId === image.id ? '2px solid rgba(255,255,255,0.9)' : '2px solid transparent'}
-                  onClick={() => setSelectedImageId(image.id)}
-                  transition="border-color 150ms ease, opacity 150ms ease"
-                >
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    objectFit="cover"
-                    w="100%"
-                    h="100%"
-                    opacity={selectedImageId === image.id ? 1 : 0.7}
-                  />
-                </Box>
-              ))}
-            </SimpleGrid>
-          </Box>
+        <Box mt={4}>
+          <SimpleGrid columns={{ base: 3, md: 5 }} spacing={3}>
+            {galleryImages.map((image) => (
+              <Box
+                key={image.id}
+                as="button"
+                minH="80px"
+                borderRadius="xl"
+                overflow="hidden"
+                border={selectedImageId === image.id ? '2px solid rgba(255,255,255,0.9)' : '1px solid transparent'}
+                onClick={() => setSelectedImageId(image.id)}
+                transition="border-color 150ms ease, opacity 150ms ease"
+              >
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  objectFit="cover"
+                  w="100%"
+                  h="100%"
+                  opacity={selectedImageId === image.id ? 1 : 0.7}
+                />
+              </Box>
+            ))}
+          </SimpleGrid>
+        </Box>
         </Box>
         <Modal isOpen={isFullscreenOpen} onClose={closeFullscreen} size="full">
           <ModalOverlay bg="blackAlpha.900" />

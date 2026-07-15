@@ -12,6 +12,9 @@ export default function Footer(){
       color="white"
       zIndex={50}
       position="static"
+      borderTopWidth={{ base: '1px', md: '0' }}
+      borderTopStyle="solid"
+      borderTopColor="whiteAlpha.300"
     >
       <Container
         maxW="100%"
