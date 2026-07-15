@@ -49,7 +49,7 @@ export default function Footer(){
             </Box>
           </HStack>
 
-          <HStack spacing={{ base: 4, md: 4 }} justify="center" width="100%" flexWrap="wrap" alignItems="center">
+          <HStack spacing={{ base: 6, md: 4 }} justify="center" width="100%" flexWrap="wrap" alignItems="center">
             <Box as="a" href="tel:+41768193273" display="flex" alignItems="center" gap={1} _hover={{ textDecoration: 'none' }}>
               <Text fontSize={{ base: 'xs', md: 'md' }} fontWeight="300" color="inherit">+41 76 819 32 73</Text>
             </Box>

@@ -105,14 +105,14 @@ export default function Inventory() {
       <Stack spacing={10}>
         <Box
           bg="#181818"
-          borderRadius="3xl"
+          borderRadius="xl"
           overflow="hidden"
-          boxShadow="2xl"
+          // boxShadow="2xl"
           ref={galleryRef}
         >
           <Box
             bg="#181818"
-            borderRadius="3xl"
+            borderRadius="xl"
             border="1px solid"
             borderColor="whiteAlpha.200"
             p={{ base: 4, md: 6 }}
@@ -142,7 +142,7 @@ export default function Inventory() {
             </Flex>
           </Box>
           <Box>
-          <Box position="relative" h={{ base: '320px', md: '520px' }} borderRadius="3xl" overflow="hidden">
+          <Box position="relative" h={{ base: '320px', md: '520px' }} borderRadius="xl" overflow="hidden">
             <Box position="absolute" inset={0} overflow="hidden">
               <Image src={selectedImage.src} alt={selectedImage.alt} objectFit="cover" w="100%" h="100%" />
             </Box>

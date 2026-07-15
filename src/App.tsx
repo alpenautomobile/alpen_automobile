@@ -16,6 +16,10 @@ export default function App() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+    const pageContent = document.querySelector('.page-content') as HTMLElement | null
+    if (pageContent) {
+      pageContent.scrollTop = 0
+    }
   }, [location.pathname])
 
   useEffect(() => {
