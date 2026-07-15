@@ -48,17 +48,18 @@ body {
   body,
   #root {
     height: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 
   .app-shell {
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100vh;
+    overflow: visible;
   }
 
   .page-content {
-    overflow: hidden;
-    padding-bottom: 120px;
+    overflow: visible;
+    padding-bottom: 0;
   }
 }
 

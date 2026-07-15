@@ -20,7 +20,7 @@ import {
 import { ChevronLeftIcon, ChevronRightIcon, CloseIcon } from '@chakra-ui/icons'
 
 const vehicle = {
-  title: 'Audi Q5 S line',
+  title: 'BMW M330d xDrive SAG Touring M-Sport Pro Individual',
   subtitle: '2021 · 42.000 km',
   price: 57900,
   image: '/card1.jpg',
@@ -103,14 +103,11 @@ export default function Inventory() {
       borderColor="whiteAlpha.300"
     >
       <Stack spacing={10}>
-        <Box>
-          <Heading fontSize={{ base: 'xl', md: 'xl' }} mb={3} color="white">
-            Fahrzeugbestand
-          </Heading>
-          <Text maxW="3xl" color="gray.300" fontSize="lg">
+        {/* <Box>
+          <Heading fontSize={{ base: 'xl', md: 'xl' }} color="white">
             BMW M330d xDrive SAG Touring M-Sport Pro Individual
-          </Text>
-        </Box>
+          </Heading>
+        </Box> */}
 
         <Box
           bg="#181818"
@@ -121,6 +118,50 @@ export default function Inventory() {
           // border="1px solid"
           // borderColor="whiteAlpha.300"
         >
+
+        <Box
+          bg="#181818"
+          // bg="#0f0f0f"
+          borderRadius="3xl"
+          border="1px solid"
+          borderColor="whiteAlpha.200"
+          p={{ base: 4, md: 6 }}
+          mb={4}
+        >
+          <Flex direction={{ base: 'column', md: 'row' }} justify="space-between" align={{ base: 'flex-start', md: 'center' }} gap={4}>
+            <Box>
+              <Heading fontSize={{ base: '2xl', md: '3xl' }} color="white" mb={2}>
+                {vehicle.title}
+              </Heading>
+              <Text color="gray.300" fontSize="md" mb={2}>
+                {vehicle.subtitle}
+              </Text>
+            </Box>
+            <Text color="#b21a18" fontSize={{ base: '2xl', md: '3xl' }} fontWeight="700">
+              CHF {vehicle.price.toLocaleString('de-CH')}
+            </Text>
+          </Flex>
+
+          <Flex wrap="wrap" gap={3} mt={4}>
+            <Badge variant="solid" bg="whiteAlpha.100" color="white" px={3} py={1} borderRadius="full">
+              {vehicle.badge}
+            </Badge>
+            <Badge variant="solid" bg="whiteAlpha.100" color="white" px={3} py={1} borderRadius="full">
+              {vehicle.condition}
+            </Badge>
+            <Badge variant="solid" bg="whiteAlpha.100" color="white" px={3} py={1} borderRadius="full">
+              {vehicle.fuel}
+            </Badge>
+            <Badge variant="solid" bg="whiteAlpha.100" color="white" px={3} py={1} borderRadius="full">
+              {vehicle.color}
+            </Badge>
+            <Badge variant="solid" bg="whiteAlpha.100" color="white" px={3} py={1} borderRadius="full">
+              {vehicle.transmission}
+            </Badge>
+          </Flex>
+        </Box>
+
+
           <Box>
             <Box position="relative" h={{ base: '320px', md: '520px' }} borderRadius="3xl" overflow="hidden">
               <Box position="absolute" inset={0} overflow="hidden">
@@ -205,47 +246,6 @@ export default function Inventory() {
               ))}
             </SimpleGrid>
           </Box>
-        </Box>
-
-        <Box
-          bg="#181818"
-          // bg="#0f0f0f"
-          borderRadius="3xl"
-          border="1px solid"
-          borderColor="whiteAlpha.200"
-          p={{ base: 4, md: 6 }}
-        >
-          <Flex direction={{ base: 'column', md: 'row' }} justify="space-between" align={{ base: 'flex-start', md: 'center' }} gap={4}>
-            <Box>
-              <Heading fontSize={{ base: '2xl', md: '3xl' }} color="white" mb={2}>
-                {vehicle.title}
-              </Heading>
-              <Text color="gray.300" fontSize="md" mb={2}>
-                {vehicle.subtitle}
-              </Text>
-            </Box>
-            <Text color="#b21a18" fontSize={{ base: '2xl', md: '3xl' }} fontWeight="700">
-              CHF {vehicle.price.toLocaleString('de-CH')}
-            </Text>
-          </Flex>
-
-          <Flex wrap="wrap" gap={3} mt={4}>
-            <Badge variant="solid" bg="whiteAlpha.100" color="white" px={3} py={1} borderRadius="full">
-              {vehicle.badge}
-            </Badge>
-            <Badge variant="solid" bg="whiteAlpha.100" color="white" px={3} py={1} borderRadius="full">
-              {vehicle.condition}
-            </Badge>
-            <Badge variant="solid" bg="whiteAlpha.100" color="white" px={3} py={1} borderRadius="full">
-              {vehicle.fuel}
-            </Badge>
-            <Badge variant="solid" bg="whiteAlpha.100" color="white" px={3} py={1} borderRadius="full">
-              {vehicle.color}
-            </Badge>
-            <Badge variant="solid" bg="whiteAlpha.100" color="white" px={3} py={1} borderRadius="full">
-              {vehicle.transmission}
-            </Badge>
-          </Flex>
         </Box>
 
         <Modal isOpen={isFullscreenOpen} onClose={closeFullscreen} size="full">

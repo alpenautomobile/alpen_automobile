@@ -11,10 +11,7 @@ export default function Footer(){
       bg="#181818"
       color="white"
       zIndex={50}
-      position={{ base: 'static', md: 'fixed' }}
-      bottom={{ base: 'auto', md: 0 }}
-      left={0}
-      right={0}
+      position="static"
     >
       <Container
         maxW="100%"
