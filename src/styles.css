@@ -51,6 +51,35 @@ a { text-decoration: none; }
   flex-direction: column;
 }
 
+.page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000000;
+}
+
+.page-loader__logo {
+  width: min(70vw, 280px);
+  max-width: 280px;
+  height: auto;
+  animation: pulse-logo 1.4s ease-in-out infinite;
+  filter: drop-shadow(0 0 24px rgba(255, 255, 255, 0.12));
+}
+
+@keyframes pulse-logo {
+  0%, 100% {
+    transform: scale(0.94);
+    opacity: 0.75;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 1;
+  }
+}
+
 .header {
   position: sticky;
   top: 0;
