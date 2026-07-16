@@ -24,8 +24,18 @@ export default function NavBar(){
       zIndex={40}
       h={{ base: '50px', md: '80px' }}
       bg="#181818"
-      borderBottom="1px solid"
-      borderColor="whiteAlpha.300"
+
+      _after={{
+        content: '""',
+        display: { base: 'none', md: 'block' },
+        position: 'absolute',
+        bottom: 0,
+        left: '-3%',
+        width: '107%',
+        height: '1px',
+        background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.7), transparent)',
+        boxShadow: '0 1px 2px rgba(255,255,255,0.18)',
+      }}
     >
       <Container maxW="100%" px="6%" h="100%">
         <Flex align="center" justify="space-between" h="100%" gap={2}>
@@ -34,8 +44,8 @@ export default function NavBar(){
               src="/header_logo.png"
               alt="Alpen"
               className="logo"
-              h={{ base: '30px', md: '36px' }}
-              w={{ base: '124px', md: '150px' }}
+              h={{ base: '22px', md: '36px' }}
+              w={{ base: '104px', md: '150px' }}
             />
           </Link>
 
@@ -101,7 +111,7 @@ export default function NavBar(){
               top={4}
               right={4}
               color="white"
-              bg="rgba(255,255,255,0.1)"
+              bg="rgba(255, 255, 255, 0.1)"
               border="1px solid"
               borderColor="whiteAlpha.500"
               borderRadius="full"

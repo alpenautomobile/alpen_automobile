@@ -99,8 +99,8 @@ export default function Inventory() {
       overflowX="hidden"
       overflowY={{ base: 'visible', md: 'auto' }}
       css={{ WebkitOverflowScrolling: 'touch' }}
-      borderTop="1px solid"
-      borderColor="whiteAlpha.300"
+      // borderTop="1px solid"
+      // borderColor="whiteAlpha.300"
     >
       <Stack spacing={10}>
         <Box
