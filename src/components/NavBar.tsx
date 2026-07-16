@@ -76,7 +76,7 @@ export default function NavBar(){
                   fontSize={{ base: 'sm', lg: 'md' }}
                   fontWeight="600"
                   transition="transform 0.2s ease, color 0.2s ease, text-shadow 0.2s ease"
-                  _hover={{ color: 'gray.200', transform: 'translateX(2px) scale(1.04)', textShadow: '0 1px 8px rgba(255,255,255,0.18)' }}
+                  _hover={{ color: 'gray.200', transform: 'translateX(2px) scale(1.04)' }}
                   _focus={{ boxShadow: 'none' }}
                 >
                   {item.label}
@@ -108,14 +108,16 @@ export default function NavBar(){
           <DrawerOverlay bg="blackAlpha.300" />
           <DrawerContent p={0} bg="#181818">
             <DrawerCloseButton
-              top={4}
+              top={3}
               right={4}
+              h="25px"
+              w="25px"          
               color="white"
               bg="rgba(255, 255, 255, 0.1)"
               border="1px solid"
               borderColor="whiteAlpha.500"
               borderRadius="full"
-              fontSize="10px"
+              fontSize="8px"
               _hover={{ bg: 'rgba(255,255,255,1)', borderColor: 'white' }}
               _focus={{ boxShadow: 'none' }}
               zIndex={10}
@@ -164,7 +166,7 @@ export default function NavBar(){
                       color={isActiveItem ? 'white' : 'whiteAlpha.900'}
                       bg="transparent"
                       transition="transform 0.2s ease, color 0.2s ease, textShadow 0.2s ease"
-                      borderBottom="2px solid"
+                      borderBottom="1px solid"
                       borderBottomColor={isActiveItem ? '#b21a18' : 'transparent'}
                       _hover={{ color: 'white', transform: 'translateX(3px) scale(1.01)', textShadow: '0 1px 8px rgba(255,255,255,0.18)' }}
                       _focus={{ boxShadow: 'none' }}

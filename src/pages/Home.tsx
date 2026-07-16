@@ -1,15 +1,17 @@
 import React from 'react'
 import {
   Box,
+  Button,
   Container,
   Flex,
   Heading,
   SimpleGrid,
   Text,
   Icon,
+  VStack,
 } from '@chakra-ui/react'
-import Content from '../components/Content'
-import { FiCheckCircle, FiSearch, FiUser } from 'react-icons/fi'
+import { Link as RouterLink } from 'react-router-dom'
+import { FiCheckCircle, FiSearch, FiUser, FiChevronRight } from 'react-icons/fi'
 
 const features = [
   {
@@ -34,12 +36,93 @@ const features = [
 
 export default function Home() {
   return (
-    <Box>
-      <Content />
+    <Box minH="100%" bg="white">
+      <Box
+        className="page"
+        position="relative"
+        bgImage="url('/content_page.png')"
+        bgSize="cover"
+        bgPosition="center"
+        bgRepeat="no-repeat"
+        h={{ base: 'auto', md: '55vh' }}
+        minH="420px"
+      >
+        <Box
+          className="contentBox"
+          position="relative"
+          zIndex="2"
+          pt={{ base: '80px', md: '110px' }}
+        >
+          <Container maxW="100%" px="6%" className="content">
+            <Flex
+              direction={{ base: 'column', md: 'row' }}
+              align="center"
+              justify="flex-start"
+            >
+              <VStack
+                align="start"
+                spacing={4}
+                maxW={{ base: '100%', md: '650px' }}
+              >
+                <Heading as="h1" fontSize={{ base: '3xl', md: '6xl' }} lineHeight="short" color="white">Fahrzeuge, die überzeugen.</Heading>
+
+                <Text
+                  fontSize={{ base: 'sm', md: 'md' }}
+                  color="whiteAlpha.900"
+                >
+                  Jedes Fahrzeug erfüllt hohe Ausstattungsstandards, 
+              verfügt über eine nachvollziehbare Historie 
+              und eine vollständige Dokumentation.
+
+                </Text>
+
+                <Flex pt={4}>
+                  <Button
+                    as={RouterLink}
+                    to="/inventory"
+                    role="group"
+                    rightIcon={
+                      <Box
+                        display="inline-flex"
+                        alignItems="center"
+                        justifyContent="center"
+                        w="30px"
+                        h="30px"
+                        borderRadius="full"
+                        border="1px solid rgba(255,255,255,0.9)"
+                        transition="transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease"
+                        _groupHover={{ transform: 'translateX(3px) scale(1.08)' }}
+                      >
+                        <FiChevronRight size="16px" color="white" />
+                      </Box>
+                    }
+                    iconSpacing={4}
+                    bg="#b21a18"
+                    color="white"
+                    fontSize={{ base: 'sm', md: '0.88rem' }}
+                    textTransform="uppercase"
+                    letterSpacing="0.18em"
+                    px={4}
+                    py="13px"
+                    minW="250px"
+                    h="46px"
+                    borderRadius="4px"
+                    border="1px solid rgba(255,255,255,0.15)"
+                    boxShadow="0 10px 18px rgba(0,0,0,0.2)"
+                    _hover={{ bg: '#b21a18', boxShadow: '0 12px 22px rgba(0,0,0,0.24)' }}
+                    _active={{ bg: '#8a1212' }}
+                  >
+                    Fahrzeugbestand
+                  </Button>
+                </Flex>
+              </VStack>
+            </Flex>
+          </Container>
+        </Box>
+      </Box>
 
       <Box
         bg="white"
-        minH="calc(100vh - 200px)"
         width="100%"
       >
         <Container

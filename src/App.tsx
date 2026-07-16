@@ -20,7 +20,7 @@ export default function App() {
     if (pageContent) {
       pageContent.scrollTop = 0
     }
-  }, [location.pathname])
+  }, [location.key])
 
   useEffect(() => {
     if (document.readyState === 'complete') {

@@ -11,7 +11,10 @@ export default function Footer(){
       bg="#181818"
       color="white"
       zIndex={50}
-      position="relative"
+      position={{ base: 'relative', md: 'fixed' }}
+      bottom={{ md: 0 }}
+      left={{ md: 0 }}
+      right={{ md: 0 }}
       _before={{
         content: '""',
         display: 'block',
@@ -44,19 +47,16 @@ export default function Footer(){
               <Box as="span" display="inline-flex" alignItems="center" color="whiteAlpha.800" transition="color 0.2s ease" _hover={{ color: '#b21a18' }}>
                 <FaWhatsapp size={16} />
               </Box>
-              {/* <Text fontSize="sm">WhatsApp</Text> */}
             </Box>
             <Box as="a" href="https://www.instagram.com" target="_blank" rel="noreferrer" display="flex" alignItems="center" gap={2}>
               <Box as="span" display="inline-flex" alignItems="center" color="whiteAlpha.800" transition="color 0.2s ease" _hover={{ color: '#b21a18' }}>
                 <FaInstagram size={16} />
               </Box>
-              {/* <Text fontSize="sm">Instagram</Text> */}
             </Box>
             <Box as="a" href="https://www.youtube.com" target="_blank" rel="noreferrer" display="flex" alignItems="center" gap={2}>
               <Box as="span" display="inline-flex" alignItems="center" color="whiteAlpha.800" transition="color 0.2s ease" _hover={{ color: '#b21a18' }}>
                 <FaYoutube size={16} />
               </Box>
-              {/* <Text fontSize="sm">YouTube</Text> */}
             </Box>
           </HStack>
 
@@ -69,11 +69,6 @@ export default function Footer(){
               <Text fontSize={{ base: 'xs', md: 'md' }} color="inherit">info@alpen-automobile.ch</Text>
             </Box>
           </HStack>
-
-          {/* <HStack spacing={2} justify="center" width="100%">
-            <FaCopyright size={14} />
-            <Text fontSize="sm" color="whiteAlpha.800">© 2024 Alpen Automobile. Alle Rechte vorbehalten.</Text>
-          </HStack> */}
         </Box>
 
         <Box
@@ -94,31 +89,34 @@ export default function Footer(){
             </Text>
           </Box>
           <Box display="flex" alignItems="center" justifyContent="center" gap={8}>
-            <Box as="a" href="tel:+41768193273" display="flex" alignItems="center" gap={1} _hover={{ textDecoration: 'none' }}>
+            <Box as="a" href="tel:+41768193273" display="flex" alignItems="center" gap={2} _hover={{ textDecoration: 'none' }}>
+              <Box as="span" display="inline-flex" alignItems="center" color="whiteAlpha.800" transition="color 0.2s ease" _hover={{ color: '#b21a18' }}>
+                <FiPhone size={15} />
+              </Box>
               <Text fontSize={{ base: 'sm', md: 'md' }} fontWeight="200" color="inherit">+41 76 819 32 73</Text>
             </Box>
-            <Box as="a" href="mailto:info@alpen-automobile.ch" display="flex" alignItems="center" gap={1} _hover={{ textDecoration: 'none' }}>
+            <Box as="a" href="mailto:info@alpen-automobile.ch" display="flex" alignItems="center" gap={2} _hover={{ textDecoration: 'none' }}>
+              <Box as="span" display="inline-flex" alignItems="center" color="whiteAlpha.800" transition="color 0.2s ease" _hover={{ color: '#b21a18' }}>
+                <FiMail size={15} />
+              </Box>
               <Text fontSize={{ base: 'sm', md: 'md' }} fontWeight="200" color="inherit">info@alpen-automobile.ch</Text>
             </Box>
           </Box>
-          <HStack spacing={4} alignItems="center">
+          <HStack spacing={8} alignItems="center">
             <Box as="a" href="https://www.instagram.com" target="_blank" rel="noreferrer" display="flex" alignItems="center" gap={2}>
               <Box as="span" display="inline-flex" alignItems="center" color="whiteAlpha.800" transition="color 0.2s ease" _hover={{ color: '#b21a18' }}>
                 <FaInstagram size={18} />
-              </Box>
-              <Text fontSize={{ base: 'sm', md: 'md' }} fontWeight="200">Instagram</Text>
+              </Box>   
             </Box>
             <Box as="a" href="https://www.youtube.com" target="_blank" rel="noreferrer" display="flex" alignItems="center" gap={2}>
               <Box as="span" display="inline-flex" alignItems="center" color="whiteAlpha.800" transition="color 0.2s ease" _hover={{ color: '#b21a18' }}>
                 <FaYoutube size={18} />
-              </Box>
-              <Text fontSize={{ base: 'sm', md: 'md' }} fontWeight="200">YouTube</Text>
+              </Box>            
             </Box>
             <Box as="a" href="https://wa.me/41768193273" target="_blank" rel="noreferrer" display="flex" alignItems="center" gap={2}>
               <Box as="span" display="inline-flex" alignItems="center" color="whiteAlpha.800" transition="color 0.2s ease" _hover={{ color: '#b21a18' }}>
                 <FaWhatsapp size={18} />
-              </Box>
-              <Text fontSize={{ base: 'sm', md: 'md' }} fontWeight="200">WhatsApp</Text>
+              </Box>     
             </Box>
           </HStack>
         </Box>
