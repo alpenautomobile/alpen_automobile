@@ -22,12 +22,12 @@ export default function NavBar(){
       position="sticky"
       top={0}
       zIndex={40}
-      h={{ base: '50px', md: '80px' }}
+      h={{ base: '48px', md: '60px' }}
       bg="#181818"
 
       _after={{
         content: '""',
-        display: { base: 'none', md: 'block' },
+        display: 'block',
         position: 'absolute',
         bottom: 0,
         left: '-3%',
@@ -44,8 +44,8 @@ export default function NavBar(){
               src="/header_logo.png"
               alt="Alpen"
               className="logo"
-              h={{ base: '22px', md: '36px' }}
-              w={{ base: '104px', md: '150px' }}
+              h={{ base: '21px', md: '30px' }}
+              w={{ base: '87px', md: '124px' }}
             />
           </Link>
 

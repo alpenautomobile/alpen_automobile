@@ -123,7 +123,6 @@ a { text-decoration: none; }
   top: 0;
   left: 0;
   width: 100%;
-  min-height: 80px;
   z-index: 10;
   background: #181818;
 }
