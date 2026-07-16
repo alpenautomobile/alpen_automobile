@@ -22,7 +22,7 @@ export default function NavBar(){
       position="sticky"
       top={0}
       zIndex={40}
-      h={{ base: '50px', md: '60px' }}
+      h={{ base: '52px', md: '60px' }}
       bg="#181818"
 
       _after={{
