@@ -96,7 +96,7 @@ export default function NavBar(){
 
         <Drawer placement="right" onClose={onClose} isOpen={isOpen} size="full">
           <DrawerOverlay bg="blackAlpha.300" />
-          <DrawerContent p={0} bg="#000">
+          <DrawerContent p={0} bg="#181818">
             <DrawerCloseButton
               top={4}
               right={4}
@@ -118,7 +118,7 @@ export default function NavBar(){
               alignItems="center"
               justifyContent="center"
               position="relative"
-              bg="#000"
+              bg="#181818"
               _after={{
                 content: '""',
                 position: "absolute",
