@@ -98,26 +98,39 @@ export default function NavBar(){
           <DrawerOverlay bg="blackAlpha.300" />
           <DrawerContent p={0} bg="#181818">
             <DrawerCloseButton
-              mt={4}
-              mr={4}
-              color="whiteAlpha.900"
-              bg="#0f0f0f"
+              top={4}
+              right={4}
+              color="white"
+              bg="rgba(255,255,255,0.12)"
               border="1px solid"
               borderColor="whiteAlpha.500"
               borderRadius="full"
-              _hover={{ bg: '#111111', borderColor: 'whiteAlpha.700' }}
+              fontSize="14px"
+              _hover={{ bg: 'rgba(255,255,255,0.22)', borderColor: 'white' }}
               _focus={{ boxShadow: 'none' }}
+              zIndex={10}
             />
-            <DrawerHeader
-              minH="80px"
-              pt={6}
-              pb={4}
-              borderBottom="1px solid"
-              borderColor="whiteAlpha.300"
-              display="flex"
-              alignItems="center"
-              justifyContent="center"
-            >
+<DrawerHeader
+  minH="80px"
+  pt={6}
+  pb={4}
+  display="flex"
+  alignItems="center"
+  justifyContent="center"
+  position="relative"
+  bg="#000"
+  _after={{
+    content: '""',
+    position: "absolute",
+    bottom: 0,
+    left: "8%",
+    width: "84%",
+    height: "1px",
+    background:
+      "linear-gradient(90deg, transparent, rgba(255,255,255,0.7), transparent)",
+    boxShadow: "0 1px 8px rgba(255,255,255,0.18)",
+  }}
+>
               <Image src="/logo_design_5.png" alt="Alpen" h="50px" w="auto" />
             </DrawerHeader>
             <DrawerBody p={4}>
