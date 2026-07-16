@@ -96,7 +96,6 @@ export default function Inventory() {
       bg="#181818"
       minH="0"
       flex="1"
-      overflowX="hidden"
       overflowY={{ base: 'visible', md: 'auto' }}
       css={{ WebkitOverflowScrolling: 'touch' }}
     >
