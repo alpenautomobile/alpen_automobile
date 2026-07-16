@@ -321,13 +321,26 @@ export default function Inventory() {
         setZoomLevel(1)
       }} size="full">
         <ModalOverlay bg="blackAlpha.900" />
-        <ModalContent bg="transparent" boxShadow="none" maxW="100vw" minH="100vh" overflow="hidden">
-          <ModalCloseButton color="white" mt={4} mr={4} zIndex={3} />
-          <Box position="absolute" top={4} right={12} zIndex={3} display="flex" gap={2}>
+        <ModalContent bg="transparent" boxShadow="none" maxW="100vw" minH="100vh" overflow="hidden" display="flex" flexDirection="column">
+          {/* Controls bar: centered on mobile, top-right on desktop */}
+          <Flex
+            position={{ base: 'fixed', md: 'absolute' }}
+            bottom={{ base: 6, md: 'auto' }}
+            top={{ base: 'auto', md: 4 }}
+            left={{ base: 0, md: 'auto' }}
+            right={{ base: 0, md: 4 }}
+            justifyContent={{ base: 'center', md: 'flex-end' }}
+            gap={2}
+            zIndex={10}
+            px={4}
+          >
             <IconButton aria-label="Verkleinern" icon={<FiZoomOut />} color="white" bg="blackAlpha.700" _hover={{ bg: 'blackAlpha.900' }} borderRadius="full" onClick={handleZoomOut} />
             <IconButton aria-label="Zurücksetzen" icon={<FiRotateCcw />} color="white" bg="blackAlpha.700" _hover={{ bg: 'blackAlpha.900' }} borderRadius="full" onClick={handleResetZoom} />
             <IconButton aria-label="Vergrößern" icon={<FiZoomIn />} color="white" bg="blackAlpha.700" _hover={{ bg: 'blackAlpha.900' }} borderRadius="full" onClick={handleZoomIn} />
-          </Box>
+            <IconButton aria-label="Schließen" icon={<ChevronLeftIcon transform="rotate(90deg)" />} color="white" bg="blackAlpha.700" _hover={{ bg: 'blackAlpha.900' }} borderRadius="full" onClick={() => { setIsFullscreenOpen(false); setZoomLevel(1) }} display={{ base: 'flex', md: 'none' }} />
+          </Flex>
+          {/* Desktop-only close button */}
+          <ModalCloseButton color="white" mt={4} mr={4} zIndex={11} display={{ base: 'none', md: 'flex' }} />
           <ModalBody p={0} bg="#181818" overflow="auto" css={{ WebkitOverflowScrolling: 'touch' }}>
             <Box minH="100vh" display="flex" justifyContent="center" alignItems="center" px={4} py={4} overflow="auto">
               <Box
