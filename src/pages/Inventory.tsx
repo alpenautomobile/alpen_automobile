@@ -231,7 +231,7 @@ export default function Inventory() {
         <Flex gap={3}>
           <Button
             as="a"
-            href="/contact"
+            href="mailto:info@alpen-automobile.ch?subject=Fahrzeuganfrage%3A%20BMW%20M330d%20xDrive%20SAG%20Touring"
             flex={1}
             bg="#b21a18"
             color="white"
@@ -242,7 +242,7 @@ export default function Inventory() {
             _hover={{ bg: '#9a1614' }}
             _active={{ bg: '#7e110f' }}
           >
-            Fahrzeug anfragen
+            Anfragen
           </Button>
           <Button
             as="a"
@@ -266,20 +266,24 @@ export default function Inventory() {
           <Heading fontSize="md" fontWeight="700" color="white" mb={3}>
             Fahrzeugdetails
           </Heading>
-          <Box borderTop="1px solid" borderColor="whiteAlpha.200">
+          <Box borderTop="none">
+            <Box h="1px" background="linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent)" mb={0} />
             {([
               { icon: FiSettings, label: 'Getriebe', value: 'Automatik' },
               { icon: FiDisc, label: 'Kilometerstand', value: "42'000 KM" },
               { icon: FiCalendar, label: 'Erstzulassung', value: '04 / 2021' },
               { icon: FiGitBranch, label: 'Antrieb', value: 'xDrive (Allrad)' },
             ] as const).map(({ icon: Icon, label, value }) => (
-              <Flex key={label} align="center" justify="space-between" py={3} borderBottom="1px solid" borderColor="whiteAlpha.100">
-                <Flex align="center" gap={3}>
-                  <Box color="whiteAlpha.700"><Icon size={17} /></Box>
-                  <Text color="whiteAlpha.800" fontSize="sm">{label}</Text>
+              <Box key={label}>
+                <Flex align="center" justify="space-between" py={3}>
+                  <Flex align="center" gap={3}>
+                    <Box color="whiteAlpha.700"><Icon size={17} /></Box>
+                    <Text color="whiteAlpha.800" fontSize="sm">{label}</Text>
+                  </Flex>
+                  <Text color="white" fontSize="sm" fontWeight="500">{value}</Text>
                 </Flex>
-                <Text color="white" fontSize="sm" fontWeight="500">{value}</Text>
-              </Flex>
+                <Box h="1px" background="linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent)" />
+              </Box>
             ))}
           </Box>
         </Box>
