@@ -101,12 +101,12 @@ export default function NavBar(){
               top={4}
               right={4}
               color="white"
-              bg="rgba(255,255,255,0.12)"
+              bg="rgba(255,255,255,0.1)"
               border="1px solid"
               borderColor="whiteAlpha.500"
               borderRadius="full"
-              fontSize="14px"
-              _hover={{ bg: 'rgba(255,255,255,0.22)', borderColor: 'white' }}
+              fontSize="10px"
+              _hover={{ bg: 'rgba(255,255,255,1)', borderColor: 'white' }}
               _focus={{ boxShadow: 'none' }}
               zIndex={10}
             />
@@ -123,8 +123,8 @@ export default function NavBar(){
                 content: '""',
                 position: "absolute",
                 bottom: 0,
-             left: "5%",
-width: "90%",
+                left: "5%",
+                width: "90%",
                 height: "1px",
                 background:
                   "linear-gradient(90deg, transparent, rgba(255,255,255,0.7), transparent)",
