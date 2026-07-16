@@ -72,6 +72,7 @@ export default function Inventory() {
 
   const [isFullscreenOpen, setIsFullscreenOpen] = useState(false)
   const [zoomLevel, setZoomLevel] = useState(1)
+  const [touchStartDistance, setTouchStartDistance] = useState<number | null>(null)
 
   const handleFullscreen = async () => {
     const elem = mainImageRef.current as HTMLElement | null
@@ -104,6 +105,31 @@ export default function Inventory() {
   const handleZoomIn = () => setZoomLevel((prev) => Math.min(prev + 0.25, 3))
   const handleZoomOut = () => setZoomLevel((prev) => Math.max(prev - 0.25, 1))
   const handleResetZoom = () => setZoomLevel(1)
+
+  const handleTouchStart = (event: React.TouchEvent) => {
+    if (event.touches.length === 2) {
+      const distance = Math.hypot(
+        event.touches[0].clientX - event.touches[1].clientX,
+        event.touches[0].clientY - event.touches[1].clientY,
+      )
+      setTouchStartDistance(distance)
+    }
+  }
+
+  const handleTouchMove = (event: React.TouchEvent) => {
+    if (event.touches.length !== 2 || touchStartDistance === null) return
+
+    const distance = Math.hypot(
+      event.touches[0].clientX - event.touches[1].clientX,
+      event.touches[0].clientY - event.touches[1].clientY,
+    )
+
+    const ratio = distance / touchStartDistance
+    const nextZoom = Math.min(Math.max(1 * ratio, 1), 3)
+    setZoomLevel(nextZoom)
+  }
+
+  const handleTouchEnd = () => setTouchStartDistance(null)
 
   return (
     <Container
@@ -305,6 +331,9 @@ export default function Inventory() {
           <ModalBody p={0} bg="#181818" overflow="auto" css={{ WebkitOverflowScrolling: 'touch' }}>
             <Box minH="100vh" display="flex" justifyContent="center" alignItems="center" px={4} py={4} overflow="auto">
               <Box
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+                onTouchEnd={handleTouchEnd}
                 onDoubleClick={() => setZoomLevel((prev) => (prev === 1 ? 2 : 1))}
                 onWheel={(event) => {
                   event.preventDefault()
