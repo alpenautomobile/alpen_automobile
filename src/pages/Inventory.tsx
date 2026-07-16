@@ -17,7 +17,7 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/react'
-import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons'
+import { ChevronLeftIcon, ChevronRightIcon, CloseIcon } from '@chakra-ui/icons'
 import { FiCalendar, FiDisc, FiSettings, FiMail, FiPhone, FiGitBranch, FiZap, FiDroplet, FiUsers, FiShield, FiPackage, FiExternalLink, FiZoomIn, FiZoomOut, FiRotateCcw } from 'react-icons/fi'
 
 const vehicle = {
@@ -337,7 +337,7 @@ export default function Inventory() {
             <IconButton aria-label="Verkleinern" icon={<FiZoomOut />} color="white" bg="blackAlpha.700" _hover={{ bg: 'blackAlpha.900' }} borderRadius="full" onClick={handleZoomOut} />
             <IconButton aria-label="Zurücksetzen" icon={<FiRotateCcw />} color="white" bg="blackAlpha.700" _hover={{ bg: 'blackAlpha.900' }} borderRadius="full" onClick={handleResetZoom} />
             <IconButton aria-label="Vergrößern" icon={<FiZoomIn />} color="white" bg="blackAlpha.700" _hover={{ bg: 'blackAlpha.900' }} borderRadius="full" onClick={handleZoomIn} />
-            <IconButton aria-label="Schließen" icon={<ChevronLeftIcon transform="rotate(90deg)" />} color="white" bg="blackAlpha.700" _hover={{ bg: 'blackAlpha.900' }} borderRadius="full" onClick={() => { setIsFullscreenOpen(false); setZoomLevel(1) }} display={{ base: 'flex', md: 'none' }} />
+            <IconButton aria-label="Schließen" icon={<CloseIcon boxSize={3} />} color="white" bg="blackAlpha.700" _hover={{ bg: 'blackAlpha.900' }} borderRadius="full" onClick={() => { setIsFullscreenOpen(false); setZoomLevel(1) }} display={{ base: 'flex', md: 'none' }} />
           </Flex>
           {/* Desktop-only close button */}
           <ModalCloseButton color="white" mt={4} mr={4} zIndex={11} display={{ base: 'none', md: 'flex' }} />
