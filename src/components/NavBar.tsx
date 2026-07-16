@@ -37,7 +37,7 @@ export default function NavBar(){
         boxShadow: '0 1px 2px rgba(255,255,255,0.18)',
       }}
     >
-      <Container maxW="100%" px="6%" h="100%">
+      <Container maxW="100%" px={{ base: 4, md: '6%' }} h="100%">
         <Flex align="center" justify="space-between" h="100%" gap={2}>
           <Link as={RouterLink} to="/" display="inline-flex" alignItems="center" _hover={{ opacity: 0.9 }}>
             <Image

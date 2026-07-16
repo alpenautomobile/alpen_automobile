@@ -29,7 +29,7 @@ export default function Footer(){
     >
       <Container
         maxW="100%"
-        px="6%"
+        px={{ base: 4, md: '6%' }}
         py={{ base: 3, md: 3 }}
         display="flex"
         flexDirection="column"
