@@ -91,7 +91,7 @@ export default function Inventory() {
     <Container
       w="100%"
       maxW="100%"
-      px={{ base: 6, md: '6%' }}
+      px={{ base: 4, md: '6%' }}
       py={4}
       bg="#181818"
       minH="0"
@@ -129,7 +129,7 @@ export default function Inventory() {
         </Box>
 
         {/* Grey card: image, thumbnails, actions, details */}
-        <Box bg="#222222" borderRadius="2xl" p={{ base: 2, md: 5 }} display="flex" flexDirection="column" gap={4}>
+        <Box bg="#222222" borderRadius="2xl" p={{ base: 3, md: 5 }} display="flex" flexDirection="column" gap={4}>
 
         {/* Main image */}
         <Box position="relative" h={{ base: '260px', md: '460px' }} borderRadius="xl" overflow="hidden">
