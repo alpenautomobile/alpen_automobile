@@ -18,7 +18,7 @@ import {
   Text,
 } from '@chakra-ui/react'
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons'
-import { FiCalendar, FiDisc, FiSettings, FiMail, FiPhone, FiGitBranch, FiZap, FiDroplet, FiUsers, FiShield, FiPackage } from 'react-icons/fi'
+import { FiCalendar, FiDisc, FiSettings, FiMail, FiPhone, FiGitBranch, FiZap, FiDroplet, FiUsers, FiShield, FiPackage, FiExternalLink, FiZoomIn, FiZoomOut, FiRotateCcw } from 'react-icons/fi'
 
 const vehicle = {
   title: 'BMW M330d xDrive SAG Touring',
@@ -55,7 +55,7 @@ const details = [
 ] as const
 
 export default function Inventory() {
-  const galleryRef = useRef<HTMLDivElement | null>(null)
+  const mainImageRef = useRef<HTMLDivElement | null>(null)
   const [selectedImageId, setSelectedImageId] = useState(1)
   const selectedImageIndex = galleryImages.findIndex((image) => image.id === selectedImageId)
   const selectedImage = galleryImages[selectedImageIndex] || galleryImages[0]
@@ -71,17 +71,39 @@ export default function Inventory() {
   }
 
   const [isFullscreenOpen, setIsFullscreenOpen] = useState(false)
+  const [zoomLevel, setZoomLevel] = useState(1)
 
   const handleFullscreen = async () => {
-    if (!galleryRef.current) { setIsFullscreenOpen(true); return }
-    const elem = galleryRef.current as any
-    try {
-      if (elem.requestFullscreen) { await elem.requestFullscreen(); return }
-      if (elem.webkitRequestFullscreen) { elem.webkitRequestFullscreen(); return }
-      if (elem.msRequestFullscreen) { elem.msRequestFullscreen(); return }
+    const elem = mainImageRef.current as HTMLElement | null
+
+    if (!elem) {
       setIsFullscreenOpen(true)
-    } catch { setIsFullscreenOpen(true) }
+      return
+    }
+
+    try {
+      if (typeof elem.requestFullscreen === 'function') {
+        await elem.requestFullscreen()
+        return
+      }
+      if (typeof (elem as any).webkitRequestFullscreen === 'function') {
+        ;(elem as any).webkitRequestFullscreen()
+        return
+      }
+      if (typeof (elem as any).msRequestFullscreen === 'function') {
+        ;(elem as any).msRequestFullscreen()
+        return
+      }
+    } catch {
+      // fall back to the modal viewer if browser fullscreen is blocked
+    }
+
+    setIsFullscreenOpen(true)
   }
+
+  const handleZoomIn = () => setZoomLevel((prev) => Math.min(prev + 0.25, 3))
+  const handleZoomOut = () => setZoomLevel((prev) => Math.max(prev - 0.25, 1))
+  const handleResetZoom = () => setZoomLevel(1)
 
   return (
     <Container
@@ -96,12 +118,12 @@ export default function Inventory() {
       css={{ WebkitOverflowScrolling: 'touch' }}
     >
       {/* ── Desktop: two-column / Mobile: stacked ── */}
-      <Flex direction={{ base: 'column', md: 'row' }} gap={{ base: 4, md: 6 }} ref={galleryRef}>
+      <Flex direction={{ base: 'column', md: 'row' }} gap={{ base: 4, md: 6 }}>
 
         {/* ── LEFT: Gallery ── */}
         <Box flex="1" minW={0}>
           {/* Main image */}
-          <Box position="relative" h={{ base: '260px', md: '440px' }} borderRadius="xl" overflow="hidden">
+          <Box ref={mainImageRef} position="relative" h={{ base: '260px', md: '560px' }} borderRadius="xl" overflow="hidden">
             <Box position="absolute" inset={0}>
               <Image src={selectedImage.src} alt={selectedImage.alt} objectFit="cover" objectPosition="center" w="100%" h="100%" />
             </Box>
@@ -168,27 +190,47 @@ export default function Inventory() {
         <Box w={{ base: '100%', md: '340px' }} flexShrink={0} order={{ base: -1, md: 0 }}>
           <Box bg="#1e1e1e" borderRadius="xl" p={{ base: 4, md: 5 }} border="1px solid" borderColor="whiteAlpha.100" h="100%">
             {/* Title */}
-            <Heading fontSize={{ base: '18px', md: '2xl' }} color="white" lineHeight="1.25" fontWeight="700" mb={1}>
+            <Heading fontSize={{ base: '18px', md: '2xl' }} color="white" lineHeight="1.25" fontWeight="700" mb={2}>
               {vehicle.title}
             </Heading>
-            <Text color="whiteAlpha.600" fontSize="sm" mb={4}>{vehicle.subtitle}</Text>
+            <Text color="whiteAlpha.600" fontSize="sm" mb={2}>{vehicle.subtitle}</Text>
 
             {/* Price */}
-            <Text color="#b21a18" fontSize={{ base: '2xl', md: '3xl' }} fontWeight="700" mb={5}>
+            <Text color="#b21a18" fontSize={{ base: 'xl', md: '3xl' }} fontWeight="700" mb={3}>
               CHF {vehicle.price.toLocaleString('de-CH')}
             </Text>
 
             {/* Spec badges */}
-            <Flex gap={2} wrap="wrap" mb={6}>
-              <Badge variant="solid" bg="whiteAlpha.100" color="white" fontSize="11px" px={3} py={2} borderRadius="full" display="inline-flex" alignItems="center" gap={2}>
-                <FiCalendar size={11} />{vehicle.year}
-              </Badge>
-              <Badge variant="solid" bg="whiteAlpha.100" color="white" fontSize="11px" px={3} py={2} borderRadius="full" display="inline-flex" alignItems="center" gap={2}>
-                <FiDisc size={11} />{vehicle.km}
-              </Badge>
-              <Badge variant="solid" bg="whiteAlpha.100" color="white" fontSize="11px" px={3} py={2} borderRadius="full" display="inline-flex" alignItems="center" gap={2}>
-                <FiSettings size={11} />AUTOMATIK
-              </Badge>
+            <Flex gap={2} wrap="wrap" mb={{ base: 0, md: 4 }}>
+              <Button
+                as="a"
+                href="https://www.autoscout24.ch/de/d/bmw-330d-xdrive-touring-12345678"
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="ghost"
+                h="44px"
+                px={0}
+                bg="transparent"
+                color="white"
+                border="none"
+                borderRadius="0"
+                fontSize="13px"
+                fontWeight="600"
+                leftIcon={<FiExternalLink size={16} />}
+                rightIcon={<ChevronRightIcon boxSize={5} />}
+                _hover={{
+                  bg: 'transparent',
+                  color: '#d22a21',
+                  transform: 'translateX(2px)',
+                }}
+                _active={{
+                  bg: 'transparent',
+                  transform: 'translateX(0)',
+                }}
+                transition="all 150ms ease"
+              >
+                Auf AutoScout24.ch ansehen
+              </Button>
             </Flex>
 
             {/* Action buttons — desktop only (mobile buttons are below the gallery) */}
@@ -248,13 +290,48 @@ export default function Inventory() {
         </SimpleGrid>
       </Box>
 
-      <Modal isOpen={isFullscreenOpen} onClose={() => setIsFullscreenOpen(false)} size="full">
+      <Modal isOpen={isFullscreenOpen} onClose={() => {
+        setIsFullscreenOpen(false)
+        setZoomLevel(1)
+      }} size="full">
         <ModalOverlay bg="blackAlpha.900" />
         <ModalContent bg="transparent" boxShadow="none" maxW="100vw" minH="100vh" overflow="hidden">
           <ModalCloseButton color="white" mt={4} mr={4} zIndex={3} />
+          <Box position="absolute" top={4} right={12} zIndex={3} display="flex" gap={2}>
+            <IconButton aria-label="Verkleinern" icon={<FiZoomOut />} color="white" bg="blackAlpha.700" _hover={{ bg: 'blackAlpha.900' }} borderRadius="full" onClick={handleZoomOut} />
+            <IconButton aria-label="Zurücksetzen" icon={<FiRotateCcw />} color="white" bg="blackAlpha.700" _hover={{ bg: 'blackAlpha.900' }} borderRadius="full" onClick={handleResetZoom} />
+            <IconButton aria-label="Vergrößern" icon={<FiZoomIn />} color="white" bg="blackAlpha.700" _hover={{ bg: 'blackAlpha.900' }} borderRadius="full" onClick={handleZoomIn} />
+          </Box>
           <ModalBody p={0} bg="#181818" overflow="auto" css={{ WebkitOverflowScrolling: 'touch' }}>
-            <Box minH="100vh" display="flex" justifyContent="center" alignItems="center">
-              <Image src={selectedImage.src} alt={selectedImage.alt} objectFit="contain" w="100%" maxH="100vh" bg="#181818" userSelect="none" />
+            <Box minH="100vh" display="flex" justifyContent="center" alignItems="center" px={4} py={4} overflow="auto">
+              <Box
+                onDoubleClick={() => setZoomLevel((prev) => (prev === 1 ? 2 : 1))}
+                onWheel={(event) => {
+                  event.preventDefault()
+                  if (event.deltaY < 0) {
+                    handleZoomIn()
+                  } else {
+                    handleZoomOut()
+                  }
+                }}
+                cursor="zoom-in"
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+              >
+                <Image
+                  src={selectedImage.src}
+                  alt={selectedImage.alt}
+                  objectFit="contain"
+                  w="100%"
+                  maxH="100vh"
+                  bg="#181818"
+                  userSelect="none"
+                  transform={`scale(${zoomLevel})`}
+                  transition="transform 150ms ease"
+                  transformOrigin="center center"
+                />
+              </Box>
             </Box>
           </ModalBody>
         </ModalContent>
