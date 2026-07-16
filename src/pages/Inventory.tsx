@@ -191,23 +191,28 @@ export default function Inventory() {
         {/* Thumbnails */}
         <Flex
           overflowX="auto"
-          gap={3}
-          pb={2}
-          sx={{ scrollSnapType: 'x mandatory', '&::-webkit-scrollbar': { display: 'none' } }}
+          gap={2}
+          pb={1}
+          css={{
+            WebkitOverflowScrolling: 'touch',
+            touchAction: 'pan-x',
+            msOverflowStyle: 'none',
+            scrollbarWidth: 'none',
+            '&::-webkit-scrollbar': { display: 'none' },
+          }}
         >
           {galleryImages.map((image) => (
             <Box
               key={image.id}
               as="button"
               flexShrink={0}
-              minW={{ base: '22%', md: '18%' }}
-              h="70px"
+              w={{ base: '80px', md: '100px' }}
+              h={{ base: '60px', md: '72px' }}
               borderRadius="xl"
               overflow="hidden"
-              border={selectedImageId === image.id ? '2px solid white' : '1px solid transparent'}
+              border={selectedImageId === image.id ? '2px solid white' : '2px solid transparent'}
               onClick={() => setSelectedImageId(image.id)}
               transition="border-color 150ms ease, opacity 150ms ease"
-              sx={{ scrollSnapAlign: 'start' }}
             >
               <Image
                 src={image.src}
@@ -216,7 +221,7 @@ export default function Inventory() {
                 objectPosition="center"
                 w="100%"
                 h="100%"
-                opacity={selectedImageId === image.id ? 1 : 0.55}
+                opacity={selectedImageId === image.id ? 1 : 0.5}
               />
             </Box>
           ))}
