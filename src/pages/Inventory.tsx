@@ -561,8 +561,8 @@ export default function Inventory() {
           >
             <Heading
               fontSize={{
-                base: '18px',
-                md: '2xl',
+                base: '16px',
+                md: 'xl',
               }}
               color="white"
               lineHeight="1.25"
