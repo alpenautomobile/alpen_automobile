@@ -938,40 +938,21 @@ export default function Inventory() {
             {/* Previous image */}
             <IconButton
               aria-label="Vorheriges Bild"
-              icon={
-                <ChevronLeftIcon
-                  boxSize={{
-                    base: 7,
-                    md: 9,
-                  }}
-                />
-              }
+              icon={<ChevronLeftIcon boxSize={6} />}
               position="absolute"
               top="50%"
-              left={{
-                base: 3,
-                md: 6,
-              }}
+              left={2}
               transform="translateY(-50%)"
               color="white"
               bg="blackAlpha.700"
               border="1px solid"
               borderColor="whiteAlpha.300"
               borderRadius="full"
-              size={{
-                base: 'md',
-                md: 'lg',
-              }}
+              size="md"
               zIndex={30}
               onClick={showPreviousImage}
-              _hover={{
-                bg: 'blackAlpha.900',
-                borderColor: 'whiteAlpha.600',
-              }}
-              _active={{
-                transform:
-                  'translateY(-50%) scale(0.94)',
-              }}
+              _hover={{ bg: 'blackAlpha.900' }}
+              _active={{ transform: 'translateY(-50%) scale(0.94)' }}
             />
 
             {/* Image viewport */}
@@ -1011,6 +992,8 @@ export default function Inventory() {
                 src={selectedImage.src}
                 alt={selectedImage.alt}
                 display="block"
+                minW="80%"
+                minH="00%"
                 maxW="100%"
                 maxH="100%"
                 objectFit="contain"
@@ -1019,6 +1002,10 @@ export default function Inventory() {
                 transform={`scale(${zoomLevel})`}
                 transformOrigin="center center"
                 transition="transform 150ms ease"
+                borderRadius={{
+                  base: 'md',
+                  md: 'xl',
+                }}
                 cursor={{
                   base: 'default',
                   md:
@@ -1032,40 +1019,21 @@ export default function Inventory() {
             {/* Next image */}
             <IconButton
               aria-label="Nächstes Bild"
-              icon={
-                <ChevronRightIcon
-                  boxSize={{
-                    base: 7,
-                    md: 9,
-                  }}
-                />
-              }
+              icon={<ChevronRightIcon boxSize={6} />}
               position="absolute"
               top="50%"
-              right={{
-                base: 3,
-                md: 6,
-              }}
+              right={2}
               transform="translateY(-50%)"
               color="white"
               bg="blackAlpha.700"
               border="1px solid"
               borderColor="whiteAlpha.300"
               borderRadius="full"
-              size={{
-                base: 'md',
-                md: 'lg',
-              }}
+              size="md"
               zIndex={30}
               onClick={showNextImage}
-              _hover={{
-                bg: 'blackAlpha.900',
-                borderColor: 'whiteAlpha.600',
-              }}
-              _active={{
-                transform:
-                  'translateY(-50%) scale(0.94)',
-              }}
+              _hover={{ bg: 'blackAlpha.900' }}
+              _active={{ transform: 'translateY(-50%) scale(0.94)' }}
             />
 
             <Text
