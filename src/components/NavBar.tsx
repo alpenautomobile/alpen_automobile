@@ -123,8 +123,8 @@ export default function NavBar(){
                 content: '""',
                 position: "absolute",
                 bottom: 0,
-                left: "8%",
-                width: "84%",
+             left: "5%",
+width: "90%",
                 height: "1px",
                 background:
                   "linear-gradient(90deg, transparent, rgba(255,255,255,0.7), transparent)",
