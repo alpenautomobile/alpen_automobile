@@ -7,7 +7,7 @@ const navItems = [
   { label: 'Startseite', to: '/' },
   { label: 'Fahrzeugbestand', to: '/inventory' },
   { label: 'Dienstleistungen', to: '/services' },
-  { label: 'Social Media', to: '/social' },
+  { label: 'Kontakt', to: '/contact' },
   { label: 'Über mich', to: '/philosophy' },
 ]
 
