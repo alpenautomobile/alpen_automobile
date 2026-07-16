@@ -133,7 +133,7 @@ width: "90%",
             >
               <Image src="/logo_design_5.png" alt="Alpen" h="50px" w="auto" />
             </DrawerHeader>
-            <DrawerBody p={4}>
+            <DrawerBody p={8}>
               <VStack spacing={0} align="stretch">
                 {navItems.map((item) => {
                   const isActiveItem = location.pathname === item.to
@@ -146,7 +146,7 @@ width: "90%",
                       alignItems="center"
                       width="fit-content"
                       pl={0}
-                      py={3}
+                      py={4}
                       fontSize={{ base: 'md', md: 'lg' }}
                       fontWeight="500"
                       color={isActiveItem ? 'white' : 'whiteAlpha.900'}
