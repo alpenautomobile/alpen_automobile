@@ -11,10 +11,18 @@ export default function Footer(){
       bg="#181818"
       color="white"
       zIndex={50}
-      position="static"
-      borderTopWidth={{ base: '1px', md: '0' }}
-      borderTopStyle="solid"
-      borderTopColor="whiteAlpha.300"
+      position="relative"
+      _before={{
+        content: '""',
+        display: 'block',
+        position: 'absolute',
+        top: 0,
+        left: '-3%',
+        width: '107%',
+        height: '1px',
+        background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.7), transparent)',
+        boxShadow: '0 1px 8px rgba(255,255,255,0.18)',
+      }}
     >
       <Container
         maxW="100%"
