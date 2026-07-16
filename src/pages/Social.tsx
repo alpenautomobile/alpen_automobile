@@ -3,7 +3,7 @@ import { Container, Heading, SimpleGrid, Box, Text, Image } from '@chakra-ui/rea
 
 export default function Social(){
   return (
-    <Container maxW="100%" px="6%" py={12}>
+    <Container maxW="100%" px={{ base: 4, md: '6%' }} py={12}>
       <Heading fontSize={{ base: '2xl', md: '3xl', lg: '4xl' }} mb={6}>Social Media</Heading>
       <Text fontSize={{ base: 'sm', md: 'md' }} mb={6}>Folgen Sie Alpen Automobile auf unseren Kanälen für exklusive Einblicke.</Text>
       <SimpleGrid columns={{base:1, md:3}} spacing={6}>

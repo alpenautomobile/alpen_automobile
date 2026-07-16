@@ -53,7 +53,7 @@ export default function Home() {
           zIndex="2"
           pt={{ base: '80px', md: '110px' }}
         >
-          <Container maxW="100%" px="6%" className="content">
+          <Container maxW="100%" px={{ base: 4, md: '6%' }} className="content">
             <Flex
               direction={{ base: 'column', md: 'row' }}
               align="center"
@@ -128,7 +128,7 @@ export default function Home() {
         <Container
           maxW="100%"
           h="100%"
-          px="6%"
+          px={{ base: 4, md: '6%' }}
           py={{ base: 8, md: 10 }}
         >
           <SimpleGrid templateColumns={{ base: '1fr', md: 'repeat(3, minmax(0, 1fr))' }} spacing={{ base: 6, lg: '26px' }} w="full">

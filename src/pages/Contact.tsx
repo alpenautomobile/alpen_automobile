@@ -3,7 +3,7 @@ import { Container, Heading, SimpleGrid, Box, FormControl, FormLabel, Input, Tex
 
 export default function Contact(){
   return (
-    <Container maxW="100%" px="6%" py={12}>
+    <Container maxW="100%" px={{ base: 4, md: '6%' }} py={12}>
       <Heading fontSize={{ base: '2xl', md: '3xl', lg: '4xl' }} mb={6}>Kontakt</Heading>
       <SimpleGrid columns={{base:1, md:2}} spacing={8}>
         <Box>
