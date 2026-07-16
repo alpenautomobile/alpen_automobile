@@ -96,7 +96,7 @@ export default function NavBar(){
 
         <Drawer placement="right" onClose={onClose} isOpen={isOpen} size="full">
           <DrawerOverlay bg="blackAlpha.300" />
-          <DrawerContent p={0} bg="#181818">
+          <DrawerContent p={0} bg="#000">
             <DrawerCloseButton
               top={4}
               right={4}
@@ -110,27 +110,27 @@ export default function NavBar(){
               _focus={{ boxShadow: 'none' }}
               zIndex={10}
             />
-<DrawerHeader
-  minH="80px"
-  pt={6}
-  pb={4}
-  display="flex"
-  alignItems="center"
-  justifyContent="center"
-  position="relative"
-  bg="#000"
-  _after={{
-    content: '""',
-    position: "absolute",
-    bottom: 0,
-    left: "8%",
-    width: "84%",
-    height: "1px",
-    background:
-      "linear-gradient(90deg, transparent, rgba(255,255,255,0.7), transparent)",
-    boxShadow: "0 1px 8px rgba(255,255,255,0.18)",
-  }}
->
+            <DrawerHeader
+              minH="80px"
+              pt={6}
+              pb={4}
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              position="relative"
+              bg="#000"
+              _after={{
+                content: '""',
+                position: "absolute",
+                bottom: 0,
+                left: "8%",
+                width: "84%",
+                height: "1px",
+                background:
+                  "linear-gradient(90deg, transparent, rgba(255,255,255,0.7), transparent)",
+                boxShadow: "0 1px 8px rgba(255,255,255,0.18)",
+              }}
+            >
               <Image src="/logo_design_5.png" alt="Alpen" h="50px" w="auto" />
             </DrawerHeader>
             <DrawerBody p={4}>
