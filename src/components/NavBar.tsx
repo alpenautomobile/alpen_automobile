@@ -121,9 +121,11 @@ export default function NavBar(){
               zIndex={10}
             />
             <DrawerHeader
-              minH="80px"
-              pt={6}
-              pb={4}
+              h="56px" 
+              minH="56px"
+              pt={0}
+              pb={0}
+              px={4}
               display="flex"
               alignItems="center"
               justifyContent="center"
@@ -141,7 +143,7 @@ export default function NavBar(){
                 boxShadow: "0 1px 8px rgba(255,255,255,0.18)",
               }}
             >
-              <Image src="/logo_design_5.png" alt="Alpen" h="50px" w="auto" />
+              <Image src="/logo_design_5.png" alt="Alpen" h="40px" w="auto" />
             </DrawerHeader>
             <DrawerBody p={8}>
               <VStack spacing={0} align="stretch">
