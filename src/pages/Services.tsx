@@ -231,19 +231,19 @@ export default function Services() {
         position="relative"
         zIndex={1}
         maxW="1600px"
-        // px={{ base: 5, sm: 6, md: 8, lg: 12, xl: 16 }}
-        // pt={{ base: 10, md: 14, xl: 16 }}
-        // pb={{ base: 12, md: 16, xl: 20 }}
+        px={{ base: 5, sm: 6, md: 8, lg: 12, xl: 16 }}
+        pt={{ base: 10, md: 14, xl: 16 }}
+        pb={{ base: 12, md: 16, xl: 20 }}
       >
         <SimpleGrid
           columns={{ base: 1, lg: 2 }}
           spacing={{ base: 8, lg: 10, xl: 14 }}
           alignItems="center"
-          // mb={{ base: 12, md: 14, xl: 16 }}
+          mb={{ base: 12, md: 14, xl: 16 }}
         >
           <Box
             maxW={{ base: '100%', lg: '760px' }}
-            // pt={{ base: 0, lg: 4 }}
+            pt={{ base: 0, lg: 4 }}
           >
             <Heading
               as="h1"
