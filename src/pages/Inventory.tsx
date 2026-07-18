@@ -496,7 +496,7 @@ export default function Inventory() {
           >
             <Button
               as="a"
-              href="mailto:info@alpen-automobile.ch?subject=Fahrzeuganfrage%3A%20BMW%20M330d%20xDrive%20SAG%20Touring"
+              href="mailto:info@alpenautomobile.ch ?subject=Fahrzeuganfrage%3A%20BMW%20M330d%20xDrive%20SAG%20Touring"
               w="100%"
               h="46px"
               bg="#b21a18"
@@ -646,7 +646,7 @@ export default function Inventory() {
             >
               <Button
                 as="a"
-                href="mailto:info@alpen-automobile.ch?subject=Fahrzeuganfrage%3A%20BMW%20M330d%20xDrive%20SAG%20Touring"
+                href="mailto:info@alpenautomobile.ch ?subject=Fahrzeuganfrage%3A%20BMW%20M330d%20xDrive%20SAG%20Touring"
                 w="100%"
                 h="46px"
                 bg="#b21a18"

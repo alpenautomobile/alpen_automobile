@@ -65,8 +65,8 @@ export default function Footer(){
               <Text fontSize={{ base: 'xs', md: 'md' }} fontWeight="300" color="inherit">+41 76 819 32 73</Text>
             </Box>
             <Text display={{ base: 'inline-flex', md: 'none' }} color="whiteAlpha.600" fontSize="xs">|</Text>
-            <Box as="a" href="mailto:info@alpen-automobile.ch" display="flex" alignItems="center" gap={1} _hover={{ textDecoration: 'none' }}>
-              <Text fontSize={{ base: 'xs', md: 'md' }} color="inherit">info@alpen-automobile.ch</Text>
+            <Box as="a" href="mailto:info@alpenautomobile.ch " display="flex" alignItems="center" gap={1} _hover={{ textDecoration: 'none' }}>
+              <Text fontSize={{ base: 'xs', md: 'md' }} color="inherit">info@alpenautomobile.ch </Text>
             </Box>
           </HStack>
         </Box>
@@ -95,11 +95,11 @@ export default function Footer(){
               </Box>
               <Text fontSize={{ base: 'sm', md: 'md' }} fontWeight="200" color="inherit">+41 76 819 32 73</Text>
             </Box>
-            <Box as="a" href="mailto:info@alpen-automobile.ch" display="flex" alignItems="center" gap={2} _hover={{ textDecoration: 'none' }}>
+            <Box as="a" href="mailto:info@alpenautomobile.ch " display="flex" alignItems="center" gap={2} _hover={{ textDecoration: 'none' }}>
               <Box as="span" display="inline-flex" alignItems="center" color="whiteAlpha.800" transition="color 0.2s ease" _hover={{ color: '#b21a18' }}>
                 <FiMail size={15} />
               </Box>
-              <Text fontSize={{ base: 'sm', md: 'md' }} fontWeight="200" color="inherit">info@alpen-automobile.ch</Text>
+              <Text fontSize={{ base: 'sm', md: 'md' }} fontWeight="200" color="inherit">info@alpenautomobile.ch </Text>
             </Box>
           </Box>
           <HStack spacing={8} alignItems="center">
