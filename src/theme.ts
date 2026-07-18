@@ -1,5 +1,7 @@
 import { extendTheme } from '@chakra-ui/react'
 
+const appFontFamily = "Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+
 const theme = extendTheme({
   colors: {
     brand: {
@@ -17,8 +19,8 @@ const theme = extendTheme({
     '2xl': '1920px',
   },
   fonts: {
-    heading: "Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial",
-    body: "Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial"
+    heading: appFontFamily,
+    body: appFontFamily,
   },
   components: {
     Heading: {
@@ -38,10 +40,10 @@ const theme = extendTheme({
   styles: {
     global: {
       html: {
-        fontFamily: "Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial",
+        fontFamily: appFontFamily,
       },
       body: {
-        fontFamily: "Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial",
+        fontFamily: appFontFamily,
         fontSize: { base: '15px', md: '16px' },
         lineHeight: 1.7,
         bg: 'transparent',

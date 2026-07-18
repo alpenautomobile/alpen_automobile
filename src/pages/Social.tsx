@@ -1,5 +1,4 @@
-import React from 'react'
-import { Container, Heading, SimpleGrid, Box, Text, Image } from '@chakra-ui/react'
+import { Container, Heading, SimpleGrid, Box, Text } from '@chakra-ui/react'
 
 export default function Social(){
   return (

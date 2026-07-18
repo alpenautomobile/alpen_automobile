@@ -291,25 +291,6 @@ export default function Services() {
             position="relative"
             minH={{ lg: '330px', xl: '410px' }}
           >
-            {/* <Box
-              position="absolute"
-              inset="-10% -8% -10% 0"
-              bgImage="
-                linear-gradient(
-                  90deg,
-                  #050505 0%,
-                  rgba(5,5,5,0.88) 13%,
-                  rgba(5,5,5,0.18) 49%,
-                  rgba(5,5,5,0.02) 100%
-                ),
-                url('/images/fahrzeugbeschaffung-car-dark.png')
-              "
-              bgRepeat="no-repeat"
-              bgPosition="center right"
-              bgSize="contain"
-              opacity={0.92}
-            /> */}
-
             <Box
               position="absolute"
               left="5%"

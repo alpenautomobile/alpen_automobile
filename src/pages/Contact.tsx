@@ -1,50 +1,11 @@
-import React, { useState } from 'react'
-import { Container, Heading, SimpleGrid, Box, FormControl, FormLabel, Input, Textarea, Button, Text, VStack, Alert, AlertIcon } from '@chakra-ui/react'
+import { Container, Heading, SimpleGrid, Box, Text, VStack } from '@chakra-ui/react'
 import { FiPhone, FiMail } from 'react-icons/fi'
 import { FaWhatsapp } from 'react-icons/fa'
 
-const WEB3FORMS_ACCESS_KEY = 'YOUR_ACCESS_KEY_HERE'
-
-export default function Contact(){
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [phone, setPhone] = useState('')
-  const [message, setMessage] = useState('')
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setStatus('loading')
-    try {
-      const res = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          access_key: WEB3FORMS_ACCESS_KEY,
-          name,
-          email,
-          phone,
-          message,
-        }),
-      })
-      const data = await res.json()
-      if (data.success) {
-        setStatus('success')
-        setName(''); setEmail(''); setPhone(''); setMessage('')
-      } else {
-        setStatus('error')
-      }
-    } catch {
-      setStatus('error')
-    }
-  }
-
+export default function Contact() {
   return (
     <Container maxW="100%" px={{ base: 4, md: '6%' }} py={{ base: 8, md: 12 }} bg="#181818" minH="100%">
-
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={{ base: 8, md: 12 }}>
-
-
         <Box>
           <Heading fontSize={{ base: 'md', md: 'lg' }} color="white" mb={6}>Kontaktdaten</Heading>
           <VStack align="stretch" spacing={4}>

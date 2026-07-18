@@ -1,6 +1,6 @@
 import React from 'react'
-import { Box, Container, Flex, HStack, Link, IconButton, Button, Image, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody, useDisclosure, VStack, Show } from '@chakra-ui/react'
-import { HamburgerIcon, ArrowForwardIcon } from '@chakra-ui/icons'
+import { Box, Container, Flex, HStack, Link, Button, Image, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody, useDisclosure, VStack, Show } from '@chakra-ui/react'
+import { HamburgerIcon } from '@chakra-ui/icons'
 import { Link as RouterLink, useLocation } from 'react-router-dom'
 
 const navItems = [

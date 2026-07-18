@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, Container, Text, Image, HStack } from '@chakra-ui/react'
-import { FaInstagram, FaYoutube, FaWhatsapp, FaCopyright } from 'react-icons/fa'
+import { FaInstagram, FaYoutube, FaWhatsapp } from 'react-icons/fa'
 import { FiPhone, FiMail } from 'react-icons/fi'
 
 export default function Footer(){
