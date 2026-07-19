@@ -36,26 +36,7 @@ const features = [
 
 export default function Home() {
   return (
-    <Box minH="100%" bg="#181818" color="white" position="relative" overflow="hidden">
-      <Box
-        position="absolute"
-        inset={0}
-        pointerEvents="none"
-        bg="
-          radial-gradient(
-            circle at 75% 20%,
-            rgba(255,255,255,0.035),
-            transparent 30%
-          ),
-          linear-gradient(
-            180deg,
-            #181818 0%,
-            #282828 45%,
-            #181818 100%
-          )
-        "
-      />
-
+    <Box minH="100%" bg="white">
       <Box
         className="page"
         position="relative"
@@ -89,9 +70,10 @@ export default function Home() {
                   fontSize={{ base: 'sm', md: 'md' }}
                   color="whiteAlpha.900"
                 >
-                  Jedes Fahrzeug erfüllt hohe Ausstattungsstandards,
-                  verfügt über eine nachvollziehbare Historie
-                  und eine vollständige Dokumentation.
+                  Jedes Fahrzeug erfüllt hohe Ausstattungsstandards, 
+              verfügt über eine nachvollziehbare Historie 
+              und eine vollständige Dokumentation.
+
                 </Text>
 
                 <Flex pt={4}>
@@ -139,7 +121,10 @@ export default function Home() {
         </Box>
       </Box>
 
-      <Box width="100%">
+      <Box
+        bg="white"
+        width="100%"
+      >
         <Container
           maxW="100%"
           h="100%"
@@ -167,19 +152,13 @@ export default function Home() {
                       flexShrink={0}
                     />
 
-                    <Box
-                      w="full"
-                      p={{ base: 6, lg: 7 }}
-                      borderRadius="lg"
-                      bg="rgba(255,255,255,0.035)"
-                      border="1px solid rgba(255,255,255,0.12)"
-                    >
+                    <Box w="full">
                       <Heading
                         as="h3"
                         fontSize={{ base: 'md', md: 'lg' }}
                         fontWeight="600"
                         mb={3}
-                        color="white"
+                        color="gray.900"
                         textAlign={{ base: 'center', md: 'left' }}
                       >
                         {feature.title}
@@ -196,7 +175,7 @@ export default function Home() {
                       <Text
                         fontSize={{ base: 'sm', md: 'md' }}
                         lineHeight="1.7"
-                        color="whiteAlpha.800"
+                        color="gray.700"
                         whiteSpace="pre-line"
                         textAlign={{ base: 'center', md: 'left' }}
                       >

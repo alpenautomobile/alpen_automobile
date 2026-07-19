@@ -11,10 +11,11 @@ export default function Footer(){
       bg="#181818"
       color="white"
       zIndex={50}
-      position={{ base: 'relative', md: 'fixed' }}
-      bottom={{ md: 0 }}
+      position={{ base: 'sticky', md: 'fixed' }}
+      bottom={0}
       left={{ md: 0 }}
       right={{ md: 0 }}
+      mt="auto"
       _before={{
         content: '""',
         display: 'block',
