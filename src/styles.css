@@ -71,16 +71,16 @@ body {
   body,
   #root {
     overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-y: auto;
   }
 
   .app-shell {
-    height: 100dvh;
-    overflow: hidden;
+    height: auto;
+    overflow: visible;
   }
 
   .page-content {
-    overflow-y: auto;
+    overflow-y: visible;
     -webkit-overflow-scrolling: touch;
   }
 }
