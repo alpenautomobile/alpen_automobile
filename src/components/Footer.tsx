@@ -47,23 +47,83 @@ export default function Footer({ stickyOnMobile = false }: FooterProps) {
           gap={2}
           width="100%"
         >
-          <HStack spacing={{ base: 8, md: 10 }} justify="center" width="100%" flexWrap="wrap">
-            <Box as="a" href="https://wa.me/41768193273" target="_blank" rel="noreferrer" display="flex" alignItems="center" gap={2}>
-              <Box as="span" display="inline-flex" alignItems="center" color="whiteAlpha.800" transition="color 0.2s ease" _hover={{ color: '#b21a18' }}>
-                <FaWhatsapp size={16} />
-              </Box>
-            </Box>
-            <Box as="a" href="https://www.instagram.com" target="_blank" rel="noreferrer" display="flex" alignItems="center" gap={2}>
-              <Box as="span" display="inline-flex" alignItems="center" color="whiteAlpha.800" transition="color 0.2s ease" _hover={{ color: '#b21a18' }}>
-                <FaInstagram size={16} />
-              </Box>
-            </Box>
-            <Box as="a" href="https://www.youtube.com" target="_blank" rel="noreferrer" display="flex" alignItems="center" gap={2}>
-              <Box as="span" display="inline-flex" alignItems="center" color="whiteAlpha.800" transition="color 0.2s ease" _hover={{ color: '#b21a18' }}>
-                <FaYoutube size={16} />
-              </Box>
-            </Box>
-          </HStack>
+<HStack
+  spacing={{ base: 8, md: 10 }}
+  justify="center"
+  width="100%"
+  flexWrap="wrap"
+>
+  <Box
+    as="a"
+    href="https://wa.me/41768193273"
+    target="_blank"
+    rel="noreferrer"
+    display="flex"
+    alignItems="center"
+    gap={2}
+  >
+    <Box
+      as="span"
+      display="inline-flex"
+      alignItems="center"
+      color="#25D366"
+      transition="transform 0.2s ease, opacity 0.2s ease"
+      _hover={{
+        transform: 'scale(1.12)',
+        opacity: 0.9,
+      }}
+    >
+      <FaWhatsapp size={15} />
+    </Box>
+  </Box>
+
+<Box
+  as="a"
+  href="https://www.instagram.com"
+  target="_blank"
+  rel="noreferrer"
+  display="inline-flex"
+  alignItems="center"
+  justifyContent="center"
+  aria-label="Instagram"
+  transition="transform 0.2s ease, opacity 0.2s ease"
+  _hover={{
+    transform: 'scale(1.12)',
+    opacity: 0.9,
+  }}
+>
+  <Image
+    src="/instagram.png"
+    alt="Instagram"
+    boxSize={{ base: '14px', md: '21px' }}
+    objectFit="contain"
+  />
+</Box>
+
+  <Box
+    as="a"
+    href="https://www.youtube.com"
+    target="_blank"
+    rel="noreferrer"
+    display="flex"
+    alignItems="center"
+    gap={2}
+  >
+    <Box
+      as="span"
+      display="inline-flex"
+      alignItems="center"
+      color="#FF0000"
+      transition="transform 0.2s ease, opacity 0.2s ease"
+      _hover={{
+        transform: 'scale(1.12)',
+        opacity: 0.9,
+      }}
+    >
+      <FaYoutube size={16} />
+    </Box>
+  </Box>
+</HStack>
 
           <HStack spacing={{ base: 6, md: 4 }} justify="center" width="100%" flexWrap="wrap" alignItems="center">
             <Box as="a" href="tel:+41768193273" display="flex" alignItems="center" gap={1} _hover={{ textDecoration: 'none' }}>
