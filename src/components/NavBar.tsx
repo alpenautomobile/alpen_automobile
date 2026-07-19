@@ -18,6 +18,12 @@ export default function NavBar(){
 
   const scrollToTopNow = () => {
     window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+
+    document.documentElement.scrollTop = 0
+    document.documentElement.scrollLeft = 0
+    document.body.scrollTop = 0
+    document.body.scrollLeft = 0
+
     const pageContent = document.querySelector('.page-content') as HTMLElement | null
     if (pageContent) {
       pageContent.scrollTop = 0
@@ -26,6 +32,10 @@ export default function NavBar(){
 
     window.setTimeout(() => {
       window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+      document.documentElement.scrollTop = 0
+      document.documentElement.scrollLeft = 0
+      document.body.scrollTop = 0
+      document.body.scrollLeft = 0
       if (pageContent) {
         pageContent.scrollTop = 0
         pageContent.scrollLeft = 0
