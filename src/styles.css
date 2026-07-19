@@ -61,7 +61,7 @@ body {
 
   .page-content {
     overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-y: auto;
     padding-bottom: 40px;
   }
 }
@@ -218,7 +218,7 @@ a { text-decoration: none; }
 
   .page-content {
     overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-y: auto;
     background: #181818;
   }
 }
