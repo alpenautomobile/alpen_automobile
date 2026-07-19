@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Container, Flex, HStack, Link, Button, Image, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody, useDisclosure, VStack, Show } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
-import { Link as RouterLink, useLocation } from 'react-router-dom'
+import { Link as RouterLink, useLocation, useNavigate } from 'react-router-dom'
 
 const navItems = [
   { label: 'Startseite', to: '/' },
@@ -13,6 +13,7 @@ const navItems = [
 
 export default function NavBar(){
   const location = useLocation()
+  const navigate = useNavigate()
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   const scrollToTopNow = () => {
@@ -30,6 +31,19 @@ export default function NavBar(){
         pageContent.scrollLeft = 0
       }
     }, 120)
+  }
+
+  const handleNavigate = (to: string, closeDrawer = false) => {
+    if (closeDrawer) {
+      onClose()
+    }
+
+    navigate(to)
+    scrollToTopNow()
+
+    window.requestAnimationFrame(() => {
+      scrollToTopNow()
+    })
   }
 
   return (
@@ -85,9 +99,11 @@ export default function NavBar(){
             return (
               <Box as="li" key={item.to} className="nav-item">
                 <Link
-                  as={RouterLink}
-                  to={item.to}
-                  onClick={scrollToTopNow}
+                  as="button"
+                  type="button"
+                  onClick={() => {
+                    handleNavigate(item.to)
+                  }}
                   className={isActive ? 'nav-link active' : 'nav-link'}
                   color="white"
                   display="inline-block"
@@ -177,12 +193,11 @@ export default function NavBar(){
                   const isActiveItem = location.pathname === item.to
                   return (
                     <Box
-                      as={RouterLink}
+                      as="button"
+                      type="button"
                       key={item.to}
-                      to={item.to}
                       onClick={() => {
-                        scrollToTopNow()
-                        onClose()
+                        handleNavigate(item.to, true)
                       }}
                       display="inline-flex"
                       alignItems="center"
