@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useLayoutEffect } from 'react'
 import { Container, Heading, Text, SimpleGrid, Box } from '@chakra-ui/react'
 
 function SectionUnderline() {
@@ -13,6 +13,18 @@ function SectionUnderline() {
 }
 
 export default function About() {
+  useLayoutEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+    document.documentElement.scrollTop = 0
+    document.body.scrollTop = 0
+
+    const pageContent = document.querySelector('.page-content') as HTMLElement | null
+    if (pageContent) {
+      pageContent.scrollTop = 0
+      pageContent.scrollLeft = 0
+    }
+  }, [])
+
   return (
     <Box
       as="main"

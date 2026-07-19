@@ -1,3 +1,4 @@
+import { useLayoutEffect } from 'react'
 import { Container, Heading, SimpleGrid, Box, Text, VStack } from '@chakra-ui/react'
 import { FiPhone, FiMail } from 'react-icons/fi'
 import { FaWhatsapp } from 'react-icons/fa'
@@ -14,6 +15,18 @@ function SectionUnderline() {
 }
 
 export default function Contact() {
+  useLayoutEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+    document.documentElement.scrollTop = 0
+    document.body.scrollTop = 0
+
+    const pageContent = document.querySelector('.page-content') as HTMLElement | null
+    if (pageContent) {
+      pageContent.scrollTop = 0
+      pageContent.scrollLeft = 0
+    }
+  }, [])
+
   return (
     <Box
       as="main"

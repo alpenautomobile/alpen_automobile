@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useLayoutEffect } from 'react'
 import {
   Box,
   Button,
@@ -35,6 +35,18 @@ const features = [
 ]
 
 export default function Home() {
+  useLayoutEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+    document.documentElement.scrollTop = 0
+    document.body.scrollTop = 0
+
+    const pageContent = document.querySelector('.page-content') as HTMLElement | null
+    if (pageContent) {
+      pageContent.scrollTop = 0
+      pageContent.scrollLeft = 0
+    }
+  }, [])
+
   return (
     <Box minH="100vh" bg="white" display="flex" flexDirection="column">
       <Box
