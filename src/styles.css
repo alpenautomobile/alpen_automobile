@@ -19,7 +19,7 @@ html, body, #root {
   height: 100%;
   font-family: var(--app-font-family);
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: hidden;
 }
 
 html {
@@ -43,7 +43,7 @@ body {
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
-  overflow-y: visible;
+  overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   padding-bottom: 0;
 }
@@ -51,8 +51,8 @@ body {
 @media (min-width: 768px) {
   .app-shell {
     min-height: 100vh;
-    height: auto;
-    overflow: visible;
+    height: 100vh;
+    overflow: hidden;
   }
 
   .page-content {
@@ -61,10 +61,18 @@ body {
 }
 
 @media (max-width: 767.98px) {
+  html, body, #root {
+    overflow-y: auto;
+  }
+
   .app-shell {
     min-height: 100dvh;
     height: auto;
     overflow: visible;
+  }
+
+  .page-content {
+    overflow-y: visible;
   }
 }
 

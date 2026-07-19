@@ -122,7 +122,13 @@ export default function NavBar(){
           </Button>
         </Show>
 
-        <Drawer placement="right" onClose={onClose} isOpen={isOpen} size="full">
+        <Drawer
+          placement="right"
+          onClose={onClose}
+          isOpen={isOpen}
+          size="full"
+          blockScrollOnMount={false}
+        >
           <DrawerOverlay bg="blackAlpha.300" />
           <DrawerContent p={0} bg="#181818">
             <DrawerCloseButton
