@@ -71,11 +71,12 @@ body {
   body,
   #root {
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: hidden;
   }
 
   .app-shell {
-    overflow: visible;
+    height: 100dvh;
+    overflow: hidden;
   }
 
   .page-content {

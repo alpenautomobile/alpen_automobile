@@ -52,7 +52,11 @@ export default function Contact() {
           base: 4,
           md: '6%',
         }}
-        py={{
+        pt={{
+          base: 9,
+          md: 15,
+        }}
+        pb={{
           base: 4,
           md: 6,
         }}
@@ -64,7 +68,6 @@ export default function Contact() {
           fontWeight="800"
           letterSpacing="-0.035em"
           mb={{ base: 5, md: 6 }}
-          mt={{ base: 5, md: 9 }}
         >
           Kontakt
         </Heading>

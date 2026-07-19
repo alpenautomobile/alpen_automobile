@@ -15,6 +15,15 @@ export default function NavBar(){
   const location = useLocation()
   const { isOpen, onOpen, onClose } = useDisclosure()
 
+  const scrollToTopNow = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+    const pageContent = document.querySelector('.page-content') as HTMLElement | null
+    if (pageContent) {
+      pageContent.scrollTop = 0
+      pageContent.scrollLeft = 0
+    }
+  }
+
   return (
     <Box
       as="nav"
@@ -70,6 +79,7 @@ export default function NavBar(){
                 <Link
                   as={RouterLink}
                   to={item.to}
+                  onClick={scrollToTopNow}
                   className={isActive ? 'nav-link active' : 'nav-link'}
                   color="white"
                   display="inline-block"
@@ -156,6 +166,10 @@ export default function NavBar(){
                       as={RouterLink}
                       key={item.to}
                       to={item.to}
+                      onClick={() => {
+                        scrollToTopNow()
+                        onClose()
+                      }}
                       display="inline-flex"
                       alignItems="center"
                       width="fit-content"
@@ -170,7 +184,6 @@ export default function NavBar(){
                       borderBottomColor={isActiveItem ? '#b21a18' : 'transparent'}
                       _hover={{ transform: 'translateX(3px) scale(1.01)' }}
                       _focus={{ boxShadow: 'none' }}
-                      onClick={onClose}
                     >
                       {item.label}
                     </Box>
