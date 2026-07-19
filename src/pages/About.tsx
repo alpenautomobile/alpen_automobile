@@ -47,18 +47,8 @@ export default function About() {
         zIndex={1}
         w="100%"
         maxW="100%"
-        px={{
-          base: 4,
-          md: '6%',
-        }}
-        pt={{
-          base: 9,
-          md: 15,
-        }}
-        pb={{
-          base: 4,
-          md: 6,
-        }}
+        px={{ base: 4, md: '6%' }}
+        pt={{ base: 9, md: 8 }}
       >
         <Heading
           as="h1"
@@ -66,7 +56,7 @@ export default function About() {
           lineHeight={{ base: '1.05', md: '0.98' }}
           fontWeight="800"
           letterSpacing="-0.035em"
-          mb={{ base: 5, md: 6 }}
+          mb={{ base: 5, md: 4 }}
         >
           Über Mich
         </Heading>

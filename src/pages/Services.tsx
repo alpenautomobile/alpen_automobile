@@ -230,18 +230,8 @@ export default function Services() {
         zIndex={1}
         w="100%"
         maxW="100%"
-        px={{
-          base: 4,
-          md: '6%',
-        }}
-        pt={{
-          base: 9,
-          md: 15,
-        }}
-        pb={{
-          base: 4,
-          md: 6,
-        }}
+        px={{ base: 4, md: '6%' }}
+        pt={{ base: 9, md: 8 }}
       >
         <SimpleGrid
           columns={1}
@@ -262,7 +252,7 @@ export default function Services() {
               fontWeight="800"
               letterSpacing="-0.035em"
               wordBreak="break-word"
-              mb={{ base: 5, md: 6 }}
+              mb={{ base: 5, md: 4 }}
             >
               Fahrzeugbeschaffung
             </Heading>

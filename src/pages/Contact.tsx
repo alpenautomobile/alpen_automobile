@@ -18,7 +18,7 @@ export default function Contact() {
     <Box
       as="main"
       position="relative"
-      minH="calc(100vh - 120px)"
+      minH="100vh"
       w="100%"
       bg="#181818"
       color="white"
@@ -48,18 +48,8 @@ export default function Contact() {
         zIndex={1}
         w="100%"
         maxW="100%"
-        px={{
-          base: 4,
-          md: '6%',
-        }}
-        pt={{
-          base: 9,
-          md: 15,
-        }}
-        pb={{
-          base: 4,
-          md: 6,
-        }}
+        px={{ base: 4, md: '6%' }}
+        pt={{ base: 9, md: 8 }}
       >
         <Heading
           as="h1"
@@ -67,7 +57,7 @@ export default function Contact() {
           lineHeight={{ base: '1.05', md: '0.98' }}
           fontWeight="800"
           letterSpacing="-0.035em"
-          mb={{ base: 5, md: 6 }}
+          mb={{ base: 5, md: 4 }}
         >
           Kontakt
         </Heading>
