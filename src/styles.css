@@ -24,6 +24,8 @@ html, body, #root {
 
 html {
   background: transparent;
+  scroll-behavior: auto;
+  scroll-padding-top: 0;
 }
 
 body {
