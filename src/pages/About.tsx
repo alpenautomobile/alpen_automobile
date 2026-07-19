@@ -45,14 +45,20 @@ export default function About() {
       <Container
         position="relative"
         zIndex={1}
-        maxW="1600px"
-        px={{ base: 5, sm: 6, md: 8, lg: 12, xl: 16 }}
-        pt={{ base: 10, md: 14, xl: 16 }}
-        pb={{ base: 12, md: 16, xl: 20 }}
+        w="100%"
+        maxW="100%"
+        px={{
+          base: 4,
+          md: '6%',
+        }}
+        py={{
+          base: 4,
+          md: 6,
+        }}
       >
         <Heading
           as="h1"
-          fontSize={{ base: '3xl', sm: '4xl', md: '5xl', xl: '6xl' }}
+          fontSize={{ base: '3xl', sm: '4xl', md: '4xl', xl: '4xl' }}
           lineHeight={{ base: '1.05', md: '0.98' }}
           fontWeight="800"
           letterSpacing="-0.035em"

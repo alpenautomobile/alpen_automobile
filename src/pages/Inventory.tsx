@@ -126,6 +126,17 @@ const details = [
   },
 ] as const
 
+function SectionUnderline() {
+  return (
+    <Box
+      w={{ base: '44px', md: '64px' }}
+      h="3px"
+      bg="#d31313"
+      borderRadius="full"
+    />
+  )
+}
+
 export default function Inventory() {
   const [selectedImageId, setSelectedImageId] = useState(1)
   const [isFullscreenOpen, setIsFullscreenOpen] = useState(false)
@@ -283,6 +294,7 @@ export default function Inventory() {
 
   return (
     <Box
+      className="inventory-page"
       as="main"
       position="relative"
       minH="100vh"
@@ -292,6 +304,7 @@ export default function Inventory() {
       overflow="hidden"
     >
       <Box
+        className="inventory-page-background"
         position="absolute"
         inset={0}
         pointerEvents="none"
@@ -311,6 +324,7 @@ export default function Inventory() {
       />
 
       <Container
+        className="inventory-container"
         position="relative"
         zIndex={1}
         w="100%"
@@ -333,7 +347,29 @@ export default function Inventory() {
           WebkitOverflowScrolling: 'touch',
         }}
       >
+      <Heading
+        as="h1"
+        fontSize={{
+          base: '3xl',
+          md: '4xl',
+        }}
+        lineHeight={{ base: '1.05', md: '0.98' }}
+        fontWeight="800"
+        letterSpacing="-0.035em"
+        wordBreak="break-word"
+        mb={{ base: 5, md: 6 }}
+      >
+        Fahrzeugbestand
+      </Heading>
+
+      <SectionUnderline />
+
       <Flex
+        className="inventory-layout"
+        mt={{
+          base: 6,
+          md: 8,
+        }}
         direction={{
           base: 'column',
           md: 'row',
@@ -345,10 +381,12 @@ export default function Inventory() {
       >
         {/* Gallery */}
         <Box
+          className="inventory-gallery"
           flex="1"
           minW={0}
         >
           <Box
+            className="inventory-main-image"
             position="relative"
             h={{
               base: '260px',
@@ -360,6 +398,7 @@ export default function Inventory() {
             bg="#111"
           >
             <Image
+              className="inventory-main-photo"
               src={selectedImage.src}
               alt={selectedImage.alt}
               objectFit="cover"
@@ -447,6 +486,7 @@ export default function Inventory() {
 
           {/* Thumbnails */}
           <Flex
+            className="inventory-thumbnails"
             mt={3}
             gap={2}
             overflowX="auto"
@@ -466,6 +506,7 @@ export default function Inventory() {
 
               return (
                 <Box
+                  className="inventory-thumbnail"
                   key={image.id}
                   as="button"
                   type="button"
@@ -565,6 +606,7 @@ export default function Inventory() {
 
         {/* Vehicle information */}
         <Box
+          className="inventory-info-column"
           w={{
             base: '100%',
             md: '340px',
@@ -576,6 +618,7 @@ export default function Inventory() {
           }}
         >
           <Box
+            className="inventory-info-card"
             bg="#1e1e1e"
             borderRadius="xl"
             p={{
@@ -587,6 +630,7 @@ export default function Inventory() {
             h="100%"
           >
             <Heading
+              className="inventory-title"
               fontSize={{
                 base: '16px',
                 md: 'xl',
@@ -600,6 +644,7 @@ export default function Inventory() {
             </Heading>
 
             <Text
+              className="inventory-subtitle"
               color="whiteAlpha.600"
               fontSize="sm"
               mb={2}
@@ -608,6 +653,7 @@ export default function Inventory() {
             </Text>
 
             <Text
+              className="inventory-price"
               color="#b21a18"
               fontSize={{
                 base: 'xl',
@@ -620,6 +666,7 @@ export default function Inventory() {
             </Text>
 
             <Flex
+              className="inventory-autoscout-row"
               gap={2}
               wrap="wrap"
               mb={{
@@ -628,6 +675,7 @@ export default function Inventory() {
               }}
             >
               <Button
+                className="inventory-autoscout-link"
                 as="a"
                 href={vehicle.autoScoutUrl}
                 target="_blank"
@@ -664,6 +712,7 @@ export default function Inventory() {
 
             {/* Desktop action buttons */}
             <Stack
+              className="inventory-desktop-actions"
               spacing={3}
               mb={4}
               display={{
@@ -990,4 +1039,3 @@ export default function Inventory() {
     </Box>
   )
 }
-

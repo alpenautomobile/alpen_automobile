@@ -199,7 +199,6 @@ export default function Services() {
   return (
     <Box
       as="main"
-      className="services-page"
       position="relative"
       minH="100vh"
       w="100%"
@@ -227,32 +226,33 @@ export default function Services() {
       />
 
       <Container
-        className="services-container"
         position="relative"
         zIndex={1}
-        maxW="1600px"
-        px={{ base: 5, sm: 6, md: 8, lg: 12, xl: 16 }}
-        pt={{ base: 10, md: 14, xl: 16 }}
-        pb={{ base: 12, md: 16, xl: 20 }}
+        w="100%"
+        maxW="100%"
+        px={{
+          base: 4,
+          md: '6%',
+        }}
+        py={{
+          base: 4,
+          md: 6,
+        }}
       >
         <SimpleGrid
-          columns={{ base: 1, lg: 2 }}
+          columns={1}
           spacing={{ base: 8, lg: 10, xl: 14 }}
-          alignItems="center"
-          mb={{ base: 12, md: 14, xl: 16 }}
+          alignItems="start"
+          mb={{ base: 8, md: 10, xl: 14 }}
         >
           <Box
             maxW={{ base: '100%', lg: '760px' }}
-            pt={{ base: 0, lg: 4 }}
           >
             <Heading
               as="h1"
               fontSize={{
                 base: '3xl',
-                sm: '4xl',
-                md: '5xl',
-                lg: '5xl',
-                xl: '6xl',
+                md: '4xl',
               }}
               lineHeight={{ base: '1.05', md: '0.98' }}
               fontWeight="800"
@@ -285,28 +285,13 @@ export default function Services() {
               </Text>
             </Box>
           </Box>
-
-          <Box
-            display={{ base: 'none', lg: 'block' }}
-            position="relative"
-            minH={{ lg: '330px', xl: '410px' }}
-          >
-            <Box
-              position="absolute"
-              left="5%"
-              right="-4%"
-              bottom="0"
-              h="1px"
-              bgGradient="linear(to-r, transparent, whiteAlpha.100, transparent)"
-            />
-          </Box>
         </SimpleGrid>
 
         <Box>
           <Heading
             as="h2"
-            fontSize={{ base: '2xl', md: '3xl', xl: '4xl' }}
-            fontWeight="750"
+            fontSize={{ base: '2xl', md: '2xl' }}
+            fontWeight="800"
             letterSpacing="-0.02em"
             mb={3}
           >

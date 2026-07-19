@@ -51,7 +51,7 @@ export default function Home() {
           className="contentBox"
           position="relative"
           zIndex="2"
-          pt={{ base: '80px', md: '110px' }}
+          pt={{ base: '80px', md: '24px' }}
         >
           <Container maxW="100%" px={{ base: 4, md: '6%' }} className="content">
             <Flex
@@ -64,7 +64,7 @@ export default function Home() {
                 spacing={4}
                 maxW={{ base: '100%', md: '650px' }}
               >
-                <Heading as="h1" fontSize={{ base: '3xl', md: '6xl' }} lineHeight="short" color="white">Fahrzeuge, die überzeugen.</Heading>
+                <Heading as="h1" fontSize={{ base: '3xl', md: '4xl' }} lineHeight="short" color="white">Fahrzeuge, die überzeugen.</Heading>
 
                 <Text
                   fontSize={{ base: 'sm', md: 'md' }}
