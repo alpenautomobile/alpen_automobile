@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import Home from './pages/Home'
 import Inventory from './pages/Inventory'
@@ -11,105 +11,23 @@ import Footer from './components/Footer'
 export default function App() {
   const location = useLocation()
   const [isLoading, setIsLoading] = useState(true)
-  const pageContentRef = useRef<HTMLElement | null>(null)
   const stickyFooterOnMobile = location.pathname === '/contact' || location.pathname === '/about'
 
-  const forceScrollTop = () => {
+  useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
-
-    const scrollingElement = document.scrollingElement as HTMLElement | null
-    if (scrollingElement) {
-      scrollingElement.scrollTop = 0
-      scrollingElement.scrollLeft = 0
-    }
 
     if (document.documentElement) {
       document.documentElement.scrollTop = 0
-      document.documentElement.scrollLeft = 0
     }
 
     if (document.body) {
       document.body.scrollTop = 0
-      document.body.scrollLeft = 0
     }
-
-    const pageContent = pageContentRef.current
-    if (pageContent) {
-      pageContent.scrollTop = 0
-      pageContent.scrollLeft = 0
-    }
-  }
-
-  useLayoutEffect(() => {
-    forceScrollTop()
-  }, [location.pathname, location.key])
-
-  useEffect(() => {
-    forceScrollTop()
-
-    // Keep forcing top briefly to override delayed browser restoration.
-    const interval = window.setInterval(() => {
-      forceScrollTop()
-    }, 50)
-
-    const stopInterval = window.setTimeout(() => {
-      window.clearInterval(interval)
-    }, 700)
-
-    const frameA = window.requestAnimationFrame(() => {
-      forceScrollTop()
-    })
-
-    const frameB = window.requestAnimationFrame(() => {
-      window.requestAnimationFrame(() => {
-        forceScrollTop()
-      })
-    })
-
-    const timeoutA = window.setTimeout(() => {
-      forceScrollTop()
-    }, 0)
-
-    const timeoutB = window.setTimeout(() => {
-      forceScrollTop()
-    }, 120)
-
-    const timeoutC = window.setTimeout(() => {
-      forceScrollTop()
-    }, 320)
-
-    return () => {
-      window.clearInterval(interval)
-      window.clearTimeout(stopInterval)
-      window.cancelAnimationFrame(frameA)
-      window.cancelAnimationFrame(frameB)
-      window.clearTimeout(timeoutA)
-      window.clearTimeout(timeoutB)
-      window.clearTimeout(timeoutC)
-    }
-  }, [location.pathname, location.key, location.search, location.hash])
+  }, [location.pathname])
 
   useEffect(() => {
     if ('scrollRestoration' in window.history) {
       window.history.scrollRestoration = 'manual'
-    }
-
-    const handlePageShow = () => {
-      forceScrollTop()
-      window.setTimeout(forceScrollTop, 120)
-    }
-
-    const handlePopState = () => {
-      forceScrollTop()
-      window.setTimeout(forceScrollTop, 120)
-    }
-
-    window.addEventListener('pageshow', handlePageShow)
-    window.addEventListener('popstate', handlePopState)
-
-    return () => {
-      window.removeEventListener('pageshow', handlePageShow)
-      window.removeEventListener('popstate', handlePopState)
     }
   }, [])
 
@@ -138,8 +56,8 @@ export default function App() {
         </div>
       )}
       <NavBar />
-      <main className="page-content" key={location.pathname} ref={pageContentRef}>
-        <Routes key={location.pathname}>
+      <main className="page-content">
+        <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/inventory" element={<Inventory />} />
           <Route path="/services" element={<Services />} />

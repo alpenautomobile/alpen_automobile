@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from 'react'
+import React, { useState } from 'react'
 import {
   Box,
   Button,
@@ -138,18 +138,6 @@ function SectionUnderline() {
 }
 
 export default function Inventory() {
-  useLayoutEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
-    document.documentElement.scrollTop = 0
-    document.body.scrollTop = 0
-
-    const pageContent = document.querySelector('.page-content') as HTMLElement | null
-    if (pageContent) {
-      pageContent.scrollTop = 0
-      pageContent.scrollLeft = 0
-    }
-  }, [])
-
   const [selectedImageId, setSelectedImageId] = useState(1)
   const [isFullscreenOpen, setIsFullscreenOpen] = useState(false)
   const [zoomLevel, setZoomLevel] = useState(1)

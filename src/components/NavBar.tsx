@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Container, Flex, HStack, Link, Button, Image, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody, useDisclosure, VStack, Show } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
-import { Link as RouterLink, useLocation, useNavigate } from 'react-router-dom'
+import { Link as RouterLink, useLocation } from 'react-router-dom'
 
 const navItems = [
   { label: 'Startseite', to: '/' },
@@ -13,48 +13,7 @@ const navItems = [
 
 export default function NavBar(){
   const location = useLocation()
-  const navigate = useNavigate()
   const { isOpen, onOpen, onClose } = useDisclosure()
-
-  const scrollToTopNow = () => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
-
-    document.documentElement.scrollTop = 0
-    document.documentElement.scrollLeft = 0
-    document.body.scrollTop = 0
-    document.body.scrollLeft = 0
-
-    const pageContent = document.querySelector('.page-content') as HTMLElement | null
-    if (pageContent) {
-      pageContent.scrollTop = 0
-      pageContent.scrollLeft = 0
-    }
-
-    window.setTimeout(() => {
-      window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
-      document.documentElement.scrollTop = 0
-      document.documentElement.scrollLeft = 0
-      document.body.scrollTop = 0
-      document.body.scrollLeft = 0
-      if (pageContent) {
-        pageContent.scrollTop = 0
-        pageContent.scrollLeft = 0
-      }
-    }, 120)
-  }
-
-  const handleNavigate = (to: string, closeDrawer = false) => {
-    if (closeDrawer) {
-      onClose()
-    }
-
-    navigate(to)
-    scrollToTopNow()
-
-    window.requestAnimationFrame(() => {
-      scrollToTopNow()
-    })
-  }
 
   return (
     <Box
@@ -109,11 +68,8 @@ export default function NavBar(){
             return (
               <Box as="li" key={item.to} className="nav-item">
                 <Link
-                  as="button"
-                  type="button"
-                  onClick={() => {
-                    handleNavigate(item.to)
-                  }}
+                  as={RouterLink}
+                  to={item.to}
                   className={isActive ? 'nav-link active' : 'nav-link'}
                   color="white"
                   display="inline-block"
@@ -153,7 +109,6 @@ export default function NavBar(){
           onClose={onClose}
           isOpen={isOpen}
           size="full"
-          blockScrollOnMount={false}
         >
           <DrawerOverlay bg="blackAlpha.300" />
           <DrawerContent p={0} bg="#181818">
@@ -203,11 +158,11 @@ export default function NavBar(){
                   const isActiveItem = location.pathname === item.to
                   return (
                     <Box
-                      as="button"
-                      type="button"
+                      as={RouterLink}
                       key={item.to}
+                      to={item.to}
                       onClick={() => {
-                        handleNavigate(item.to, true)
+                        onClose()
                       }}
                       display="inline-flex"
                       alignItems="center"
