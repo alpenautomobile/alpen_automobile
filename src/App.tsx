@@ -47,9 +47,23 @@ export default function App() {
   useEffect(() => {
     forceScrollTop()
 
-    // Multiple passes to override delayed browser restoration on mobile/history nav.
-    const frame = window.requestAnimationFrame(() => {
+    // Keep forcing top briefly to override delayed browser restoration.
+    const interval = window.setInterval(() => {
       forceScrollTop()
+    }, 50)
+
+    const stopInterval = window.setTimeout(() => {
+      window.clearInterval(interval)
+    }, 700)
+
+    const frameA = window.requestAnimationFrame(() => {
+      forceScrollTop()
+    })
+
+    const frameB = window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => {
+        forceScrollTop()
+      })
     })
 
     const timeoutA = window.setTimeout(() => {
@@ -58,19 +72,22 @@ export default function App() {
 
     const timeoutB = window.setTimeout(() => {
       forceScrollTop()
-    }, 80)
+    }, 120)
 
     const timeoutC = window.setTimeout(() => {
       forceScrollTop()
-    }, 220)
+    }, 320)
 
     return () => {
-      window.cancelAnimationFrame(frame)
+      window.clearInterval(interval)
+      window.clearTimeout(stopInterval)
+      window.cancelAnimationFrame(frameA)
+      window.cancelAnimationFrame(frameB)
       window.clearTimeout(timeoutA)
       window.clearTimeout(timeoutB)
       window.clearTimeout(timeoutC)
     }
-  }, [location.pathname, location.key])
+  }, [location.pathname, location.key, location.search, location.hash])
 
   useEffect(() => {
     if ('scrollRestoration' in window.history) {
