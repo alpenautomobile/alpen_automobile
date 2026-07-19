@@ -3,7 +3,11 @@ import { Box, Container, Text, Image, HStack } from '@chakra-ui/react'
 import { FaInstagram, FaYoutube, FaWhatsapp } from 'react-icons/fa'
 import { FiPhone, FiMail } from 'react-icons/fi'
 
-export default function Footer(){
+type FooterProps = {
+  stickyOnMobile?: boolean
+}
+
+export default function Footer({ stickyOnMobile = false }: FooterProps) {
   return (
     <Box
       as="footer"
@@ -11,10 +15,11 @@ export default function Footer(){
       bg="#181818"
       color="white"
       zIndex={50}
-      position={{ base: 'relative', md: 'fixed' }}
-      bottom={{ md: 0 }}
+      position={{ base: stickyOnMobile ? 'sticky' : 'relative', md: 'fixed' }}
+      bottom={0}
       left={{ md: 0 }}
       right={{ md: 0 }}
+      mt="auto"
       _before={{
         content: '""',
         display: 'block',

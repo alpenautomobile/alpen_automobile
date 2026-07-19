@@ -11,6 +11,7 @@ import Footer from './components/Footer'
 export default function App() {
   const location = useLocation()
   const [isLoading, setIsLoading] = useState(true)
+  const stickyFooterOnMobile = location.pathname === '/contact' || location.pathname === '/about'
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
@@ -54,7 +55,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
         </Routes>
       </main>
-      <Footer />
+      <Footer stickyOnMobile={stickyFooterOnMobile} />
     </div>
   )
 }
