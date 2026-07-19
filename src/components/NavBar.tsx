@@ -22,6 +22,14 @@ export default function NavBar(){
       pageContent.scrollTop = 0
       pageContent.scrollLeft = 0
     }
+
+    window.setTimeout(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+      if (pageContent) {
+        pageContent.scrollTop = 0
+        pageContent.scrollLeft = 0
+      }
+    }, 120)
   }
 
   return (

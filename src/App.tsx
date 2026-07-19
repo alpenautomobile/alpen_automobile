@@ -60,10 +60,15 @@ export default function App() {
       forceScrollTop()
     }, 80)
 
+    const timeoutC = window.setTimeout(() => {
+      forceScrollTop()
+    }, 220)
+
     return () => {
       window.cancelAnimationFrame(frame)
       window.clearTimeout(timeoutA)
       window.clearTimeout(timeoutB)
+      window.clearTimeout(timeoutC)
     }
   }, [location.pathname, location.key])
 
@@ -74,12 +79,20 @@ export default function App() {
 
     const handlePageShow = () => {
       forceScrollTop()
+      window.setTimeout(forceScrollTop, 120)
+    }
+
+    const handlePopState = () => {
+      forceScrollTop()
+      window.setTimeout(forceScrollTop, 120)
     }
 
     window.addEventListener('pageshow', handlePageShow)
+    window.addEventListener('popstate', handlePopState)
 
     return () => {
       window.removeEventListener('pageshow', handlePageShow)
+      window.removeEventListener('popstate', handlePopState)
     }
   }, [])
 
