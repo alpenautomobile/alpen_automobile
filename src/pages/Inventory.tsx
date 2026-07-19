@@ -331,6 +331,7 @@ export default function Inventory() {
         maxW="100%"
         px={{ base: 4, md: '6%' }}
         pt={{ base: 9, md: 8 }}
+        pb={{ base: 8, md: 0 }}
         minH="100vh"
         flex="1"
         overflowY={{
