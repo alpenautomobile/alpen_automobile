@@ -3,8 +3,6 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import Home from './pages/Home'
 import Inventory from './pages/Inventory'
 import Services from './pages/Services'
-import Social from './pages/Social'
-import Philosophy from './pages/Philosophy'
 import Contact from './pages/Contact'
 import About from './pages/About'
 import NavBar from './components/NavBar'
@@ -52,8 +50,6 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/inventory" element={<Inventory />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/social" element={<Social />} />
-          <Route path="/philosophy" element={<Philosophy />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
         </Routes>

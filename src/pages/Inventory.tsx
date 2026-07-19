@@ -282,28 +282,57 @@ export default function Inventory() {
   }
 
   return (
-    <Container
-      w="100%"
-      maxW="100%"
-      px={{
-        base: 4,
-        md: '6%',
-      }}
-      py={{
-        base: 4,
-        md: 6,
-      }}
-      bg="#181818"
+    <Box
+      as="main"
+      position="relative"
       minH="100vh"
-      flex="1"
-      overflowY={{
-        base: 'visible',
-        md: 'auto',
-      }}
-      css={{
-        WebkitOverflowScrolling: 'touch',
-      }}
+      w="100%"
+      bg="#181818"
+      color="white"
+      overflow="hidden"
     >
+      <Box
+        position="absolute"
+        inset={0}
+        pointerEvents="none"
+        bg="
+          radial-gradient(
+            circle at 75% 20%,
+            rgba(255,255,255,0.035),
+            transparent 30%
+          ),
+          linear-gradient(
+            180deg,
+            #181818 0%,
+            #282828 45%,
+            #181818 100%
+          )
+        "
+      />
+
+      <Container
+        position="relative"
+        zIndex={1}
+        w="100%"
+        maxW="100%"
+        px={{
+          base: 4,
+          md: '6%',
+        }}
+        py={{
+          base: 4,
+          md: 6,
+        }}
+        minH="100vh"
+        flex="1"
+        overflowY={{
+          base: 'visible',
+          md: 'auto',
+        }}
+        css={{
+          WebkitOverflowScrolling: 'touch',
+        }}
+      >
       <Flex
         direction={{
           base: 'column',
@@ -531,8 +560,6 @@ export default function Inventory() {
             >
               Anrufen
             </Button>
-
-            <QualityBox />
           </Stack>
         </Box>
 
@@ -682,108 +709,11 @@ export default function Inventory() {
                 Anrufen
               </Button>
             </Stack>
-
-            <Box
-              display={{
-                base: 'none',
-                md: 'block',
-              }}
-            >
-              <QualityBox />
-            </Box>
           </Box>
         </Box>
       </Flex>
 
-      {/* Vehicle details */}
-      <Box
-        mt={6}
-        bg="#1e1e1e"
-        borderRadius="xl"
-        p={{
-          base: 4,
-          md: 5,
-        }}
-        border="1px solid"
-        borderColor="whiteAlpha.100"
-      >
-        <Heading
-          fontSize="md"
-          fontWeight="700"
-          color="white"
-          mb={4}
-        >
-          Fahrzeugdetails
-        </Heading>
-
-        <SimpleGrid
-          columns={{
-            base: 1,
-            sm: 2,
-            md: 4,
-          }}
-          spacing={{
-            base: 0,
-            md: 0,
-          }}
-        >
-          {details.map(
-            ({ icon: Icon, label, value }, index) => (
-              <Flex
-                key={label}
-                align="center"
-                gap={3}
-                py={{
-                  base: 3,
-                  md: 4,
-                }}
-                px={{
-                  base: 0,
-                  md: 4,
-                }}
-                borderRight={{
-                  md:
-                    index % 4 !== 3
-                      ? '1px solid'
-                      : 'none',
-                }}
-                borderBottom={{
-                  base: '1px solid',
-                  md:
-                    index < 4
-                      ? '1px solid'
-                      : 'none',
-                }}
-                borderColor="whiteAlpha.100"
-              >
-                <Box
-                  color="whiteAlpha.500"
-                  flexShrink={0}
-                >
-                  <Icon size={17} />
-                </Box>
-
-                <Box minW={0}>
-                  <Text
-                    color="whiteAlpha.500"
-                    fontSize="xs"
-                  >
-                    {label}
-                  </Text>
-
-                  <Text
-                    color="white"
-                    fontSize="sm"
-                    fontWeight="600"
-                  >
-                    {value}
-                  </Text>
-                </Box>
-              </Flex>
-            ),
-          )}
-        </SimpleGrid>
-      </Box>
+   
 
       {/* Fullscreen image viewer */}
       <Modal
@@ -1056,44 +986,8 @@ export default function Inventory() {
           </ModalBody>
         </ModalContent>
       </Modal>
-    </Container>
+      </Container>
+    </Box>
   )
 }
 
-function QualityBox() {
-  return (
-    <Flex
-      align="center"
-      gap={3}
-      p={3}
-      bg="whiteAlpha.50"
-      borderRadius="xl"
-      border="1px solid"
-      borderColor="whiteAlpha.100"
-    >
-      <Box
-        color="whiteAlpha.600"
-        flexShrink={0}
-      >
-        <FiShield size={20} />
-      </Box>
-
-      <Box>
-        <Text
-          color="white"
-          fontSize="xs"
-          fontWeight="600"
-        >
-          Geprüfte Qualität
-        </Text>
-
-        <Text
-          color="whiteAlpha.500"
-          fontSize="xs"
-        >
-          Alle Fahrzeuge werden sorgfältig geprüft.
-        </Text>
-      </Box>
-    </Flex>
-  )
-}
