@@ -341,7 +341,7 @@ export default function Inventory() {
         flex="1"
         overflowY={{
           base: 'visible',
-          md: 'auto',
+          md: 'hidden',
         }}
         css={{
           WebkitOverflowScrolling: 'touch',
@@ -350,14 +350,15 @@ export default function Inventory() {
       <Heading
         as="h1"
         fontSize={{
-          base: '3xl',
-          md: '4xl',
+          base: 'xl',
+          md: '2xl',
         }}
         lineHeight={{ base: '1.05', md: '0.98' }}
         fontWeight="800"
         letterSpacing="-0.035em"
         wordBreak="break-word"
         mb={{ base: 5, md: 6 }}
+        mt={{ base: 5, md: 9 }}
       >
         Fahrzeugbestand
       </Heading>

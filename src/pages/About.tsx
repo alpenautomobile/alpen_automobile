@@ -58,70 +58,46 @@ export default function About() {
       >
         <Heading
           as="h1"
-          fontSize={{ base: '3xl', sm: '4xl', md: '4xl', xl: '4xl' }}
+          fontSize={{ base: 'xl', sm: '2xl' }}
           lineHeight={{ base: '1.05', md: '0.98' }}
           fontWeight="800"
           letterSpacing="-0.035em"
           mb={{ base: 5, md: 6 }}
+          mt={{ base: 5, md: 9 }}
         >
-          Über Alpen Automobile
+          Über Mich
         </Heading>
 
         <SectionUnderline />
 
-        <Text
-          fontSize={{ base: 'md', md: 'lg', xl: 'xl' }}
-          color="whiteAlpha.850"
-          lineHeight="1.6"
-          mt={{ base: 7, md: 9 }}
-          mb={8}
-        >
-          Wir begleiten Sie persönlich und diskret auf dem Weg zu Ihrem nächsten Fahrzeug.
-        </Text>
-
-        <SimpleGrid columns={{ base: 1, md: 3 }} spacing={6}>
-          <Box
-            p={5}
-            bg="rgba(255,255,255,0.035)"
-            border="1px solid rgba(255,255,255,0.15)"
-            borderRadius="md"
+        <Box maxW="980px" mt={{ base: 7, md: 9 }} mb={10}>
+          <Text
+            fontSize={{ base: 'sm', md: 'md' }}
+            color="whiteAlpha.850"
+            lineHeight="1.75"
+            mb={4}
           >
-            <Heading fontSize={{ base: 'md', md: 'lg' }} color="white">
-              Erfahrung
-            </Heading>
-            <Text fontSize={{ base: 'sm', md: 'md' }} color="whiteAlpha.800" mt={2}>
-              Langjährige Expertise im Premiumsegment.
-            </Text>
-          </Box>
+            Ich konzentriere mich bewusst auf wenige, sorgfältig ausgewählte Fahrzeuge statt auf ein möglichst großes Angebot. Ich wähle nur Fahrzeuge aus, welche durch Ausstattung, Zustand und Historie überzeugen – Fahrzeuge, die ich mit gutem Gewissen empfehlen kann und auch selbst gerne fahren würde.
+          </Text>
 
-          <Box
-            p={5}
-            bg="rgba(255,255,255,0.035)"
-            border="1px solid rgba(255,255,255,0.15)"
-            borderRadius="md"
+          <Text
+            fontSize={{ base: 'sm', md: 'md', xl: 'lg' }}
+            color="whiteAlpha.850"
+            lineHeight="1.75"
+            mb={4}
           >
-            <Heading fontSize={{ base: 'md', md: 'lg' }} color="white">
-              Vertrauen
-            </Heading>
-            <Text fontSize={{ base: 'sm', md: 'md' }} color="whiteAlpha.800" mt={2}>
-              Diskretion, Fairness und absolute Verlässlichkeit.
-            </Text>
-          </Box>
+            Direkte Kommunikation und eine persönliche Betreuung stehen für mich dabei an erster Stelle damit Sie mit der Abwicklung und dem Fahrzeug vollkommend zufrieden sind.
+          </Text>
 
-          <Box
-            p={5}
-            bg="rgba(255,255,255,0.035)"
-            border="1px solid rgba(255,255,255,0.15)"
-            borderRadius="md"
+          <Text
+            fontSize={{ base: 'sm', md: 'md', xl: 'lg' }}
+            color="whiteAlpha.900"
+            lineHeight="1.75"
+            fontWeight="600"
           >
-            <Heading fontSize={{ base: 'md', md: 'lg' }} color="white">
-              Leidenschaft
-            </Heading>
-            <Text fontSize={{ base: 'sm', md: 'md' }} color="whiteAlpha.800" mt={2}>
-              Automobile sind unsere Leidenschaft.
-            </Text>
-          </Box>
-        </SimpleGrid>
+            Jedes Fahrzeug von Alpen Automobile erfüllt meinen Qualitätsstandard
+          </Text>
+        </Box>
       </Container>
     </Box>
   )

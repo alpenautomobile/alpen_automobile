@@ -28,14 +28,14 @@ body {
   font-family: var(--app-font-family);
   margin: 0;
   min-height: 100vh;
-  background: white;
+  background: #181818;
   color: #ffffff;
   position: relative;
   overflow-x: hidden;
 }
 
 .page-content {
-  background: white;
+  background: #181818;
   flex: 1 1 auto;
   min-height: 0;
   display: flex;
@@ -44,27 +44,29 @@ body {
   padding-bottom: 0;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   html,
   body,
   #root {
     height: 100%;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: hidden;
   }
 
   .app-shell {
     min-height: 100vh;
-    overflow: visible;
+    height: 100vh;
+    overflow: hidden;
   }
 
   .page-content {
-    overflow: visible;
+    overflow-x: hidden;
+    overflow-y: hidden;
     padding-bottom: 40px;
   }
 }
 
-@media (max-width: 1023.98px) {
+@media (max-width: 767.98px) {
   html,
   body,
   #root {
@@ -208,15 +210,14 @@ a { text-decoration: none; }
   }
 }
 
-@media (max-width: 1279.98px) {
+@media (min-width: 768px) and (max-width: 1279.98px) {
   body {
     background: #181818;
   }
 
   .page-content {
     overflow-x: hidden;
-    overflow-y: visible;
-    -webkit-overflow-scrolling: touch;
+    overflow-y: hidden;
     background: #181818;
   }
 }

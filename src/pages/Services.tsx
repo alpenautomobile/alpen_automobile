@@ -251,14 +251,15 @@ export default function Services() {
             <Heading
               as="h1"
               fontSize={{
-                base: '3xl',
-                md: '4xl',
+                base: 'xl',
+                md: '2xl',
               }}
               lineHeight={{ base: '1.05', md: '0.98' }}
               fontWeight="800"
               letterSpacing="-0.035em"
               wordBreak="break-word"
               mb={{ base: 5, md: 6 }}
+              mt={{ base: 5, md: 9 }}
             >
               Fahrzeugbeschaffung
             </Heading>
@@ -267,7 +268,7 @@ export default function Services() {
 
             <Box mt={{ base: 7, md: 9 }}>
               <Text
-                fontSize={{ base: 'md', md: 'lg', xl: 'xl' }}
+                fontSize={{ base: 'sm', md: 'lg'}}
                 color="whiteAlpha.850"
                 lineHeight="1.6"
                 mb={2}
@@ -276,7 +277,7 @@ export default function Services() {
               </Text>
 
               <Text
-                fontSize={{ base: 'md', md: 'lg', xl: 'xl' }}
+                fontSize={{ base: 'sm', md: 'lg' }}
                 color="whiteAlpha.750"
                 lineHeight="1.6"
               >
@@ -290,15 +291,13 @@ export default function Services() {
         <Box>
           <Heading
             as="h2"
-            fontSize={{ base: '2xl', md: '2xl' }}
+            fontSize={{ base: 'xl', md: '2xl' }}
             fontWeight="800"
             letterSpacing="-0.02em"
             mb={3}
           >
             Ablauf
           </Heading>
-
-          <SectionUnderline />
         </Box>
 
         <SimpleGrid

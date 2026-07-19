@@ -59,11 +59,12 @@ export default function Contact() {
       >
         <Heading
           as="h1"
-          fontSize={{ base: '3xl', sm: '4xl', md: '4xl', xl: '4xl' }}
+          fontSize={{ base: 'xl', md: '2xl' }}
           lineHeight={{ base: '1.05', md: '0.98' }}
           fontWeight="800"
           letterSpacing="-0.035em"
           mb={{ base: 5, md: 6 }}
+          mt={{ base: 5, md: 9 }}
         >
           Kontakt
         </Heading>
@@ -71,7 +72,7 @@ export default function Contact() {
         <SectionUnderline />
 
         <Text
-          fontSize={{ base: 'md', md: 'lg', xl: 'xl' }}
+          fontSize={{ base: 'sm', md: 'lg'}}
           color="whiteAlpha.850"
           lineHeight="1.6"
           mt={{ base: 7, md: 9 }}

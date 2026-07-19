@@ -36,7 +36,7 @@ const features = [
 
 export default function Home() {
   return (
-    <Box minH="100%" bg="white">
+    <Box minH="100vh" bg="white" display="flex" flexDirection="column">
       <Box
         className="page"
         position="relative"
@@ -63,16 +63,17 @@ export default function Home() {
                 align="start"
                 spacing={4}
                 maxW={{ base: '100%', md: '650px' }}
+                mt={{ base: 0, lg: '11vh' }}
               >
-                <Heading as="h1" fontSize={{ base: '3xl', md: '4xl' }} lineHeight="short" color="white">Fahrzeuge, die überzeugen.</Heading>
+                <Heading as="h1" fontSize={{ base: '3xl', md: '5xl' }} lineHeight="short" color="white">Fahrzeuge, die überzeugen.</Heading>
 
                 <Text
                   fontSize={{ base: 'sm', md: 'md' }}
                   color="whiteAlpha.900"
                 >
                   Jedes Fahrzeug erfüllt hohe Ausstattungsstandards, 
-              verfügt über eine nachvollziehbare Historie 
-              und eine vollständige Dokumentation.
+                  verfügt über eine nachvollziehbare Historie 
+                  und eine vollständige Dokumentation.
 
                 </Text>
 
@@ -124,10 +125,13 @@ export default function Home() {
       <Box
         bg="white"
         width="100%"
+        flex="1"
+        display="flex"
       >
         <Container
           maxW="100%"
           h="100%"
+          flex="1"
           px={{ base: 4, md: '6%' }}
           py={{ base: 8, md: 10 }}
         >

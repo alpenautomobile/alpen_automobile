@@ -8,7 +8,7 @@ const navItems = [
   { label: 'Fahrzeugbestand', to: '/inventory' },
   { label: 'Dienstleistungen', to: '/services' },
   { label: 'Kontakt', to: '/contact' },
-  { label: 'Über mich', to: '/philosophy' },
+  { label: 'Über mich', to: '/about' },
 ]
 
 export default function NavBar(){
@@ -22,7 +22,7 @@ export default function NavBar(){
       position="sticky"
       top={0}
       zIndex={40}
-      h={{ base: '52px', md: '60px' }}
+      h={{ base: '52px', md: '70px' }}
       bg="#181818"
 
       _after={{
@@ -75,8 +75,8 @@ export default function NavBar(){
                   display="inline-block"
                   fontSize={{ base: 'sm', lg: 'md' }}
                   fontWeight="600"
-                  transition="transform 0.2s ease, color 0.2s ease, text-shadow 0.2s ease"
-                  _hover={{ color: 'gray.200', transform: 'translateX(2px) scale(1.04)' }}
+                  transition="transform 0.2s ease"
+                  _hover={{ transform: 'translateX(2px) scale(1.04)' }}
                   _focus={{ boxShadow: 'none' }}
                 >
                   {item.label}
@@ -165,10 +165,10 @@ export default function NavBar(){
                       fontWeight="500"
                       color={isActiveItem ? 'white' : 'whiteAlpha.900'}
                       bg="transparent"
-                      transition="transform 0.2s ease, color 0.2s ease, textShadow 0.2s ease"
+                      transition="transform 0.2s ease"
                       borderBottom="1px solid"
                       borderBottomColor={isActiveItem ? '#b21a18' : 'transparent'}
-                      _hover={{ color: 'white', transform: 'translateX(3px) scale(1.01)', textShadow: '0 1px 8px rgba(255,255,255,0.18)' }}
+                      _hover={{ transform: 'translateX(3px) scale(1.01)' }}
                       _focus={{ boxShadow: 'none' }}
                       onClick={onClose}
                     >
