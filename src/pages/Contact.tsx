@@ -18,7 +18,7 @@ export default function Contact() {
     <Box
       as="main"
       position="relative"
-      minH="100vh"
+      minH="calc(100vh - 120px)"
       w="100%"
       bg="#181818"
       color="white"
