@@ -43,8 +43,7 @@ body {
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
+  overflow-y: visible;
   padding-bottom: 0;
 }
 
@@ -56,6 +55,7 @@ body {
   }
 
   .page-content {
+    overflow-y: hidden;
     padding-bottom: 40px;
   }
 }
@@ -72,8 +72,7 @@ body {
   }
 
   .page-content {
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
+    overflow-y: visible;
   }
 }
 
@@ -205,12 +204,6 @@ a { text-decoration: none; }
 
 @media (min-width: 768px) and (max-width: 1279.98px) {
   body {
-    background: #181818;
-  }
-
-  .page-content {
-    overflow-x: hidden;
-    overflow-y: auto;
     background: #181818;
   }
 }
