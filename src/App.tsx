@@ -36,16 +36,26 @@ export default function App() {
   }, [])
 
   useEffect(() => {
-    setIsLoading(true)
+      if (document.readyState === 'complete') {
+        setIsLoading(false)
+        return
+      }
 
-    const loaderTimer = window.setTimeout(() => {
-      setIsLoading(false)
-    }, 1100)
+      const handleLoad = () => {
+        setIsLoading(false)
+      }
 
-    return () => {
-      window.clearTimeout(loaderTimer)
-    }
-  }, [location.pathname])
+      const fallbackTimer = window.setTimeout(() => {
+        setIsLoading(false)
+      }, 2500)
+      
+      window.addEventListener('load', handleLoad)
+
+      return () => {
+        window.removeEventListener('load', handleLoad)
+        window.clearTimeout(fallbackTimer)
+      }
+    }, [])
 
   return (
     <div className="app-shell">
