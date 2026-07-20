@@ -35,17 +35,25 @@ jobs:
           HOSTPOINT_HOST: ${{ secrets.HOSTPOINT_HOST }}
         run: |
           mkdir -p ~/.ssh
+
           printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
+
           ssh-keyscan -H "$HOSTPOINT_HOST" >> ~/.ssh/known_hosts
 
-      - name: Upload website to Hostpoint
+      - name: Upload website to both Hostpoint websites
         env:
           HOSTPOINT_USER: ${{ secrets.HOSTPOINT_USER }}
           HOSTPOINT_HOST: ${{ secrets.HOSTPOINT_HOST }}
-          HOSTPOINT_TARGET: ${{ secrets.HOSTPOINT_TARGET }}
+          HOSTPOINT_TARGET_1: ${{ secrets.HOSTPOINT_TARGET }}
+          HOSTPOINT_TARGET_2: ${{ secrets.HOSTPOINT_TARGET_2 }}
         run: |
           rsync -az --delete \
             -e "ssh -i ~/.ssh/id_ed25519 -p 22 -o MACs=hmac-sha2-512" \
             dist/ \
-            "$HOSTPOINT_USER@$HOSTPOINT_HOST:$HOSTPOINT_TARGET/"
+            "$HOSTPOINT_USER@$HOSTPOINT_HOST:$HOSTPOINT_TARGET_1/"
+
+          rsync -az --delete \
+            -e "ssh -i ~/.ssh/id_ed25519 -p 22 -o MACs=hmac-sha2-512" \
+            dist/ \
+            "$HOSTPOINT_USER@$HOSTPOINT_HOST:$HOSTPOINT_TARGET_2/"
