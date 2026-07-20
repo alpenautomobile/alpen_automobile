@@ -126,14 +126,30 @@ const details = [
   },
 ] as const
 
-function SectionUnderline() {
+function SectionHeader({ title }: { title: string }) {
   return (
-    <Box
-      w={{ base: '44px', md: '64px' }}
-      h="3px"
-      bg="#d31313"
-      borderRadius="full"
-    />
+    <Box mb={{ base: 7, md: 8 }}>
+      <Flex align="center" gap={4}>
+        <Box
+          w="4px"
+          h={{ base: '26px', md: '32px' }}
+          bg="#b21a18"
+          borderRadius="full"
+          flexShrink={0}
+        />
+        <Heading
+          as="h1"
+          fontSize={{ base: 'xl', md: '2xl' }}
+          lineHeight="1"
+          fontWeight="800"
+          letterSpacing="-0.035em"
+          color="white"
+          m={0}
+        >
+          {title}
+        </Heading>
+      </Flex>
+    </Box>
   )
 }
 
@@ -342,22 +358,7 @@ export default function Inventory() {
           WebkitOverflowScrolling: 'touch',
         }}
       >
-      <Heading
-        as="h1"
-        fontSize={{
-          base: 'xl',
-          md: '2xl',
-        }}
-        lineHeight={{ base: '1.05', md: '0.98' }}
-        fontWeight="800"
-        letterSpacing="-0.035em"
-        wordBreak="break-word"
-        mb={{ base: 5, md: 4 }}
-      >
-        Fahrzeugbestand
-      </Heading>
-
-      <SectionUnderline />
+      <SectionHeader title="Fahrzeugbestand" />
 
       <Flex
         className="inventory-layout"
@@ -605,6 +606,7 @@ export default function Inventory() {
           w={{
             base: '100%',
             md: '340px',
+            lg: '365px',
           }}
           flexShrink={0}
           order={{
@@ -614,145 +616,218 @@ export default function Inventory() {
         >
           <Box
             className="inventory-info-card"
-            bg="#1e1e1e"
-            borderRadius="xl"
-            p={{
-              base: 4,
-              md: 5,
-            }}
-            border="1px solid"
-            borderColor="whiteAlpha.100"
             h="100%"
+            minH={{
+              base: 'auto',
+              md: '454px',
+            }}
+            px={{
+              base: 5,
+              md: 7,
+            }}
+            py={{
+              base: 5,
+              md: 7,
+            }}
+            borderRadius="16px"
+            border="1px solid rgba(255, 255, 255, 0.10)"
+            background="
+              radial-gradient(
+                circle at 80% 5%,
+                rgba(255, 255, 255, 0.025),
+                transparent 34%
+              ),
+              linear-gradient(
+                145deg,
+                #171719 0%,
+                #101012 100%
+              )
+            "
+            boxShadow="
+              0 18px 45px rgba(0, 0, 0, 0.28),
+              inset 0 1px 0 rgba(255, 255, 255, 0.025)
+            "
           >
-            <Heading
-              className="inventory-title"
-              fontSize={{
-                base: '16px',
-                md: 'xl',
-              }}
-              color="white"
-              lineHeight="1.25"
-              fontWeight="700"
-              mb={2}
-            >
-              {vehicle.title}
-            </Heading>
-
-            <Text
-              className="inventory-subtitle"
-              color="whiteAlpha.600"
-              fontSize="sm"
-              mb={2}
-            >
-              {vehicle.subtitle}
-            </Text>
-
-            <Text
-              className="inventory-price"
-              color="#b21a18"
-              fontSize={{
-                base: 'xl',
-                md: '3xl',
-              }}
-              fontWeight="700"
-              mb={3}
-            >
-              CHF {vehicle.price.toLocaleString('de-CH')}
-            </Text>
-
             <Flex
-              className="inventory-autoscout-row"
-              gap={2}
-              wrap="wrap"
-              mb={{
-                base: 0,
-                md: 4,
-              }}
+              direction="column"
+              h="100%"
             >
-              <Button
-                className="inventory-autoscout-link"
-                as="a"
-                href={vehicle.autoScoutUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                variant="ghost"
-                h="44px"
-                px={0}
-                bg="transparent"
-                color="white"
-                border="none"
-                borderRadius={0}
-                fontSize="13px"
-                fontWeight="600"
-                leftIcon={
-                  <FiExternalLink size={16} />
-                }
-                rightIcon={
-                  <ChevronRightIcon boxSize={5} />
-                }
-                _hover={{
-                  bg: 'transparent',
-                  color: '#d22a21',
-                  transform: 'translateX(2px)',
+              <Box>
+                <Text
+                  color="#b21a18"
+                  fontSize="12px"
+                  fontWeight="700"
+                  textTransform="uppercase"
+                  letterSpacing="0.03em"
+                  mb={2}
+                >
+                  BMW
+                </Text>
+
+                <Heading
+                  className="inventory-title"
+                  color="white"
+                  fontSize={{
+                    base: 'xl',
+                    md: '2xl',
+                  }}
+                  lineHeight="1.2"
+                  fontWeight="700"
+                  letterSpacing="-0.025em"
+                  mb={3}
+                >
+                  {vehicle.title}
+                </Heading>
+
+                <Text
+                  className="inventory-subtitle"
+                  color="rgba(255, 255, 255, 0.52)"
+                  fontSize="15px"
+                  lineHeight="1.5"
+                  mb={5}
+                >
+                  {vehicle.subtitle}
+                </Text>
+
+                <Box
+                  h="1px"
+                  bg="rgba(255, 255, 255, 0.09)"
+                  mb={6}
+                />
+
+                <Text
+                  className="inventory-price"
+                  color="#b21a18"
+                  fontSize={{
+                    base: 'xl',
+                    md: '2xl',
+                  }}
+                  lineHeight="1"
+                  fontWeight="700"
+                  letterSpacing="-0.035em"
+                  whiteSpace="nowrap"
+                  mb={6}
+                >
+                  CHF {vehicle.price.toLocaleString('de-CH')}
+                </Text>
+
+                <Box
+                  h="1px"
+                  bg="rgba(255, 255, 255, 0.09)"
+                />
+
+                <Button
+                  className="inventory-autoscout-link"
+                  as="a"
+                  href={vehicle.autoScoutUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variant="ghost"
+                  w="100%"
+                  h="64px"
+                  px={0}
+                  bg="transparent"
+                  color="rgba(255, 255, 255, 0.72)"
+                  borderRadius={0}
+                  justifyContent="flex-start"
+                  fontSize="13px"
+                  fontWeight="400"
+                  leftIcon={<FiExternalLink size={16} />}
+                  rightIcon={<ChevronRightIcon boxSize={5} />}
+                  display="inline-flex"
+                  transformOrigin="left center"
+                  transition="transform 160ms ease"
+                  sx={{
+                    '.chakra-button__icon:first-of-type': {
+                      marginInlineEnd: '14px',
+                    },
+                    '.chakra-button__icon:last-of-type': {
+                      marginInlineStart: 'auto',
+                    },
+                  }}
+                  _hover={{
+                    bg: 'transparent',
+                    color: 'rgba(255, 255, 255, 0.72)',
+                    transform: 'scale(1.03)',
+                  }}
+                  _active={{
+                    bg: 'transparent',
+                  }}
+                >
+                  Auf AutoScout24.ch ansehen
+                </Button>
+              </Box>
+
+              <Stack
+                className="inventory-desktop-actions"
+                spacing={3}
+                mt="auto"
+                pt={4}
+                display={{
+                  base: 'none',
+                  md: 'flex',
                 }}
-                _active={{
-                  bg: 'transparent',
-                  transform: 'translateX(0)',
-                }}
-                transition="all 150ms ease"
               >
-                Auf AutoScout24.ch ansehen
-              </Button>
+                <Button
+                  as="a"
+                  href="mailto:info@alpenautomobile.ch?subject=Fahrzeuganfrage%3A%20BMW%20M330d%20xDrive%20SAG%20Touring"
+                  w="100%"
+                  h="52px"
+                  borderRadius="6px"
+                  border="1px solid #b21a18"
+                  bg="#b21a18"
+                  color="white"
+                  fontWeight="500"
+                  fontSize="14px"
+                  leftIcon={<FiMail size={16} />}
+                  boxShadow="
+                    0 10px 24px rgba(178, 26, 24, 0.22),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.10)
+                  "
+                  transition="all 160ms ease"
+                  _hover={{
+                    bg: '#9a1614',
+                    borderColor: '#9a1614',
+                    transform: 'translateY(-1px)',
+                    boxShadow:
+                      '0 13px 28px rgba(178, 26, 24, 0.30)',
+                  }}
+                  _active={{
+                    bg: '#7e110f',
+                    borderColor: '#7e110f',
+                    transform: 'translateY(0)',
+                  }}
+                >
+                  Fahrzeug anfragen
+                </Button>
+
+                <Button
+                  as="a"
+                  href="tel:+41768193273"
+                  w="100%"
+                  h="52px"
+                  borderRadius="6px"
+                  variant="outline"
+                  borderColor="rgba(255, 255, 255, 0.12)"
+                  bg="rgba(0, 0, 0, 0.08)"
+                  color="rgba(255, 255, 255, 0.72)"
+                  fontWeight="400"
+                  fontSize="14px"
+                  leftIcon={<FiPhone size={16} />}
+                  transition="all 160ms ease"
+                  _hover={{
+                    bg: 'rgba(255, 255, 255, 0.05)',
+                    borderColor: 'rgba(255, 255, 255, 0.23)',
+                    color: 'white',
+                  }}
+                  _active={{
+                    bg: 'rgba(255, 255, 255, 0.03)',
+                  }}
+                >
+                  Anrufen
+                </Button>
+              </Stack>
             </Flex>
-
-            {/* Desktop action buttons */}
-            <Stack
-              className="inventory-desktop-actions"
-              spacing={3}
-              mb={4}
-              display={{
-                base: 'none',
-                md: 'flex',
-              }}
-            >
-              <Button
-                as="a"
-                href="mailto:info@alpenautomobile.ch ?subject=Fahrzeuganfrage%3A%20BMW%20M330d%20xDrive%20SAG%20Touring"
-                w="100%"
-                h="46px"
-                bg="#b21a18"
-                color="white"
-                fontWeight="600"
-                fontSize="sm"
-                leftIcon={<FiMail size={16} />}
-                _hover={{
-                  bg: '#9a1614',
-                }}
-                _active={{
-                  bg: '#7e110f',
-                }}
-              >
-                Fahrzeug anfragen
-              </Button>
-
-              <Button
-                as="a"
-                href="tel:+41768193273"
-                w="100%"
-                h="46px"
-                variant="outline"
-                borderColor="whiteAlpha.300"
-                color="white"
-                fontWeight="600"
-                fontSize="sm"
-                leftIcon={<FiPhone size={16} />}
-                _hover={{
-                  bg: 'whiteAlpha.100',
-                }}
-              >
-                Anrufen
-              </Button>
-            </Stack>
           </Box>
         </Box>
       </Flex>

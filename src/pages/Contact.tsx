@@ -1,15 +1,39 @@
-import { Container, Heading, SimpleGrid, Box, Text, VStack } from '@chakra-ui/react'
+import {
+  Container,
+  Heading,
+  SimpleGrid,
+  Box,
+  Text,
+  VStack,
+  Flex,
+} from '@chakra-ui/react'
 import { FiPhone, FiMail } from 'react-icons/fi'
 import { FaWhatsapp } from 'react-icons/fa'
 
-function SectionUnderline() {
+function SectionHeader({ title }: { title: string }) {
   return (
-    <Box
-      w={{ base: '44px', md: '64px' }}
-      h="3px"
-      bg="#d31313"
-      borderRadius="full"
-    />
+    <Box mb={{ base: 7, md: 8 }}>
+      <Flex align="center" gap={4}>
+        <Box
+          w="4px"
+          h={{ base: '26px', md: '32px' }}
+          bg="#b21a18"
+          borderRadius="full"
+          flexShrink={0}
+        />
+        <Heading
+          as="h1"
+          fontSize={{ base: 'xl', md: '2xl' }}
+          lineHeight="1"
+          fontWeight="800"
+          letterSpacing="-0.035em"
+          color="white"
+          m={0}
+        >
+          {title}
+        </Heading>
+      </Flex>
+    </Box>
   )
 }
 
@@ -52,34 +76,29 @@ export default function Contact() {
         pt={{ base: 9, md: 8 }}
         pb={{ base: 8, md: 0 }}
       >
-        <Heading
-          as="h1"
-          fontSize={{ base: 'xl', md: '2xl' }}
-          lineHeight={{ base: '1.05', md: '0.98' }}
-          fontWeight="800"
-          letterSpacing="-0.035em"
-          mb={{ base: 5, md: 4 }}
-        >
-          Kontakt
-        </Heading>
-
-        <SectionUnderline />
+        <SectionHeader title="Kontakt" />
 
         <Text
-          fontSize={{ base: 'sm', md: 'lg'}}
+          fontSize={{ base: 'sm', md: 'lg' }}
           color="whiteAlpha.850"
           lineHeight="1.6"
-          mt={{ base: 7, md: 9 }}
+          mt={0}
           mb={8}
+          maxW="760px"
         >
-          Für eine persönliche Beratung oder die Besichtigung eines Fahrzeugs stehe ich Ihnen gern zur Verfügung.
+          Für eine persönliche Beratung oder die Besichtigung eines Fahrzeugs
+          stehe ich Ihnen gern zur Verfügung.
         </Text>
 
-        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={{ base: 8, md: 12 }}>
+        <SimpleGrid
+          columns={{ base: 1, md: 2 }}
+          spacing={{ base: 8, md: 12 }}
+        >
           <Box>
             <Heading fontSize={{ base: 'md', md: 'lg' }} color="white" mb={6}>
               Kontaktdaten
             </Heading>
+
             <VStack align="stretch" spacing={4}>
               <Box
                 as="a"
@@ -93,7 +112,10 @@ export default function Contact() {
                 bg="rgba(255,255,255,0.035)"
                 borderRadius="xl"
                 border="1px solid rgba(255,255,255,0.15)"
-                _hover={{ bg: 'rgba(255,255,255,0.07)', textDecoration: 'none' }}
+                _hover={{
+                  bg: 'rgba(255,255,255,0.07)',
+                  textDecoration: 'none',
+                }}
                 transition="background 0.2s ease"
               >
                 <Box color="#25D366">
@@ -103,6 +125,7 @@ export default function Contact() {
                   WhatsApp schreiben
                 </Text>
               </Box>
+
               <Box
                 as="a"
                 href="tel:+41768193273"
@@ -113,7 +136,10 @@ export default function Contact() {
                 bg="rgba(255,255,255,0.035)"
                 borderRadius="xl"
                 border="1px solid rgba(255,255,255,0.15)"
-                _hover={{ bg: 'rgba(255,255,255,0.07)', textDecoration: 'none' }}
+                _hover={{
+                  bg: 'rgba(255,255,255,0.07)',
+                  textDecoration: 'none',
+                }}
                 transition="background 0.2s ease"
               >
                 <Box color="whiteAlpha.700">
@@ -123,9 +149,10 @@ export default function Contact() {
                   +41 76 819 32 73
                 </Text>
               </Box>
+
               <Box
                 as="a"
-                href="mailto:info@alpenautomobile.ch "
+                href="mailto:info@alpenautomobile.ch"
                 display="flex"
                 alignItems="center"
                 gap={3}
@@ -133,7 +160,10 @@ export default function Contact() {
                 bg="rgba(255,255,255,0.035)"
                 borderRadius="xl"
                 border="1px solid rgba(255,255,255,0.15)"
-                _hover={{ bg: 'rgba(255,255,255,0.07)', textDecoration: 'none' }}
+                _hover={{
+                  bg: 'rgba(255,255,255,0.07)',
+                  textDecoration: 'none',
+                }}
                 transition="background 0.2s ease"
               >
                 <Box color="whiteAlpha.700">

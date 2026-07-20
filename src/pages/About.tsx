@@ -1,14 +1,37 @@
 import React from 'react'
-import { Container, Heading, Text, SimpleGrid, Box } from '@chakra-ui/react'
+import {
+  Container,
+  Heading,
+  Text,
+  SimpleGrid,
+  Box,
+  Flex,
+} from '@chakra-ui/react'
 
-function SectionUnderline() {
+function SectionHeader({ title }: { title: string }) {
   return (
-    <Box
-      w={{ base: '44px', md: '64px' }}
-      h="3px"
-      bg="#d31313"
-      borderRadius="full"
-    />
+    <Box mb={{ base: 7, md: 8 }}>
+      <Flex align="center" gap={4}>
+        <Box
+          w="4px"
+          h={{ base: '26px', md: '32px' }}
+          bg="#b21a18"
+          borderRadius="full"
+          flexShrink={0}
+        />
+        <Heading
+          as="h1"
+          fontSize={{ base: 'xl', md: '2xl' }}
+          lineHeight="1"
+          fontWeight="800"
+          letterSpacing="-0.035em"
+          color="white"
+          m={0}
+        >
+          {title}
+        </Heading>
+      </Flex>
+    </Box>
   )
 }
 
@@ -51,18 +74,7 @@ export default function About() {
         pt={{ base: 9, md: 8 }}
         pb={{ base: 8, md: 0 }}
       >
-        <Heading
-          as="h1"
-          fontSize={{ base: 'xl', sm: '2xl' }}
-          lineHeight={{ base: '1.05', md: '0.98' }}
-          fontWeight="800"
-          letterSpacing="-0.035em"
-          mb={{ base: 5, md: 4 }}
-        >
-          Über Mich
-        </Heading>
-
-        <SectionUnderline />
+        <SectionHeader title="Über Mich" />
 
         <Box maxW="980px" mt={{ base: 7, md: 9 }} mb={10}>
           <Text

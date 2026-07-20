@@ -74,14 +74,30 @@ const steps: ServiceStep[] = [
   },
 ]
 
-function SectionUnderline() {
+function SectionHeader({ title }: { title: string }) {
   return (
-    <Box
-      w={{ base: '44px', md: '64px' }}
-      h="3px"
-      bg="#d31313"
-      borderRadius="full"
-    />
+    <Box mb={{ base: 7, md: 8 }}>
+      <Flex align="center" gap={4}>
+        <Box
+          w="4px"
+          h={{ base: '26px', md: '32px' }}
+          bg="#b21a18"
+          borderRadius="full"
+          flexShrink={0}
+        />
+        <Heading
+          as="h1"
+          fontSize={{ base: 'xl', md: '2xl' }}
+          lineHeight="1"
+          fontWeight="800"
+          letterSpacing="-0.035em"
+          color="white"
+          m={0}
+        >
+          {title}
+        </Heading>
+      </Flex>
+    </Box>
   )
 }
 
@@ -243,22 +259,7 @@ export default function Services() {
           <Box
             maxW={{ base: '100%', lg: '760px' }}
           >
-            <Heading
-              as="h1"
-              fontSize={{
-                base: 'xl',
-                md: '2xl',
-              }}
-              lineHeight={{ base: '1.05', md: '0.98' }}
-              fontWeight="800"
-              letterSpacing="-0.035em"
-              wordBreak="break-word"
-              mb={{ base: 5, md: 4 }}
-            >
-              Fahrzeugbeschaffung
-            </Heading>
-
-            <SectionUnderline />
+            <SectionHeader title="Fahrzeugbeschaffung" />
 
             <Box mt={{ base: 7, md: 9 }}>
               <Text
