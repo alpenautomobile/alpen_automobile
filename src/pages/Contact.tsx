@@ -86,8 +86,10 @@ export default function Contact() {
           mb={8}
           maxW="760px"
         >
-          Für eine persönliche Beratung oder die Besichtigung eines Fahrzeugs
-          stehe ich Ihnen gern zur Verfügung.
+          Für einen persönlichen Austausch zu meinen Dienstleistungen oder Fahrzeugen 
+          sowie zur Vereinbarung eines Besichtigungstermins stehe ich Ihnen unter den folgenden Kontaktmöglichkeiten 
+          gerne zur Verfügung.
+
         </Text>
 
         <SimpleGrid

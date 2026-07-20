@@ -92,7 +92,9 @@ export default function About() {
             lineHeight="1.75"
             mb={4}
           >
-            Direkte Kommunikation und eine persönliche Betreuung stehen für mich dabei an erster Stelle damit Sie mit der Abwicklung und dem Fahrzeug vollkommend zufrieden sind.
+            Direkte Kommunikation und eine persönliche Betreuung stehen für mich an erster Stelle, 
+            damit Sie sowohl mit der Abwicklung als auch mit Ihrem Fahrzeug nachhaltig zufrieden sind.
+
           </Text>
 
           <Text

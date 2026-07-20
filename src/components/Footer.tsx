@@ -96,7 +96,7 @@ export default function Footer({
 
             <Box
               as="a"
-              href="https://www.instagram.com"
+              href="https://www.instagram.com/alpen_automobile"
               target="_blank"
               rel="noreferrer"
               display="inline-flex"
@@ -119,7 +119,7 @@ export default function Footer({
 
             <Box
               as="a"
-              href="https://www.youtube.com"
+              href="https://www.youtube.com/@alpenautomobile"
               target="_blank"
               rel="noreferrer"
               display="flex"
@@ -317,7 +317,7 @@ export default function Footer({
 
             <Box
               as="a"
-              href="https://www.instagram.com"
+              href="https://www.instagram.com/alpen_automobile"
               target="_blank"
               rel="noreferrer"
               display="inline-flex"
@@ -340,7 +340,7 @@ export default function Footer({
 
             <Box
               as="a"
-              href="https://www.youtube.com"
+              href="https://www.youtube.com/@alpenautomobile"
               target="_blank"
               rel="noreferrer"
               display="inline-flex"
