@@ -5,6 +5,7 @@ import {
   Container,
   Flex,
   Heading,
+  Link,
   SimpleGrid,
   Text,
 } from '@chakra-ui/react'
@@ -14,11 +15,13 @@ import {
   FiFileText,
   FiSearch,
   FiShield,
-  FiTruck,
   FiUsers,
 } from 'react-icons/fi'
-import { LuHandshake } from 'react-icons/lu'
-import { LuCarFront } from 'react-icons/lu'
+import {
+  LuHandshake,
+  LuKeyRound,
+  LuRoute,
+} from 'react-icons/lu'
 
 type ServiceStep = {
   number: string
@@ -64,12 +67,12 @@ const steps: ServiceStep[] = [
   },
   {
     number: '08',
-    icon: FiTruck,
+    icon: LuRoute,
     text: 'Durchführung oder Koordination der Fahrzeugabholung im In- und Ausland',
   },
   {
     number: '09',
-    icon: LuCarFront,
+    icon: LuKeyRound,
     text: 'Persönliche Übergabe beziehungsweise Auslieferung des Fahrzeugs',
   },
 ]
@@ -85,6 +88,7 @@ function SectionHeader({ title }: { title: string }) {
           borderRadius="full"
           flexShrink={0}
         />
+
         <Heading
           as="h1"
           fontSize={{ base: 'xl', md: '2xl' }}
@@ -196,7 +200,11 @@ function MobileStepCard({ step }: { step: ServiceStep }) {
         color="whiteAlpha.900"
         flexShrink={0}
       >
-        <Box as={Icon} boxSize={5} strokeWidth="1.7" />
+        <Box
+          as={Icon}
+          boxSize={5}
+          strokeWidth="1.7"
+        />
       </Circle>
 
       <Text
@@ -256,14 +264,12 @@ export default function Services() {
           alignItems="start"
           mb={{ base: 8, md: 10, xl: 14 }}
         >
-          <Box
-            maxW={{ base: '100%', lg: '760px' }}
-          >
+          <Box maxW={{ base: '100%', lg: '760px' }}>
             <SectionHeader title="Fahrzeugbeschaffung" />
 
             <Box mt={{ base: 7, md: 9 }}>
               <Text
-                fontSize={{ base: 'sm', md: 'lg'}}
+                fontSize={{ base: 'sm', md: 'lg' }}
                 color="whiteAlpha.850"
                 lineHeight="1.6"
                 mb={2}
@@ -302,7 +308,10 @@ export default function Services() {
           mt={5}
         >
           {steps.map((step) => (
-            <DesktopStepCard key={step.number} step={step} />
+            <DesktopStepCard
+              key={step.number}
+              step={step}
+            />
           ))}
         </SimpleGrid>
 
@@ -313,38 +322,57 @@ export default function Services() {
           mt={5}
         >
           {steps.map((step) => (
-            <MobileStepCard key={step.number} step={step} />
+            <MobileStepCard
+              key={step.number}
+              step={step}
+            />
           ))}
         </SimpleGrid>
 
         <Box
-          display={{ base: 'block', md: 'none' }}
-          mt={8}
-          p={5}
-          border="1px solid rgba(255,255,255,0.12)"
-          borderRadius="8px"
-          bg="rgba(255,255,255,0.025)"
+          mt={{ base: 6, md: 14 }}
+          mb={{ base: -3, md: 10 }}
+          maxW="720px"
+          mx="auto"
+          px={{ base: 5, md: 8 }}
+          py={{ base: 5, md: 3 }}
+          position="relative"
+          overflow="hidden"
+          textAlign="center"
+          // border="1px solid rgba(255,255,255,0.14)"
+          // borderRadius={{ base: '8px', md: '10px' }}
+          // bg="rgba(255,255,255,0.025)"
+          boxShadow="0 18px 50px rgba(0,0,0,0.18)"
         >
-          <Text
-            color="#e11b22"
-            fontSize="xs"
-            fontWeight="700"
-            letterSpacing="0.18em"
-            textTransform="uppercase"
-            mb={2}
-          >
-            Persönlich betreut
-          </Text>
+          <Box
+            position="absolute"
+            top={0}
+            left="50%"
+            transform="translateX(-50%)"
+            w={{ base: '90px', md: '120px' }}
+            h="1px"
+            bg="
+              linear-gradient(
+                90deg,
+                transparent 0%,
+                #ffffff 25%,
+                #ffffff 50%,
+                rgba(255,255,255,0.75) 75%,
+                transparent 100%
+              )
+            "
+          />
 
           <Text
-            color="whiteAlpha.800"
-            fontSize="sm"
-            lineHeight="1.65"
+            color="white"
+            fontSize={{ base: 'md', md: 'xl' }}
+            fontWeight="500"
+            lineHeight="1.5"
+            mb={2}
           >
-            Von der ersten Vorstellung bis zur persönlichen Übergabe Ihres
-            Fahrzeugs werden alle Schritte transparent und zuverlässig
-            begleitet.
+            Ich freue mich auf Ihre Anfrage.
           </Text>
+
         </Box>
       </Container>
     </Box>
