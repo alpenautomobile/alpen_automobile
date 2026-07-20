@@ -43,7 +43,7 @@ export default function App() {
 
       const loaderTimer = window.setTimeout(() => {
         setIsLoading(false)
-      }, 1100)
+      }, 1500)
 
       return () => { window.clearTimeout(loaderTimer) }
     } else {
