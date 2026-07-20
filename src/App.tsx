@@ -36,6 +36,17 @@ export default function App() {
   }, [])
 
   useEffect(() => {
+    const isMobile = window.matchMedia('(max-width: 768px)').matches
+
+    if (isMobile) {
+      setIsLoading(true)
+
+      const loaderTimer = window.setTimeout(() => {
+        setIsLoading(false)
+      }, 1100)
+
+      return () => { window.clearTimeout(loaderTimer) }
+    } else {
       if (document.readyState === 'complete') {
         setIsLoading(false)
         return
@@ -48,14 +59,15 @@ export default function App() {
       const fallbackTimer = window.setTimeout(() => {
         setIsLoading(false)
       }, 2500)
-      
+
       window.addEventListener('load', handleLoad)
 
       return () => {
         window.removeEventListener('load', handleLoad)
         window.clearTimeout(fallbackTimer)
       }
-    }, [])
+    }
+  }, [location.pathname])
 
   return (
     <div className="app-shell">

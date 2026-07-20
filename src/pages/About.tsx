@@ -96,15 +96,6 @@ export default function About() {
             damit Sie sowohl mit der Abwicklung als auch mit Ihrem Fahrzeug nachhaltig zufrieden sind.
 
           </Text>
-
-          <Text
-            fontSize={{ base: 'sm', md: 'md', xl: 'lg' }}
-            color="whiteAlpha.900"
-            lineHeight="1.75"
-            fontWeight="600"
-          >
-            Jedes Fahrzeug von Alpen Automobile erfüllt meinen Qualitätsstandard
-          </Text>
         </Box>
       </Container>
     </Box>
