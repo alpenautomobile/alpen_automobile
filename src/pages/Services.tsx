@@ -79,7 +79,7 @@ const steps: ServiceStep[] = [
 
 function SectionHeader({ title }: { title: string }) {
   return (
-    <Box mb={{ base: 7, md: 8 }}>
+    <Box mb={{ base: 7, md: 8 }} >
       <Flex align="center" gap={4}>
         <Box
           w="4px"
@@ -87,6 +87,7 @@ function SectionHeader({ title }: { title: string }) {
           bg="#b21a18"
           borderRadius="full"
           flexShrink={0}
+          
         />
 
         <Heading
@@ -328,52 +329,6 @@ export default function Services() {
             />
           ))}
         </SimpleGrid>
-
-        <Box
-          mt={{ base: 6, md: 14 }}
-          mb={{ base: -3, md: 10 }}
-          maxW="720px"
-          mx="auto"
-          px={{ base: 5, md: 8 }}
-          py={{ base: 5, md: 3 }}
-          position="relative"
-          overflow="hidden"
-          textAlign="center"
-          // border="1px solid rgba(255,255,255,0.14)"
-          // borderRadius={{ base: '8px', md: '10px' }}
-          // bg="rgba(255,255,255,0.025)"
-          boxShadow="0 18px 50px rgba(0,0,0,0.18)"
-        >
-          <Box
-            position="absolute"
-            top={0}
-            left="50%"
-            transform="translateX(-50%)"
-            w={{ base: '90px', md: '120px' }}
-            h="1px"
-            bg="
-              linear-gradient(
-                90deg,
-                transparent 0%,
-                #ffffff 25%,
-                #ffffff 50%,
-                rgba(255,255,255,0.75) 75%,
-                transparent 100%
-              )
-            "
-          />
-
-          <Text
-            color="white"
-            fontSize={{ base: 'md', md: 'xl' }}
-            fontWeight="500"
-            lineHeight="1.5"
-            mb={2}
-          >
-            Ich freue mich auf Ihre Anfrage.
-          </Text>
-
-        </Box>
       </Container>
     </Box>
   )

@@ -10,6 +10,8 @@ import Inventory from './pages/Inventory'
 import Services from './pages/Services'
 import Contact from './pages/Contact'
 import About from './pages/About'
+import Datenschutz from './pages/Datenschutz'
+import Impressum from './pages/Impressum'
 
 import NavBar from './components/NavBar'
 import Footer from './components/Footer'
@@ -110,6 +112,14 @@ export default function App() {
           <Route
             path="/about"
             element={<About />}
+          />
+          <Route
+            path="/datenschutz"
+            element={<Datenschutz />}
+          />
+          <Route
+            path="/impressum"
+            element={<Impressum />}
           />
         </Routes>
       </main>

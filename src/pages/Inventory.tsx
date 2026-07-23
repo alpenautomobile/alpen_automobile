@@ -1084,24 +1084,6 @@ export default function Inventory() {
               _hover={{ bg: 'blackAlpha.900' }}
               _active={{ transform: 'translateY(-50%) scale(0.94)' }}
             />
-
-            <Text
-              display={{
-                base: 'block',
-                md: 'none',
-              }}
-              position="absolute"
-              bottom={5}
-              left="50%"
-              transform="translateX(-50%)"
-              color="whiteAlpha.600"
-              fontSize="11px"
-              whiteSpace="nowrap"
-              zIndex={20}
-              pointerEvents="none"
-            >
-              Wischen oder Pfeile verwenden
-            </Text>
           </ModalBody>
         </ModalContent>
       </Modal>
