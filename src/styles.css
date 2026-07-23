@@ -93,7 +93,7 @@ a { text-decoration: none; }
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #000000;
+  background: #181818;
 }
 
 .page-loader__logo {
