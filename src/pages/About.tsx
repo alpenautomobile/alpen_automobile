@@ -18,7 +18,7 @@ function SectionHeader({ title }: { title: string }) {
         <Box
           w="4px"
           h={{ base: '26px', md: '32px' }}
-          bg="#b21a18"
+          bg={RED}
           borderRadius="full"
           flexShrink={0}
         />
