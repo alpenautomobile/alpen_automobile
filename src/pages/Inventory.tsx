@@ -598,7 +598,7 @@ export default function Inventory() {
                   className="inventory-title"
                   color="white"
                   fontSize={{
-                    base: 'xl',
+                    base: 'md',
                     md: '2xl',
                   }}
                   lineHeight="1.2"
@@ -613,7 +613,10 @@ export default function Inventory() {
                 <Text
                   className="inventory-subtitle"
                   color="rgba(255, 255, 255, 0.52)"
-                  fontSize="15px"
+                   fontSize={{
+                    base: 'md',
+                    md: 'xl',
+                  }}
                   lineHeight="1.5"
                   mb={5}
                 >
