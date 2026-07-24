@@ -89,7 +89,7 @@ function SectionHeader({ title }: { title: string }) {
         />
         <Heading
           as="h1"
-          fontSize={{ base: 'xl', md: '2xl' }}
+          fontSize={{ base: 'md', md: '2xl' }}
           lineHeight="1"
           fontWeight="800"
           letterSpacing="-0.035em"
