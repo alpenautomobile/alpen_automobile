@@ -227,7 +227,7 @@ export default function Services() {
       position="relative"
       minH="100vh"
       w="100%"
-      bg="#181818"
+      bg="#000000"
       color="white"
       overflow="hidden"
     >
@@ -243,9 +243,9 @@ export default function Services() {
           ),
           linear-gradient(
             180deg,
-            #181818 0%,
+            #000000 0%,
             #282828 45%,
-            #181818 100%
+            #000000 100%
           )
         "
       />

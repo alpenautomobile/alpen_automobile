@@ -259,14 +259,15 @@ function MobileFooter() {
     <Box
       display={{ base: 'block', md: 'none' }}
       py={2.5}
+      mt={0.5}
     >
+      {/* First row: contact and social media */}
       <Flex
         align="center"
         justify="center"
         flexWrap="wrap"
         columnGap={4}
-        rowGap={1.5}
-        color="whiteAlpha.750"
+        rowGap={1}
       >
         <Flex
           as="a"
@@ -275,13 +276,14 @@ function MobileFooter() {
           gap={1.5}
           color="whiteAlpha.850"
           whiteSpace="nowrap"
+          textDecoration="none"
           _hover={{
             color: 'white',
             textDecoration: 'none',
           }}
         >
-          <Box color={RED} mr={1.}>
-            <FiPhone size={10} />
+          <Box color={RED}>
+            <FiPhone size={11} />
           </Box>
 
           <Text fontSize="11px">
@@ -293,71 +295,8 @@ function MobileFooter() {
           as="a"
           href="mailto:info@alpenautomobile.ch"
           align="center"
-          gap={2}
+          gap={1.5}
           color="whiteAlpha.850"
-          whiteSpace="nowrap"
-          _hover={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          <Box color={RED} mr={1.5}>
-            <FiMail size={10} />
-          </Box>
-
-          <Text fontSize="11px">
-            info@alpenautomobile.ch
-          </Text>
-        </Flex>
-      <HStack
-        justify="center"
-        spacing={3}
-        ml={1.5}
-      >
-        <SocialLink
-          href="https://wa.me/41768193273"
-          label="WhatsApp"
-        >
-          {/* <Box color="#fff"> */}
-          <Box color="#25D366">
-            <FaWhatsapp size={14} />
-          </Box>
-        </SocialLink>
-
-        <SocialLink
-          href="https://www.instagram.com/alpen_automobile"
-          label="Instagram"
-        >
-          <Image
-            src="/instagram.png"
-            alt="Instagram"
-            boxSize="12px"
-            objectFit="contain"
-          />
-        </SocialLink>
-
-        <SocialLink
-          href="https://www.youtube.com/@alpenautomobile"
-          label="YouTube"
-        >
-          {/* <Box color="#fff"> */}
-          <Box color="#ff0000">
-            <FaYoutube size={15} />
-          </Box>
-        </SocialLink>
-      </HStack>
-
-        <Text
-          color="rgba(255,255,255,0.55)"
-          fontSize="12px"
-        >          
-        </Text>
-
-         <Link
-          as={RouterLink}
-          to="/impressum"
-          color="whiteAlpha.650"
-          fontSize="11px"
           whiteSpace="nowrap"
           textDecoration="none"
           _hover={{
@@ -365,11 +304,76 @@ function MobileFooter() {
             textDecoration: 'none',
           }}
         >
+          <Box color={RED}>
+            <FiMail size={11} />
+          </Box>
+
+          <Text fontSize="11px">
+            info@alpenautomobile.ch
+          </Text>
+        </Flex>
+
+        <HStack
+          justify="center"
+          spacing={3}
+        >
+          <SocialLink
+            href="https://wa.me/41768193273"
+            label="WhatsApp"
+          >
+            <Box color="#25D366">
+              <FaWhatsapp size={14} />
+            </Box>
+          </SocialLink>
+
+          <SocialLink
+            href="https://www.instagram.com/alpen_automobile"
+            label="Instagram"
+          >
+            <Image
+              src="/instagram.png"
+              alt="Instagram"
+              boxSize="12px"
+              objectFit="contain"
+            />
+          </SocialLink>
+
+          <SocialLink
+            href="https://www.youtube.com/@alpenautomobile"
+            label="YouTube"
+          >
+            <Box color="#ff0000">
+              <FaYoutube size={15} />
+            </Box>
+          </SocialLink>
+        </HStack>
+      </Flex>
+
+      {/* Second row: legal links */}
+      <HStack
+        justify="center"
+        spacing={3}
+        mt={1.5}
+      >
+        <Link
+          as={RouterLink}
+          to="/impressum"
+          color="whiteAlpha.650"
+          fontSize="11px"
+          whiteSpace="nowrap"
+          // textDecoration="underline"
+          textUnderlineOffset="3px"
+          _hover={{
+            color: 'white',
+            textDecoration: 'underline',
+          }}
+        >
           Impressum
         </Link>
-                <Text
-          color="rgba(255,255,255,0.55)"
-          fontSize="6px"
+
+        <Text
+          color="whiteAlpha.350"
+          fontSize="8px"
         >
           |
         </Text>
@@ -380,17 +384,16 @@ function MobileFooter() {
           color="whiteAlpha.650"
           fontSize="11px"
           whiteSpace="nowrap"
-          textDecoration="none"
+          // textDecoration="underline"
+          textUnderlineOffset="3px"
           _hover={{
             color: 'white',
-            textDecoration: 'none',
+            textDecoration: 'underline',
           }}
         >
           Datenschutz
         </Link>
-
-       
-      </Flex>
+      </HStack>
     </Box>
   )
 }
@@ -412,19 +415,20 @@ export default function Footer({
       mt="auto"
       bg="
         radial-gradient(
-          circle at 75% 0%,
-          rgba(255,255,255,0.025),
-          transparent 28%
+          circle at 50% 0%,
+          rgba(255,255,255,0.035) 0%,
+          rgba(255,255,255,0.012) 38%,
+          transparent 72%
         ),
         linear-gradient(
-          145deg,
-          #171719 0%,
-          #101012 65%,
-          #0d0d0f 100%
+          180deg,
+          #0b0b0c 0%,
+          #050506 45%,
+          #000000 100%
         )
       "
-      borderTop="1px solid rgba(255,255,255,0.10)"
-      boxShadow="0 -12px 35px rgba(0,0,0,0.24)"
+      borderTop="1px solid rgba(255,255,255,0.09)"
+      boxShadow="0 -10px 28px rgba(0,0,0,0.35)"
     >
       <Container
         maxW="100%"

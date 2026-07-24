@@ -121,7 +121,7 @@ export default function Datenschutz() {
       h="100%"
       minH={0}
       w="100%"
-      bg="#181818"
+      bg="#000000"
       color="white"
       overflowX="hidden"
       overflowY="auto"

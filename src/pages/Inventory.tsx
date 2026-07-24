@@ -35,8 +35,9 @@ import {
   FiExternalLink,
   FiZoomIn,
   FiZoomOut,
-  FiRotateCcw,
+  FiRotateCcw
 } from 'react-icons/fi'
+import { LuExpand } from 'react-icons/lu'
 
 const vehicle = {
   title: 'BMW M330d xDrive SAG Touring',
@@ -315,7 +316,7 @@ export default function Inventory() {
       position="relative"
       minH="100vh"
       w="100%"
-      bg="#181818"
+      bg="#000000"
       color="white"
       overflow="hidden"
     >
@@ -332,9 +333,9 @@ export default function Inventory() {
           ),
           linear-gradient(
             180deg,
-            #181818 0%,
+            #000000 0%,
             #282828 45%,
-            #181818 100%
+            #000000 100%
           )
         "
       />
@@ -451,33 +452,24 @@ export default function Inventory() {
               }}
             />
 
-            <IconButton
-              aria-label="Vollbild öffnen"
-              icon={
-                <svg
-                  viewBox="0 0 24 24"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                >
-                  <path d="M6 16H4v4h4v-2H6v-2zm0-8h2V6h2V4H4v4zm12 8h-2v2h-2v2h4v-4zm-2-8V4h-4v2h2v2h2z" />
-                </svg>
-              }
-              position="absolute"
-              bottom={2}
-              right={2}
-              color="white"
-              bg="blackAlpha.700"
-              border="1px solid"
-              borderColor="whiteAlpha.300"
-              borderRadius="full"
-              size="md"
-              zIndex={2}
-              onClick={openFullscreen}
-              _hover={{
-                bg: 'blackAlpha.900',
-              }}
-            />
+<IconButton
+  aria-label="Vollbild öffnen"
+  icon={<LuExpand size={18} />}
+  position="absolute"
+  bottom={2}
+  right={2}
+  color="white"
+  bg="blackAlpha.700"
+  border="1px solid"
+  borderColor="whiteAlpha.300"
+  borderRadius="full"
+  size="md"
+  zIndex={2}
+  onClick={openFullscreen}
+  _hover={{
+    bg: 'blackAlpha.900',
+  }}
+/>
           </Box>
 
           {/* Thumbnails */}
@@ -964,10 +956,6 @@ export default function Inventory() {
               border="1px solid"
               borderColor="whiteAlpha.300"
               borderRadius="full"
-              size={{
-                base: 'md',
-                md: 'lg',
-              }}
               onClick={closeFullscreen}
               _hover={{
                 bg: '#b21a18',

@@ -50,7 +50,7 @@ export default function NavBar() {
       top={0}
       zIndex={40}
       h={{ base: '52px', md: '70px' }}
-      bg="#181818"
+      bg="#000000"
       _after={{
         content: '""',
         display: 'block',
@@ -180,7 +180,7 @@ export default function NavBar() {
 
             <DrawerContent
               p={0}
-              bg="#181818"
+              bg="#000000"
             >
               <DrawerCloseButton
                 top={3}
@@ -196,7 +196,7 @@ export default function NavBar() {
                 zIndex={10}
                 _hover={{
                   bg: 'white',
-                  color: '#181818',
+                  color: '#000000',
                   borderColor: 'white',
                 }}
                 _focus={{ boxShadow: 'none' }}
@@ -212,7 +212,7 @@ export default function NavBar() {
                 alignItems="center"
                 justifyContent="center"
                 position="relative"
-                bg="#181818"
+                bg="#000000"
                 _after={{
                   content: '""',
                   position: 'absolute',

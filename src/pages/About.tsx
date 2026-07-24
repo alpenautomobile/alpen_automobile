@@ -48,7 +48,7 @@ export default function About() {
       position="relative"
       minH="100vh"
       w="100%"
-      bg="#181818"
+      bg="#000000"
       color="white"
       overflow="hidden"
     >
@@ -65,9 +65,9 @@ export default function About() {
           ),
           linear-gradient(
             180deg,
-            #181818 0%,
+            #000000 0%,
             #222222 48%,
-            #181818 100%
+            #000000 100%
           )
         "
       />
