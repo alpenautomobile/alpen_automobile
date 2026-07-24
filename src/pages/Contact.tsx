@@ -110,7 +110,7 @@ export default function Contact() {
                 display="flex"
                 alignItems="center"
                 gap={3}
-                p={4}
+                p={3}
                 bg="rgba(255,255,255,0.035)"
                 borderRadius="xl"
                 border="1px solid rgba(255,255,255,0.15)"
@@ -134,7 +134,7 @@ export default function Contact() {
                 display="flex"
                 alignItems="center"
                 gap={3}
-                p={4}
+                p={3}
                 bg="rgba(255,255,255,0.035)"
                 borderRadius="xl"
                 border="1px solid rgba(255,255,255,0.15)"
@@ -158,7 +158,7 @@ export default function Contact() {
                 display="flex"
                 alignItems="center"
                 gap={3}
-                p={4}
+                p={3}
                 bg="rgba(255,255,255,0.035)"
                 borderRadius="xl"
                 border="1px solid rgba(255,255,255,0.15)"
