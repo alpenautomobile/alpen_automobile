@@ -44,8 +44,8 @@ export default function Home() {
         bgSize="cover"
         bgPosition="center"
         bgRepeat="no-repeat"
-        h={{ base: 'auto', md: '55vh' }}
-        minH="420px"
+        h={{ base: '55vh', md: '55vh' }}
+        minH="400px"
       >
         <Box
           className="contentBox"
@@ -77,7 +77,7 @@ export default function Home() {
 
                 </Text>
 
-                <Flex pt={14}>
+                <Flex pt={10}>
                   <Button
                     as={RouterLink}
                     to="/inventory"
