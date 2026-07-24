@@ -77,7 +77,7 @@ export default function Home() {
 
                 </Text>
 
-                <Flex pt={{ base: 1, md: 6 }} >
+                <Flex pt={{ base: 12, md: 6 }} >
                   <Button
                     as={RouterLink}
                     to="/inventory"
