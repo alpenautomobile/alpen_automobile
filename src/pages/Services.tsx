@@ -283,8 +283,7 @@ export default function Services() {
                 color="whiteAlpha.750"
                 lineHeight="1.6"
               >
-                Gern begleite ich Sie oder übernehme den gesamten
-                Beschaffungsprozess.
+                Gern begleite ich Sie dabei oder übernehme den gesamten Beschaffungsprozess.
               </Text>
             </Box>
           </Box>

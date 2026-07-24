@@ -142,7 +142,7 @@ export default function About() {
                 alt="Christoph, Gründer von Alpen Automobile"
                 width="100%"
                 height={{
-                  base: '390px',
+                  base: '380px',
                   sm: '480px',
                   md: '580px',
                 }}
