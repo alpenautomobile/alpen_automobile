@@ -77,7 +77,7 @@ export default function Home() {
 
                 </Text>
 
-                <Flex pt={4}>
+                <Flex pt={14}>
                   <Button
                     as={RouterLink}
                     to="/inventory"
@@ -133,7 +133,7 @@ export default function Home() {
           h="100%"
           flex="1"
           px={{ base: 4, md: '6%' }}
-          py={{ base: 8, md: 10 }}
+          py={{ base: 4, md: 10 }}
         >
           <SimpleGrid templateColumns={{ base: '1fr', md: 'repeat(3, minmax(0, 1fr))' }} spacing={{ base: 6, lg: '26px' }} w="full">
             {features.map((feature) => {
