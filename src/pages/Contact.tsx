@@ -29,7 +29,7 @@ function SectionHeader({ title }: { title: string }) {
 
         <Heading
           as="h1"
-          fontSize={{ base: 'xl', md: '2xl' }}
+          fontSize={{ base: 'md', md: 'xl'}}
           lineHeight="1"
           fontWeight="800"
           letterSpacing="-0.035em"
@@ -109,13 +109,13 @@ export default function Contact() {
         w="100%"
         maxW="100%"
         px={{ base: 4, md: '6%' }}
-        pt={{ base: 5, md: 8 }}
+        pt={5}
         pb={{ base: 8, md: 12 }}
       >
         <SectionHeader title="Kontakt" />
 
         <Text
-          fontSize={{ base: 'sm', md: 'lg' }}
+          fontSize={{ base: 'sm', md: 'md'}}
           color="whiteAlpha.850"
           lineHeight="1.6"
           mt={0}

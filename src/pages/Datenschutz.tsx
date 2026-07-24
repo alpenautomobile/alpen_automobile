@@ -24,7 +24,7 @@ function LegalSectionHeader({ title }: { title: string }) {
         <Heading
           as="h1"
           color="white"
-          fontSize={{ base: 'xl', md: '2xl' }}
+          fontSize={{ base: 'md', md: 'xl'}}
           lineHeight="1"
           fontWeight="800"
           letterSpacing="-0.035em"
@@ -151,7 +151,7 @@ export default function Datenschutz() {
         w="100%"
         maxW="100%"
         px={{ base: 4, md: '6%' }}
-        pt={{ base: 5, md: 8 }}
+        pt={5}
         pb={{ base: 8, md: 0 }}
       >
         <LegalSectionHeader title="Datenschutzerklärung" />

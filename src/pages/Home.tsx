@@ -68,7 +68,7 @@ export default function Home() {
                 <Heading as="h1" fontSize={{ base: '3xl', md: '5xl' }} lineHeight="short" color="white">Fahrzeuge, die überzeugen.</Heading>
 
                 <Text
-                  fontSize={{ base: 'sm', md: 'md' }}
+                  fontSize={{ base: 'sm', md: 'lg' }}
                   color="whiteAlpha.900"
                 >
                   Jedes Fahrzeug erfüllt hohe Ausstattungsstandards, 
@@ -159,7 +159,7 @@ export default function Home() {
                     <Box w="full">
                       <Heading
                         as="h3"
-                        fontSize={{ base: 'md', md: 'lg' }}
+                        fontSize={{ base: 'md', md: 'xl' }}
                         fontWeight="600"
                         mb={3}
                         color="gray.900"

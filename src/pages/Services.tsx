@@ -89,10 +89,9 @@ function SectionHeader({ title }: { title: string }) {
           flexShrink={0}
           
         />
-
         <Heading
           as="h1"
-          fontSize={{ base: 'xl', md: '2xl' }}
+          fontSize={{ base: 'md', md: 'xl'}}
           lineHeight="1"
           fontWeight="800"
           letterSpacing="-0.035em"
@@ -129,7 +128,7 @@ function DesktopStepCard({ step }: { step: ServiceStep }) {
         size={{ xl: '48px', '2xl': '52px' }}
         bg="#c91414"
         color="white"
-        fontSize={{ xl: 'lg', '2xl': 'xl' }}
+        fontSize={{ base: 'sm', md: 'md'}}
         fontWeight="700"
         flexShrink={0}
         boxShadow="0 0 0 1px rgba(255,60,60,0.35)"
@@ -161,7 +160,7 @@ function DesktopStepCard({ step }: { step: ServiceStep }) {
 
       <Text
         color="whiteAlpha.900"
-        fontSize={{ xl: 'sm', '2xl': 'md' }}
+        fontSize={{ base: 'sm', md: 'md'}}
         lineHeight="1.55"
         fontWeight="400"
       >
@@ -188,7 +187,7 @@ function MobileStepCard({ step }: { step: ServiceStep }) {
         size="42px"
         bg="#c91414"
         color="white"
-        fontSize="sm"
+        fontSize={{ base: 'sm', md: 'md'}}
         fontWeight="700"
         flexShrink={0}
       >
@@ -211,7 +210,7 @@ function MobileStepCard({ step }: { step: ServiceStep }) {
       <Text
         pt={1}
         color="whiteAlpha.900"
-        fontSize="sm"
+        fontSize={{ base: 'sm', md: 'md'}}
         lineHeight="1.55"
       >
         {step.text}
@@ -256,7 +255,7 @@ export default function Services() {
         w="100%"
         maxW="100%"
         px={{ base: 4, md: '6%' }}
-        pt={{ base: 5, md: 8 }}
+        pt={5}
         pb={{ base: 8, md: 0 }}
       >
         <SimpleGrid
@@ -270,7 +269,7 @@ export default function Services() {
 
             <Box mt={{ base: 7, md: 9 }}>
               <Text
-                fontSize={{ base: 'sm', md: 'lg' }}
+                fontSize={{ base: 'sm', md: 'md'}}
                 color="whiteAlpha.850"
                 lineHeight="1.6"
                 mb={2}
@@ -279,7 +278,7 @@ export default function Services() {
               </Text>
 
               <Text
-                fontSize={{ base: 'sm', md: 'lg' }}
+                fontSize={{ base: 'sm', md: 'md' }}
                 color="whiteAlpha.750"
                 lineHeight="1.6"
               >
@@ -292,9 +291,9 @@ export default function Services() {
         <Box>
           <Heading
             as="h2"
-            fontSize={{ base: 'xl', md: '2xl' }}
+            fontSize={{ base: 'md', md: 'xl'}}
             fontWeight="800"
-            letterSpacing="-0.02em"
+            letterSpacing="0.02em"
             mb={3}
           >
             Ablauf
