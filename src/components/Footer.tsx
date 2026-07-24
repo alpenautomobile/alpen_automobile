@@ -371,7 +371,7 @@ function MobileFooter() {
 
         <Text
           color="whiteAlpha.350"
-          fontSize="11px"
+          fontSize="8px"
         >
           |
         </Text>
