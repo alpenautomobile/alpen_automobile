@@ -13,18 +13,15 @@ const RED = '#b21a18'
 
 function SectionHeader({ title }: { title: string }) {
   return (
-    <Flex
-      align="center"
-      gap={4}
-      mb={{ base: 7, md: 9 }}
-    >
-      <Box
-        w="4px"
-        h={{ base: '26px', md: '32px' }}
-        bg={RED}
-        borderRadius="full"
-        flexShrink={0}
-      />
+    <Box mb={{ base: 7, md: 8 }}>
+      <Flex align="center" gap={4}>
+        <Box
+          w="4px"
+          h={{ base: '26px', md: '32px' }}
+          bg="#b21a18"
+          borderRadius="full"
+          flexShrink={0}
+        />
 
       <Heading
         as="h1"
@@ -33,11 +30,11 @@ function SectionHeader({ title }: { title: string }) {
         fontWeight="800"
         letterSpacing="-0.035em"
         color="white"
-        m={0}
       >
         {title}
       </Heading>
-    </Flex>
+      </Flex>
+    </Box>
   )
 }
 
@@ -59,14 +56,14 @@ export default function About() {
         pointerEvents="none"
         bg="
           radial-gradient(
-            circle at 78% 18%,
+            circle at 75% 20%,
             rgba(255,255,255,0.035),
             transparent 30%
           ),
           linear-gradient(
             180deg,
             #000000 0%,
-            #222222 48%,
+            #282828 45%,
             #000000 100%
           )
         "
@@ -75,10 +72,11 @@ export default function About() {
       <Container
         position="relative"
         zIndex={1}
-        maxW="1600px"
-        px={{ base: 4, sm: 6, md: '6%' }}
-        pt={{ base: 9, md: 10, lg: 12 }}
-        pb={{ base: 10, md: 14, lg: 16 }}
+        w="100%"
+        maxW="100%"
+        px={{ base: 4, md: '6%' }}
+        pt={{ base: 5, md: 8 }}
+        pb={{ base: 8, md: 0 }}
       >
         <SectionHeader title="Über mich" />
 

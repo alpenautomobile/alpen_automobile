@@ -89,8 +89,8 @@ export default function NavBar() {
               src="/header_logo5.png"
               alt="Alpen"
               className="logo"
-              h={{ base: '28px', md: '34px' }}
-              w={{ base: '80px', md: '130px' }}
+              h={{ base: '28px', md: '42px' }}
+              w={{ base: '80px', md: '132px' }}
             />
           </Link>
 
