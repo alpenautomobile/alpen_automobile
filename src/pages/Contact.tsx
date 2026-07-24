@@ -1,3 +1,4 @@
+import React from 'react'
 import {
   Container,
   Heading,
@@ -6,9 +7,13 @@ import {
   Text,
   VStack,
   Flex,
+  HStack,
+  Image,
 } from '@chakra-ui/react'
 import { FiPhone, FiMail } from 'react-icons/fi'
-import { FaWhatsapp } from 'react-icons/fa'
+import { FaWhatsapp, FaYoutube } from 'react-icons/fa'
+
+const RED = '#b21a18'
 
 function SectionHeader({ title }: { title: string }) {
   return (
@@ -17,10 +22,11 @@ function SectionHeader({ title }: { title: string }) {
         <Box
           w="4px"
           h={{ base: '26px', md: '32px' }}
-          bg="#b21a18"
+          bg={RED}
           borderRadius="full"
           flexShrink={0}
         />
+
         <Heading
           as="h1"
           fontSize={{ base: 'xl', md: '2xl' }}
@@ -33,6 +39,36 @@ function SectionHeader({ title }: { title: string }) {
           {title}
         </Heading>
       </Flex>
+    </Box>
+  )
+}
+
+function SocialLink({
+  href,
+  label,
+  children,
+}: {
+  href: string
+  label: string
+  children: React.ReactNode
+}) {
+  return (
+    <Box
+      as="a"
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      aria-label={label}
+      display="inline-flex"
+      alignItems="center"
+      justifyContent="center"
+      transition="transform 160ms ease, opacity 160ms ease"
+      _hover={{
+        transform: 'translateY(-1px) scale(1.08)',
+        opacity: 0.9,
+      }}
+    >
+      {children}
     </Box>
   )
 }
@@ -74,7 +110,7 @@ export default function Contact() {
         maxW="100%"
         px={{ base: 4, md: '6%' }}
         pt={{ base: 5, md: 8 }}
-        pb={{ base: 8, md: 0 }}
+        pb={{ base: 8, md: 12 }}
       >
         <SectionHeader title="Kontakt" />
 
@@ -86,18 +122,21 @@ export default function Contact() {
           mb={8}
           maxW="760px"
         >
-          Für einen persönlichen Austausch zu meinen Dienstleistungen oder Fahrzeugen 
-          sowie zur Vereinbarung eines Besichtigungstermins stehe ich Ihnen unter den folgenden Kontaktmöglichkeiten 
-          gerne zur Verfügung.
-
+          Für einen persönlichen Austausch zu meinen Dienstleistungen oder
+          Fahrzeugen sowie zur Vereinbarung eines Besichtigungstermins stehe ich
+          Ihnen unter den folgenden Kontaktmöglichkeiten gerne zur Verfügung.
         </Text>
 
         <SimpleGrid
           columns={{ base: 1, md: 2 }}
           spacing={{ base: 8, md: 12 }}
         >
-          <Box>
-            <Heading fontSize={{ base: 'md', md: 'lg' }} color="white" mb={6}>
+          <Box maxW="620px">
+            <Heading
+              fontSize={{ base: 'md', md: 'lg' }}
+              color="white"
+              mb={6}
+            >
               Kontaktdaten
             </Heading>
 
@@ -123,6 +162,7 @@ export default function Contact() {
                 <Box color="#25D366">
                   <FaWhatsapp size={18} />
                 </Box>
+
                 <Text color="white" fontSize="sm">
                   WhatsApp schreiben
                 </Text>
@@ -147,6 +187,7 @@ export default function Contact() {
                 <Box color="whiteAlpha.700">
                   <FiPhone size={18} />
                 </Box>
+
                 <Text color="white" fontSize="sm">
                   +41 76 819 32 73
                 </Text>
@@ -171,11 +212,46 @@ export default function Contact() {
                 <Box color="whiteAlpha.700">
                   <FiMail size={18} />
                 </Box>
+
                 <Text color="white" fontSize="sm">
                   info@alpenautomobile.ch
                 </Text>
               </Box>
             </VStack>
+
+            {/* Social media */}
+            <Box mt={9}>
+              <Heading
+                fontSize={{ base: 'md', md: 'lg' }}
+                color="white"
+                mb={6}
+              >
+                Folgen Sie uns
+              </Heading>
+
+              <HStack spacing={5}>
+                <SocialLink
+                  href="https://www.instagram.com/alpen_automobile"
+                  label="Instagram"
+                >
+                  <Image
+                    src="/instagram.png"
+                    alt="Instagram"
+                    boxSize="16px"
+                    objectFit="contain"
+                  />
+                </SocialLink>
+
+                <SocialLink
+                  href="https://www.youtube.com/@alpenautomobile"
+                  label="YouTube"
+                >
+                  <Box color="#ff0000">
+                    <FaYoutube size={21} />
+                  </Box>
+                </SocialLink>
+              </HStack>
+            </Box>
           </Box>
         </SimpleGrid>
       </Container>
