@@ -259,7 +259,6 @@ function MobileFooter() {
     <Box
       display={{ base: 'block', md: 'none' }}
       py={2.5}
-      mt={0.5}
     >
       {/* First row: contact and social media */}
       <Flex
@@ -267,7 +266,7 @@ function MobileFooter() {
         justify="center"
         flexWrap="wrap"
         columnGap={4}
-        rowGap={1}
+        rowGap={2}
       >
         <Flex
           as="a"
@@ -312,10 +311,18 @@ function MobileFooter() {
             info@alpenautomobile.ch
           </Text>
         </Flex>
+      </Flex>
 
-        <HStack
+      {/* Second row: legal links */}
+      <HStack
+        justify="center"
+        spacing={3}
+        mt={2}
+      >
+         <HStack
           justify="center"
-          spacing={3}
+          spacing={4}
+          mr={2}
         >
           <SocialLink
             href="https://wa.me/41768193273"
@@ -347,21 +354,12 @@ function MobileFooter() {
             </Box>
           </SocialLink>
         </HStack>
-      </Flex>
-
-      {/* Second row: legal links */}
-      <HStack
-        justify="center"
-        spacing={3}
-        mt={1.5}
-      >
         <Link
           as={RouterLink}
           to="/impressum"
           color="whiteAlpha.650"
           fontSize="11px"
           whiteSpace="nowrap"
-          // textDecoration="underline"
           textUnderlineOffset="3px"
           _hover={{
             color: 'white',
@@ -373,7 +371,7 @@ function MobileFooter() {
 
         <Text
           color="whiteAlpha.350"
-          fontSize="8px"
+          fontSize="11px"
         >
           |
         </Text>
@@ -384,7 +382,6 @@ function MobileFooter() {
           color="whiteAlpha.650"
           fontSize="11px"
           whiteSpace="nowrap"
-          // textDecoration="underline"
           textUnderlineOffset="3px"
           _hover={{
             color: 'white',
