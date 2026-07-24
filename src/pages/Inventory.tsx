@@ -296,7 +296,7 @@ export default function Inventory() {
         w="100%"
         maxW="100%"
         px={{ base: 4, md: '6%' }}
-        pt={5}
+        pt={{ base: 5, md: 10 }}
         pb={{ base: 8, md: 0 }}
         minH="100vh"
         flex="1"

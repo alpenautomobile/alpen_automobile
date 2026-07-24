@@ -40,7 +40,7 @@ export default function Home() {
       <Box
         className="page"
         position="relative"
-        bgImage="url('/content_page.png')"
+        bgImage={{ base: "url('/mobile_version_5.png')", md: "url('/desktop_version_1.png')" }}
         bgSize="cover"
         bgPosition="center"
         bgRepeat="no-repeat"
@@ -63,7 +63,7 @@ export default function Home() {
                 align="start"
                 spacing={4}
                 maxW={{ base: '100%', md: '650px' }}
-                mt={{ base: 0, lg: '11vh' }}
+                mt={{ base: -2, lg: '11vh' }}
               >
                 <Heading as="h1" fontSize={{ base: '3xl', md: '5xl' }} lineHeight="short" color="white">Fahrzeuge, die überzeugen.</Heading>
 
@@ -77,7 +77,7 @@ export default function Home() {
 
                 </Text>
 
-                <Flex pt={10}>
+                <Flex pt={{ base: 16, md: 6 }} >
                   <Button
                     as={RouterLink}
                     to="/inventory"
@@ -104,7 +104,7 @@ export default function Home() {
                     textTransform="uppercase"
                     letterSpacing="0.18em"
                     px={4}
-                    py="13px"
+                    py="1px"
                     minW="250px"
                     h="46px"
                     borderRadius="4px"

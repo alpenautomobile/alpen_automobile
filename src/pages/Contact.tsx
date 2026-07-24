@@ -109,7 +109,7 @@ export default function Contact() {
         w="100%"
         maxW="100%"
         px={{ base: 4, md: '6%' }}
-        pt={5}
+        pt={{ base: 5, md: 10 }}
         pb={{ base: 8, md: 12 }}
       >
         <SectionHeader title="Kontakt" />

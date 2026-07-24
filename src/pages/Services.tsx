@@ -79,7 +79,7 @@ const steps: ServiceStep[] = [
 
 function SectionHeader({ title }: { title: string }) {
   return (
-    <Box mb={{ base: 7, md: 8 }} >
+    <Box mb={{ base: 7, md: 10 }} >
       <Flex align="center" gap={4}>
         <Box
           w="4px"
@@ -255,7 +255,7 @@ export default function Services() {
         w="100%"
         maxW="100%"
         px={{ base: 4, md: '6%' }}
-        pt={5}
+        pt={{ base: 5, md: 10 }}
         pb={{ base: 8, md: 0 }}
       >
         <SimpleGrid
@@ -288,13 +288,12 @@ export default function Services() {
           </Box>
         </SimpleGrid>
 
-        <Box>
+        <Box mb={{ base: 5, md: 6, xl: 8 }}>
           <Heading
             as="h2"
             fontSize={{ base: 'md', md: 'xl'}}
             fontWeight="800"
             letterSpacing="0.02em"
-            mb={3}
           >
             Ablauf
           </Heading>
@@ -303,7 +302,7 @@ export default function Services() {
         <SimpleGrid
           display={{ base: 'none', xl: 'grid' }}
           columns={3}
-          spacing={4}
+          spacing={6}
           mt={5}
         >
           {steps.map((step) => (
