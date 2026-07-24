@@ -81,15 +81,16 @@ export default function NavBar() {
             to="/"
             display="inline-flex"
             alignItems="center"
+            mt={{ base: 1, md: 0 }}
             _hover={{ opacity: 0.9 }}
             _focus={{ boxShadow: 'none' }}
           >
             <Image
-              src="/header_logo.png"
+              src="/header_logo5.png"
               alt="Alpen"
               className="logo"
-              h={{ base: '23px', md: '34px' }}
-              w={{ base: '89px', md: '130px' }}
+              h={{ base: '28px', md: '34px' }}
+              w={{ base: '80px', md: '130px' }}
             />
           </Link>
 
