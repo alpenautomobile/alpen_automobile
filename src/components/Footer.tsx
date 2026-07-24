@@ -259,6 +259,7 @@ function MobileFooter() {
     <Box
       display={{ base: 'block', md: 'none' }}
       py={2.5}
+      mt={0.5}
     >
       {/* First row: contact and social media */}
       <Flex
@@ -266,7 +267,7 @@ function MobileFooter() {
         justify="center"
         flexWrap="wrap"
         columnGap={4}
-        rowGap={2}
+        rowGap={1}
       >
         <Flex
           as="a"
@@ -352,7 +353,7 @@ function MobileFooter() {
       <HStack
         justify="center"
         spacing={3}
-        mt={2.5}
+        mt={1.5}
       >
         <Link
           as={RouterLink}
@@ -360,7 +361,7 @@ function MobileFooter() {
           color="whiteAlpha.650"
           fontSize="11px"
           whiteSpace="nowrap"
-          textDecoration="underline"
+          // textDecoration="underline"
           textUnderlineOffset="3px"
           _hover={{
             color: 'white',
@@ -372,7 +373,7 @@ function MobileFooter() {
 
         <Text
           color="whiteAlpha.350"
-          fontSize="11px"
+          fontSize="8px"
         >
           |
         </Text>
@@ -383,7 +384,7 @@ function MobileFooter() {
           color="whiteAlpha.650"
           fontSize="11px"
           whiteSpace="nowrap"
-          textDecoration="underline"
+          // textDecoration="underline"
           textUnderlineOffset="3px"
           _hover={{
             color: 'white',
@@ -396,150 +397,6 @@ function MobileFooter() {
     </Box>
   )
 }
-
-// function MobileFooter() {
-//   return (
-//     <Box
-//       display={{ base: 'block', md: 'none' }}
-//       py={2.5}
-//       mt={0.5}
-//     >
-//       {/* First row: contact and social media */}
-//       <Flex
-//         align="center"
-//         justify="center"
-//         flexWrap="wrap"
-//         columnGap={4}
-//         rowGap={1}
-//       >
-//         <Flex
-//           as="a"
-//           href="tel:+41768193273"
-//           align="center"
-//           gap={1.5}
-//           color="whiteAlpha.850"
-//           whiteSpace="nowrap"
-//           textDecoration="none"
-//           _hover={{
-//             color: 'white',
-//             textDecoration: 'none',
-//           }}
-//         >
-//           <Box color={RED}>
-//             <FiPhone size={11} />
-//           </Box>
-
-//           <Text fontSize="11px">
-//             +41 76 819 32 73
-//           </Text>
-//         </Flex>
-
-//         <Flex
-//           as="a"
-//           href="mailto:info@alpenautomobile.ch"
-//           align="center"
-//           gap={1.5}
-//           color="whiteAlpha.850"
-//           whiteSpace="nowrap"
-//           textDecoration="none"
-//           _hover={{
-//             color: 'white',
-//             textDecoration: 'none',
-//           }}
-//         >
-//           <Box color={RED}>
-//             <FiMail size={11} />
-//           </Box>
-
-//           <Text fontSize="11px">
-//             info@alpenautomobile.ch
-//           </Text>
-//         </Flex>
-
-//         <HStack
-//           justify="center"
-//           spacing={3}
-//         >
-//           <SocialLink
-//             href="https://wa.me/41768193273"
-//             label="WhatsApp"
-//           >
-//             <Box color="#25D366">
-//               <FaWhatsapp size={14} />
-//             </Box>
-//           </SocialLink>
-
-//           <SocialLink
-//             href="https://www.instagram.com/alpen_automobile"
-//             label="Instagram"
-//           >
-//             <Image
-//               src="/instagram.png"
-//               alt="Instagram"
-//               boxSize="12px"
-//               objectFit="contain"
-//             />
-//           </SocialLink>
-
-//           <SocialLink
-//             href="https://www.youtube.com/@alpenautomobile"
-//             label="YouTube"
-//           >
-//             <Box color="#ff0000">
-//               <FaYoutube size={15} />
-//             </Box>
-//           </SocialLink>
-//         </HStack>
-//       </Flex>
-
-//       {/* Second row: legal links */}
-//       <HStack
-//         justify="center"
-//         spacing={3}
-//         mt={1.5}
-//       >
-//         <Link
-//           as={RouterLink}
-//           to="/impressum"
-//           color="whiteAlpha.650"
-//           fontSize="11px"
-//           whiteSpace="nowrap"
-//           // textDecoration="underline"
-//           textUnderlineOffset="3px"
-//           _hover={{
-//             color: 'white',
-//             textDecoration: 'underline',
-//           }}
-//         >
-//           Impressum
-//         </Link>
-
-//         <Text
-//           color="whiteAlpha.350"
-//           fontSize="8px"
-//         >
-//           |
-//         </Text>
-
-//         <Link
-//           as={RouterLink}
-//           to="/datenschutz"
-//           color="whiteAlpha.650"
-//           fontSize="11px"
-//           whiteSpace="nowrap"
-//           // textDecoration="underline"
-//           textUnderlineOffset="3px"
-//           _hover={{
-//             color: 'white',
-//             textDecoration: 'underline',
-//           }}
-//         >
-//           Datenschutz
-//         </Link>
-//       </HStack>
-//     </Box>
-//   )
-// }
 
 export default function Footer({
   stickyOnMobile = false,
