@@ -84,48 +84,6 @@ const galleryImages = [
   },
 ]
 
-const details = [
-  {
-    icon: FiCalendar,
-    label: 'Erstzulassung',
-    value: vehicle.year,
-  },
-  {
-    icon: FiSettings,
-    label: 'Getriebe',
-    value: vehicle.transmission,
-  },
-  {
-    icon: FiDroplet,
-    label: 'Kraftstoff',
-    value: vehicle.fuel,
-  },
-  {
-    icon: FiPackage,
-    label: 'Karosserie',
-    value: vehicle.body,
-  },
-  {
-    icon: FiDisc,
-    label: 'Kilometerstand',
-    value: vehicle.km,
-  },
-  {
-    icon: FiGitBranch,
-    label: 'Antrieb',
-    value: vehicle.drive,
-  },
-  {
-    icon: FiZap,
-    label: 'Leistung',
-    value: vehicle.power,
-  },
-  {
-    icon: FiUsers,
-    label: 'Türen / Sitze',
-    value: vehicle.seats,
-  },
-] as const
 
 function SectionHeader({ title }: { title: string }) {
   return (
@@ -452,24 +410,24 @@ export default function Inventory() {
               }}
             />
 
-<IconButton
-  aria-label="Vollbild öffnen"
-  icon={<LuExpand size={18} />}
-  position="absolute"
-  bottom={2}
-  right={2}
-  color="white"
-  bg="blackAlpha.700"
-  border="1px solid"
-  borderColor="whiteAlpha.300"
-  borderRadius="full"
-  size="md"
-  zIndex={2}
-  onClick={openFullscreen}
-  _hover={{
-    bg: 'blackAlpha.900',
-  }}
-/>
+            <IconButton
+              aria-label="Vollbild öffnen"
+              icon={<LuExpand size={18} />}
+              position="absolute"
+              bottom={2}
+              right={2}
+              color="white"
+              bg="blackAlpha.700"
+              border="1px solid"
+              borderColor="whiteAlpha.300"
+              borderRadius="full"
+              size="md"
+              zIndex={2}
+              onClick={openFullscreen}
+              _hover={{
+                bg: 'blackAlpha.900',
+              }}
+            />
           </Box>
 
           {/* Thumbnails */}
@@ -618,8 +576,8 @@ export default function Inventory() {
               md: 7,
             }}
             py={{
-              base: 5,
-              md: 7,
+              base: 3,
+              md: 8,
             }}
             borderRadius="16px"
             border="1px solid rgba(255, 255, 255, 0.10)"
@@ -645,17 +603,6 @@ export default function Inventory() {
               h="100%"
             >
               <Box>
-                <Text
-                  color="#b21a18"
-                  fontSize="12px"
-                  fontWeight="700"
-                  textTransform="uppercase"
-                  letterSpacing="0.03em"
-                  mb={2}
-                >
-                  BMW
-                </Text>
-
                 <Heading
                   className="inventory-title"
                   color="white"
@@ -666,7 +613,8 @@ export default function Inventory() {
                   lineHeight="1.2"
                   fontWeight="700"
                   letterSpacing="-0.025em"
-                  mb={3}
+                  mb={2}
+                  mt={2}
                 >
                   {vehicle.title}
                 </Heading>
@@ -684,21 +632,21 @@ export default function Inventory() {
                 <Box
                   h="1px"
                   bg="rgba(255, 255, 255, 0.09)"
-                  mb={6}
+                  mb={4}
                 />
 
                 <Text
                   className="inventory-price"
                   color="#b21a18"
                   fontSize={{
-                    base: 'xl',
-                    md: '2xl',
+                    base: 'md',
+                    md: 'xl',
                   }}
                   lineHeight="1"
                   fontWeight="700"
                   letterSpacing="-0.035em"
                   whiteSpace="nowrap"
-                  mb={6}
+                  mb={4}
                 >
                   CHF {vehicle.price.toLocaleString('de-CH')}
                 </Text>
@@ -716,8 +664,8 @@ export default function Inventory() {
                   rel="noopener noreferrer"
                   variant="ghost"
                   w="100%"
-                  h="64px"
-                  px={0}
+                  h="66px"
+                  ml={-3}
                   bg="transparent"
                   color="rgba(255, 255, 255, 0.72)"
                   borderRadius={0}
