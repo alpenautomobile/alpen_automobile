@@ -31,7 +31,7 @@ type SocialLinkProps = {
 const RED = '#b21a18'
 
 const LINK_HOVER = {
-  transform: 'scale(1.04)',
+  transform: 'translateX(2px) scale(1.04)',
   textDecoration: 'none',
 }
 
@@ -92,36 +92,35 @@ function DesktopFooter() {
           lg: 10,
           xl: 12,
         }}
-        rowGap={{
-          md: 3,
-          xl: 0,
-        }}
+        py={1.5}
+        // rowGap={{
+        //   md: 3,
+        //   xl: 0,
+        // }}
       >
         {/* Logo and copyright */}
         <Flex
           gridArea="brand"
           align="center"
-          gap={{ md: 4, xl: 5 }}
+          gap={2}
           minW={0}
         >
           <Image
             src="/footer_logo.png"
             alt="Alpen Automobile"
-            w={{ md: '104px', lg: '112px', xl: '120px' }}
-            h="auto"
-            flexShrink={0}
-            objectFit="contain"
+            w='60px'
+            h="30px"
+            mb={1}
           />
 
           <Text
-            color="whiteAlpha.700"
-            fontSize={{ md: '11.5px', xl: '12px' }}
+            color="whiteAlpha.900"
+            fontSize={{ md: '12px', xl: '13px' }}
             lineHeight="1.45"
             whiteSpace="nowrap"
+            mt={0.5}
           >
-            © 2026 Alpen Automobile.
-            <br />
-            Alle Rechte vorbehalten.
+            © 2026 Alpen Automobile
           </Text>
         </Flex>
 
@@ -155,8 +154,8 @@ function DesktopFooter() {
             <Icon
               as={FiPhone}
               color={RED}
-              boxSize={{ md: '14px', xl: '15px' }}
-              flexShrink={0}
+              boxSize="14px"
+              mb={0.5}
             />
 
             <Text fontSize={{ md: '12px', xl: '13px' }}>
@@ -193,7 +192,7 @@ function DesktopFooter() {
             <Icon
               as={FiMail}
               color={RED}
-              boxSize={{ md: '15px', xl: '16px' }}
+              boxSize="15px"
               flexShrink={0}
             />
 
@@ -217,7 +216,7 @@ function DesktopFooter() {
             <Icon
               as={FaWhatsapp}
               color="#25D366"
-              boxSize={{ md: '20px', xl: '21px' }}
+              boxSize='19px'
             />
           </SocialLink>
 
@@ -229,7 +228,7 @@ function DesktopFooter() {
             <Image
               src="/instagram.png"
               alt=""
-              boxSize={{ md: '18px', xl: '19px' }}
+              boxSize='17px'
               objectFit="contain"
             />
           </SocialLink>
@@ -242,7 +241,7 @@ function DesktopFooter() {
             <Icon
               as={FaYoutube}
               color="#ff0000"
-              boxSize={{ md: '21px', xl: '22px' }}
+              boxSize='21px'
             />
           </SocialLink>
         </HStack>

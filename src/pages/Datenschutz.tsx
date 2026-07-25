@@ -8,6 +8,10 @@ import {
   Text,
 } from '@chakra-ui/react'
 
+const UNIFIED_HOVER = {
+  transform: 'translateX(2px) scale(1.04)',
+}
+
 function LegalSectionHeader({ title }: { title: string }) {
   return (
     <Box mb={{ base: 7, md: 8 }} >
@@ -206,7 +210,7 @@ export default function Datenschutz() {
                 <Link
                   href="mailto:info@alpenautomobile.ch"
                   color="white"
-                  _hover={{ color: '#b21a18' }}
+                  _hover={UNIFIED_HOVER}
                 >
                   info@alpenautomobile.ch
                 </Link>
@@ -219,7 +223,7 @@ export default function Datenschutz() {
                   target="_blank"
                   rel="noreferrer"
                   color="white"
-                  _hover={{ color: '#b21a18' }}
+                  _hover={UNIFIED_HOVER}
                 >
                   www.alpenautomobile.ch
                 </Link>

@@ -34,6 +34,10 @@ const features = [
   }
 ]
 
+const UNIFIED_HOVER = {
+  transform: 'translateX(2px) scale(1.04)',
+}
+
 export default function Home() {
   return (
     <Box minH="100vh" bg="white" display="flex" flexDirection="column">
@@ -110,7 +114,7 @@ export default function Home() {
                     borderRadius="4px"
                     border="1px solid rgba(255,255,255,0.15)"
                     boxShadow="0 10px 18px rgba(0,0,0,0.2)"
-                    _hover={{ bg: '#b21a18', boxShadow: '0 12px 22px rgba(0,0,0,0.24)' }}
+                    _hover={UNIFIED_HOVER}
                     _active={{ bg: '#8a1212' }}
                   >
                     Fahrzeugbestand

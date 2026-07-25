@@ -75,6 +75,14 @@ const galleryImages = [
   },
 ]
 
+const UNIFIED_HOVER = {
+  transform: 'translateX(2px) scale(1.04)',
+}
+
+const UNIFIED_HOVER_CENTERED = {
+  transform: 'translateY(-50%) translateX(2px) scale(1.04)',
+}
+
 
 function SectionHeader({ title }: { title: string }) {
   return (
@@ -370,9 +378,7 @@ export default function Inventory() {
               size="md"
               zIndex={2}
               onClick={showPreviousImage}
-              _hover={{
-                bg: 'blackAlpha.900',
-              }}
+              _hover={UNIFIED_HOVER_CENTERED}
               _active={{
                 transform: 'translateY(-50%) scale(0.94)',
               }}
@@ -393,9 +399,7 @@ export default function Inventory() {
               size="md"
               zIndex={2}
               onClick={showNextImage}
-              _hover={{
-                bg: 'blackAlpha.900',
-              }}
+              _hover={UNIFIED_HOVER_CENTERED}
               _active={{
                 transform: 'translateY(-50%) scale(0.94)',
               }}
@@ -415,9 +419,7 @@ export default function Inventory() {
               size="md"
               zIndex={2}
               onClick={openFullscreen}
-              _hover={{
-                bg: 'blackAlpha.900',
-              }}
+              _hover={UNIFIED_HOVER}
             />
           </Box>
 
@@ -474,9 +476,7 @@ export default function Inventory() {
                     opacity 150ms ease,
                     transform 150ms ease
                   "
-                  _hover={{
-                    transform: 'translateY(-2px)',
-                  }}
+                  _hover={UNIFIED_HOVER}
                 >
                   <Image
                     src={image.src}
@@ -511,9 +511,7 @@ export default function Inventory() {
               fontWeight="600"
               fontSize="sm"
               leftIcon={<FiMail size={16} />}
-              _hover={{
-                bg: '#9a1614',
-              }}
+              _hover={UNIFIED_HOVER}
               _active={{
                 bg: '#7e110f',
               }}
@@ -532,9 +530,7 @@ export default function Inventory() {
               fontWeight="600"
               fontSize="sm"
               leftIcon={<FiPhone size={16} />}
-              _hover={{
-                bg: 'whiteAlpha.100',
-              }}
+              _hover={UNIFIED_HOVER}
             >
               Anrufen
             </Button>
@@ -679,7 +675,7 @@ export default function Inventory() {
                   _hover={{
                     bg: 'transparent',
                     color: 'rgba(255, 255, 255, 0.72)',
-                    transform: 'scale(1.03)',
+                    transform: 'translateX(2px) scale(1.04)',
                   }}
                   _active={{
                     bg: 'transparent',
@@ -717,11 +713,7 @@ export default function Inventory() {
                   "
                   transition="all 160ms ease"
                   _hover={{
-                    bg: '#9a1614',
-                    borderColor: '#9a1614',
-                    transform: 'translateY(-1px)',
-                    boxShadow:
-                      '0 13px 28px rgba(178, 26, 24, 0.30)',
+                    transform: 'translateX(2px) scale(1.04)',
                   }}
                   _active={{
                     bg: '#7e110f',
@@ -747,9 +739,7 @@ export default function Inventory() {
                   leftIcon={<FiPhone size={16} />}
                   transition="all 160ms ease"
                   _hover={{
-                    bg: 'rgba(255, 255, 255, 0.05)',
-                    borderColor: 'rgba(255, 255, 255, 0.23)',
-                    color: 'white',
+                    transform: 'translateX(2px) scale(1.04)',
                   }}
                   _active={{
                     bg: 'rgba(255, 255, 255, 0.03)',
@@ -844,9 +834,7 @@ export default function Inventory() {
                 borderRadius="full"
                 onClick={handleZoomOut}
                 isDisabled={zoomLevel <= 1}
-                _hover={{
-                  bg: 'blackAlpha.900',
-                }}
+                _hover={UNIFIED_HOVER}
                 _disabled={{
                   opacity: 0.35,
                   cursor: 'not-allowed',
@@ -862,9 +850,7 @@ export default function Inventory() {
                 borderColor="whiteAlpha.300"
                 borderRadius="full"
                 onClick={handleResetZoom}
-                _hover={{
-                  bg: 'blackAlpha.900',
-                }}
+                _hover={UNIFIED_HOVER}
               />
 
               <IconButton
@@ -877,9 +863,7 @@ export default function Inventory() {
                 borderRadius="full"
                 onClick={handleZoomIn}
                 isDisabled={zoomLevel >= 3}
-                _hover={{
-                  bg: 'blackAlpha.900',
-                }}
+                _hover={UNIFIED_HOVER}
                 _disabled={{
                   opacity: 0.35,
                   cursor: 'not-allowed',
@@ -896,10 +880,7 @@ export default function Inventory() {
               borderColor="whiteAlpha.300"
               borderRadius="full"
               onClick={closeFullscreen}
-              _hover={{
-                bg: '#b21a18',
-                borderColor: '#b21a18',
-              }}
+              _hover={UNIFIED_HOVER}
             />
           </Flex>
 
@@ -927,7 +908,7 @@ export default function Inventory() {
               size="md"
               zIndex={30}
               onClick={showPreviousImage}
-              _hover={{ bg: 'blackAlpha.900' }}
+              _hover={UNIFIED_HOVER_CENTERED}
               _active={{ transform: 'translateY(-50%) scale(0.94)' }}
             />
 
@@ -1008,7 +989,7 @@ export default function Inventory() {
               size="md"
               zIndex={30}
               onClick={showNextImage}
-              _hover={{ bg: 'blackAlpha.900' }}
+              _hover={UNIFIED_HOVER_CENTERED}
               _active={{ transform: 'translateY(-50%) scale(0.94)' }}
             />
           </ModalBody>

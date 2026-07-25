@@ -48,6 +48,16 @@ const theme = extendTheme({
         lineHeight: 1.7,
         bg: 'transparent',
         color: 'gray.900'
+      },
+      '@media (min-width: 1024px) and (hover: hover) and (pointer: fine)': {
+        'a, button, [role="button"]': {
+          transitionProperty: 'transform',
+          transitionDuration: '0.2s',
+          transitionTimingFunction: 'ease',
+        },
+        'a:hover, button:hover, [role="button"]:hover': {
+          transform: 'translateX(2px) scale(1.04)',
+        }
       }
     }
   }

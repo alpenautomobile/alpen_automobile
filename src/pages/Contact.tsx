@@ -16,6 +16,10 @@ import { FaWhatsapp, FaYoutube } from 'react-icons/fa'
 
 const RED = '#b21a18'
 
+const UNIFIED_HOVER = {
+  transform: 'translateX(2px) scale(1.04)',
+}
+
 function SectionHeader({ title }: { title: string }) {
   return (
     <Box mb={{ base: 7, md: 8 }}>
@@ -64,10 +68,7 @@ function SocialLink({
       alignItems="center"
       justifyContent="center"
       transition="transform 160ms ease, opacity 160ms ease"
-      _hover={{
-        transform: 'translateY(-1px) scale(1.08)',
-        opacity: 0.9,
-      }}
+      _hover={UNIFIED_HOVER}
     >
       {children}
     </Box>
@@ -154,10 +155,7 @@ export default function Contact() {
                 bg="rgba(255,255,255,0.035)"
                 borderRadius="xl"
                 border="1px solid rgba(255,255,255,0.15)"
-                _hover={{
-                  bg: 'rgba(255,255,255,0.07)',
-                  textDecoration: 'none',
-                }}
+                _hover={UNIFIED_HOVER}
                 transition="background 0.2s ease"
               >
                 <Box color="#25D366">
@@ -179,10 +177,7 @@ export default function Contact() {
                 bg="rgba(255,255,255,0.035)"
                 borderRadius="xl"
                 border="1px solid rgba(255,255,255,0.15)"
-                _hover={{
-                  bg: 'rgba(255,255,255,0.07)',
-                  textDecoration: 'none',
-                }}
+                _hover={UNIFIED_HOVER}
                 transition="background 0.2s ease"
               >
                 <Box color="whiteAlpha.700">
@@ -204,10 +199,7 @@ export default function Contact() {
                 bg="rgba(255,255,255,0.035)"
                 borderRadius="xl"
                 border="1px solid rgba(255,255,255,0.15)"
-                _hover={{
-                  bg: 'rgba(255,255,255,0.07)',
-                  textDecoration: 'none',
-                }}
+                _hover={UNIFIED_HOVER}
                 transition="background 0.2s ease"
               >
                 <Box color="whiteAlpha.700">

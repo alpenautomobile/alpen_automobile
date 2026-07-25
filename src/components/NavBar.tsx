@@ -32,6 +32,10 @@ const navItems = [
   { label: 'Über mich', to: '/about' },
 ]
 
+const UNIFIED_HOVER = {
+  transform: 'translateX(2px) scale(1.04)',
+}
+
 export default function NavBar() {
   const location = useLocation()
   const navigate = useNavigate()
@@ -49,7 +53,7 @@ export default function NavBar() {
       position="sticky"
       top={0}
       zIndex={40}
-      h={{ base: '52px', md: '80px' }}
+      h={{ base: '52px', md: '70px' }}
       bg="#000000"
       _after={{
         content: '""',
@@ -82,7 +86,7 @@ export default function NavBar() {
             display="inline-flex"
             alignItems="center"
             mt={{ base: 1, md: 0 }}
-            _hover={{ opacity: 0.9 }}
+            _hover={UNIFIED_HOVER}
             _focus={{ boxShadow: 'none' }}
           >
             <Image
@@ -157,9 +161,7 @@ export default function NavBar() {
               onClick={onOpen}
               px={3}
               py={2}
-              _hover={{
-                bg: 'rgba(255,255,255,0.1)',
-              }}
+              _hover={UNIFIED_HOVER}
               _active={{
                 bg: 'rgba(255,255,255,0.18)',
               }}
@@ -195,11 +197,7 @@ export default function NavBar() {
                 borderRadius="full"
                 fontSize="8px"
                 zIndex={10}
-                _hover={{
-                  bg: 'white',
-                  color: '#000000',
-                  borderColor: 'white',
-                }}
+                _hover={UNIFIED_HOVER}
                 _focus={{ boxShadow: 'none' }}
               />
 
@@ -278,10 +276,7 @@ export default function NavBar() {
                             ? '#b21a18'
                             : 'transparent'
                         }
-                        _hover={{
-                          transform:
-                            'translateX(3px) scale(1.01)',
-                        }}
+                        _hover={UNIFIED_HOVER}
                         _focus={{ boxShadow: 'none' }}
                       >
                         {item.label}

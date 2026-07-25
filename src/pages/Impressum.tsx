@@ -10,6 +10,10 @@ import {
 } from '@chakra-ui/react'
 import { FiMail, FiPhone } from 'react-icons/fi'
 
+const UNIFIED_HOVER = {
+  transform: 'translateX(2px) scale(1.04)',
+}
+
 function LegalSectionHeader({ title }: { title: string }) {
   return (
     <Box mb={{ base: 7, md: 8 }}>
@@ -166,7 +170,7 @@ export default function Impressum() {
                 <Link
                   href="tel:+41768193273"
                   color="white"
-                  _hover={{ color: '#b21a18' }}
+                  _hover={UNIFIED_HOVER}
                 >
                   +41 (0) 76 819 32 73
                 </Link>
@@ -180,7 +184,7 @@ export default function Impressum() {
                 <Link
                   href="mailto:info@alpenautomobile.ch"
                   color="white"
-                  _hover={{ color: '#b21a18' }}
+                  _hover={UNIFIED_HOVER}
                 >
                   info@alpenautomobile.ch
                 </Link>
@@ -191,7 +195,7 @@ export default function Impressum() {
                 target="_blank"
                 rel="noreferrer"
                 color="white"
-                _hover={{ color: '#b21a18' }}
+                _hover={UNIFIED_HOVER}
               >
                 www.alpenautomobile.ch
               </Link>
@@ -222,7 +226,7 @@ export default function Impressum() {
               <Link
                 href="mailto:info@alpenautomobile.ch"
                 color="rgba(255,255,255,0.68)"
-                _hover={{ color: '#b21a18' }}
+                _hover={UNIFIED_HOVER}
               >
                 info@alpenautomobile.ch
               </Link>
