@@ -40,7 +40,7 @@ export default function Home() {
       <Box
         className="page"
         position="relative"
-        bgImage={{ base: "url('/mobile_version_5.png')", md: "url('/desktop_version_1.png')" }}
+        bgImage={{ base: "url('/mobile_version_1.png')", md: "url('/desktop_version_1.png')" }}
         bgSize="cover"
         bgPosition="center"
         bgRepeat="no-repeat"

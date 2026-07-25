@@ -2,23 +2,30 @@ import React from 'react'
 import {
   Box,
   Container,
-  Divider,
   Flex,
   HStack,
+  Icon,
   Image,
   Link,
   Text,
 } from '@chakra-ui/react'
 import { Link as RouterLink } from 'react-router-dom'
 import { FaWhatsapp, FaYoutube } from 'react-icons/fa'
-import {
-  FiChevronRight,
-  FiMail,
-  FiPhone,
-} from 'react-icons/fi'
+import { FiMail, FiPhone } from 'react-icons/fi'
 
 type FooterProps = {
   stickyOnMobile?: boolean
+}
+
+type SocialLinkProps = {
+  href: string
+  label: string
+  children: React.ReactNode
+  size: {
+    base?: string
+    md?: string
+    xl?: string
+  }
 }
 
 const RED = '#b21a18'
@@ -27,11 +34,8 @@ function SocialLink({
   href,
   label,
   children,
-}: {
-  href: string
-  label: string
-  children: React.ReactNode
-}) {
+  size,
+}: SocialLinkProps) {
   return (
     <Box
       as="a"
@@ -42,10 +46,19 @@ function SocialLink({
       display="inline-flex"
       alignItems="center"
       justifyContent="center"
-      transition="transform 160ms ease, opacity 160ms ease"
+      boxSize={size}
+      borderRadius="full"
+      flexShrink={0}
+      transition="transform 160ms ease, background-color 160ms ease, opacity 160ms ease"
       _hover={{
-        transform: 'translateY(-1px) scale(1.08)',
-        opacity: 0.9,
+        transform: 'translateY(-1px)',
+        bg: 'whiteAlpha.100',
+        opacity: 0.92,
+      }}
+      _focusVisible={{
+        outline: '2px solid',
+        outlineColor: 'whiteAlpha.700',
+        outlineOffset: '2px',
       }}
     >
       {children}
@@ -57,40 +70,54 @@ function DesktopFooter() {
   return (
     <Box
       display={{ base: 'none', md: 'block' }}
-      py={{ md: 4, lg: 2 }}
+      py={0.5}
     >
       <Box
         display="grid"
-        gridTemplateColumns={{
-          md: '1.1fr 1.7fr 1fr 1.15fr',
-          lg: '1.15fr 1.75fr 1fr 1.2fr',
-        }}
-        alignItems="center"
         width="100%"
+        alignItems="center"
+        gridTemplateAreas={{
+          md: `
+            "brand contact"
+            "social legal"
+          `,
+          xl: '"brand contact social legal"',
+        }}
+        gridTemplateColumns={{
+          md: 'minmax(240px, 1fr) minmax(400px, 1.45fr)',
+          xl: 'minmax(260px, 1.15fr) minmax(430px, 1.65fr) auto auto',
+        }}
         columnGap={{
-          md: 6,
+          md: 8,
           lg: 10,
+          xl: 12,
+        }}
+        rowGap={{
+          md: 3,
+          xl: 0,
         }}
       >
         {/* Logo and copyright */}
         <Flex
+          gridArea="brand"
           align="center"
-          gap={{ md: 3, lg: 4 }}
+          gap={{ md: 4, xl: 5 }}
           minW={0}
         >
           <Image
             src="/footer_logo.png"
             alt="Alpen Automobile"
-            w={{ md: '76px', lg: '92px' }}
+            w={{ md: '104px', lg: '112px', xl: '120px' }}
+            h="auto"
             flexShrink={0}
             objectFit="contain"
           />
 
           <Text
-            color="whiteAlpha.800"
-            fontSize={{ md: '11px', lg: '13px' }}
+            color="whiteAlpha.700"
+            fontSize={{ md: '11.5px', xl: '12px' }}
             lineHeight="1.45"
-            minW={0}
+            whiteSpace="nowrap"
           >
             © 2026 Alpen Automobile.
             <br />
@@ -99,191 +126,235 @@ function DesktopFooter() {
         </Flex>
 
         {/* Contact */}
-        <Box minW={0}>
+        <Flex
+          gridArea="contact"
+          align="center"
+          justify={{ md: 'flex-end', xl: 'flex-start' }}
+          gap={{ md: 4, lg: 5, xl: 6 }}
+          minW={0}
+        >
           <Flex
+            as="a"
+            href="tel:+41768193273"
             align="center"
-            gap={{
-              md: 4,
-              lg: 7,
+            gap={2}
+            minH="36px"
+            color="whiteAlpha.800"
+            whiteSpace="nowrap"
+            textDecoration="none"
+            transition="color 160ms ease"
+            _hover={{
+              color: 'white',
+              textDecoration: 'none',
             }}
-            minW={0}
+            _focusVisible={{
+              outline: '2px solid',
+              outlineColor: 'whiteAlpha.700',
+              outlineOffset: '3px',
+            }}
           >
-            <Flex
-              as="a"
-              href="tel:+41768193273"
-              align="center"
-              gap={2}
-              color="whiteAlpha.850"
-              whiteSpace="nowrap"
-              _hover={{
-                color: 'white',
-                textDecoration: 'none',
-              }}
-            >
-              <Box color={RED} flexShrink={0}>
-                <FiPhone size={15} />
-              </Box>
-
-              <Text fontSize={{ md: '11px', lg: '13px' }}>
-                +41 76 819 32 73
-              </Text>
-            </Flex>
-
-            <Box
-              w="1px"
-              h="18px"
-              bg="whiteAlpha.300"
+            <Icon
+              as={FiPhone}
+              color={RED}
+              boxSize={{ md: '14px', xl: '15px' }}
               flexShrink={0}
             />
 
-            <Flex
-              as="a"
-              href="mailto:info@alpenautomobile.ch"
-              align="center"
-              gap={2}
-              color="whiteAlpha.850"
-              minW={0}
-              _hover={{
-                color: 'white',
-                textDecoration: 'none',
-              }}
-            >
-              <Box color={RED} flexShrink={0}>
-                <FiMail size={15} />
-              </Box>
-
-              <Text
-                fontSize={{ md: '11px', lg: '13px' }}
-                whiteSpace="nowrap"
-              >
-                info@alpenautomobile.ch
-              </Text>
-            </Flex>
+            <Text fontSize={{ md: '12px', xl: '13px' }}>
+              +41 76 819 32 73
+            </Text>
           </Flex>
-        </Box>
+
+          <Box
+            w="1px"
+            h="16px"
+            bg="whiteAlpha.300"
+            flexShrink={0}
+          />
+
+          <Flex
+            as="a"
+            href="mailto:info@alpenautomobile.ch"
+            align="center"
+            gap={2}
+            minH="36px"
+            color="whiteAlpha.800"
+            whiteSpace="nowrap"
+            textDecoration="none"
+            transition="color 160ms ease"
+            _hover={{
+              color: 'white',
+              textDecoration: 'none',
+            }}
+            _focusVisible={{
+              outline: '2px solid',
+              outlineColor: 'whiteAlpha.700',
+              outlineOffset: '3px',
+            }}
+          >
+            <Icon
+              as={FiMail}
+              color={RED}
+              boxSize={{ md: '15px', xl: '16px' }}
+              flexShrink={0}
+            />
+
+            <Text fontSize={{ md: '12px', xl: '13px' }}>
+              info@alpenautomobile.ch
+            </Text>
+          </Flex>
+        </Flex>
 
         {/* Social links */}
-        <Box minW={0}>
-          <HStack spacing={{ md: 5, lg: 7 }}>
-            <SocialLink
-              href="https://wa.me/41768193273"
-              label="WhatsApp"
-            >
-              <Box color="#25D366">
-                <FaWhatsapp size={21} />
-              </Box>
-            </SocialLink>
+        <HStack
+          gridArea="social"
+          justifySelf={{ md: 'start', xl: 'center' }}
+          spacing={{ md: 2, xl: 3 }}
+        >
+          <SocialLink
+            href="https://wa.me/41768193273"
+            label="WhatsApp"
+            size={{ md: '34px', xl: '36px' }}
+          >
+            <Icon
+              as={FaWhatsapp}
+              color="#25D366"
+              boxSize={{ md: '20px', xl: '21px' }}
+            />
+          </SocialLink>
 
-            <SocialLink
-              href="https://www.instagram.com/alpen_automobile"
-              label="Instagram"
-            >
-              <Image
-                src="/instagram.png"
-                alt="Instagram"
-                boxSize="19px"
-                objectFit="contain"
-              />
-            </SocialLink>
+          <SocialLink
+            href="https://www.instagram.com/alpen_automobile"
+            label="Instagram"
+            size={{ md: '34px', xl: '36px' }}
+          >
+            <Image
+              src="/instagram.png"
+              alt=""
+              boxSize={{ md: '18px', xl: '19px' }}
+              objectFit="contain"
+            />
+          </SocialLink>
 
-            <SocialLink
-              href="https://www.youtube.com/@alpenautomobile"
-              label="YouTube"
-            >
-              <Box color="#ff0000">
-                <FaYoutube size={21} />
-              </Box>
-            </SocialLink>
-          </HStack>
-        </Box>
+          <SocialLink
+            href="https://www.youtube.com/@alpenautomobile"
+            label="YouTube"
+            size={{ md: '34px', xl: '36px' }}
+          >
+            <Icon
+              as={FaYoutube}
+              color="#ff0000"
+              boxSize={{ md: '21px', xl: '22px' }}
+            />
+          </SocialLink>
+        </HStack>
 
         {/* Legal */}
-        <Box minW={0}>
-          <Flex
-            align="center"
-            gap={{
-              md: 3,
-              lg: 5,
+        <Flex
+          gridArea="legal"
+          align="center"
+          justifySelf="end"
+          gap={{ md: 4, xl: 5 }}
+          whiteSpace="nowrap"
+        >
+          <Link
+            as={RouterLink}
+            to="/impressum"
+            display="inline-flex"
+            alignItems="center"
+            minH="36px"
+            color="whiteAlpha.700"
+            fontSize={{ md: '12px', xl: '13px' }}
+            textDecoration="none"
+            transition="color 160ms ease"
+            _hover={{
+              color: 'white',
+              textDecoration: 'none',
             }}
-            whiteSpace="nowrap"
+            _focusVisible={{
+              outline: '2px solid',
+              outlineColor: 'whiteAlpha.700',
+              outlineOffset: '3px',
+            }}
           >
-            <Link
-              as={RouterLink}
-              to="/impressum"
-              color="whiteAlpha.750"
-              fontSize={{ md: '11px', lg: '13px' }}
-              textDecoration="none"
-              transition="color 160ms ease"
-              _hover={{
-                color: 'white',
-                textDecoration: 'none',
-              }}
-            >
-              Impressum
-            </Link>
+            Impressum
+          </Link>
 
+          <Box
+            w="1px"
+            h="16px"
+            bg="whiteAlpha.300"
+            flexShrink={0}
+          />
 
-            <Box
-              w="4px"
-              h="4px"
-              bg={RED}
-              borderRadius="full"
-              flexShrink={0}
-            />
-            
-            <Link
-              as={RouterLink}
-              to="/datenschutz"
-              color="whiteAlpha.750"
-              fontSize={{ md: '11px', lg: '13px' }}
-              textDecoration="none"
-              transition="color 160ms ease"
-              _hover={{
-                color: 'white',
-                textDecoration: 'none',
-              }}
-            >
-              Datenschutz
-            </Link>
-
-          </Flex>
-        </Box>
+          <Link
+            as={RouterLink}
+            to="/datenschutz"
+            display="inline-flex"
+            alignItems="center"
+            minH="36px"
+            color="whiteAlpha.700"
+            fontSize={{ md: '12px', xl: '13px' }}
+            textDecoration="none"
+            transition="color 160ms ease"
+            _hover={{
+              color: 'white',
+              textDecoration: 'none',
+            }}
+            _focusVisible={{
+              outline: '2px solid',
+              outlineColor: 'whiteAlpha.700',
+              outlineOffset: '3px',
+            }}
+          >
+            Datenschutz
+          </Link>
+        </Flex>
       </Box>
     </Box>
   )
 }
 
-
 function MobileFooter() {
   return (
     <Box
       display={{ base: 'block', md: 'none' }}
-      py={2.5}
+      py={2}
     >
-      {/* First row: contact and social media */}
+      {/* Contact row */}
       <Flex
         align="center"
         justify="center"
         flexWrap="wrap"
-        columnGap={4}
-        rowGap={2}
+        columnGap={6}
+        rowGap={1}
       >
         <Flex
           as="a"
           href="tel:+41768193273"
           align="center"
           gap={1.5}
-          color="whiteAlpha.850"
+          minH="30px"
+          color="whiteAlpha.900"
           whiteSpace="nowrap"
           textDecoration="none"
           _hover={{
             color: 'white',
             textDecoration: 'none',
           }}
+          _focusVisible={{
+            outline: '2px solid',
+            outlineColor: 'whiteAlpha.700',
+            outlineOffset: '2px',
+          }}
         >
-          <Box color={RED}>
-            <FiPhone size={11} />
-          </Box>
+          <Icon
+            as={FiPhone}
+            color={RED}
+            boxSize="13px"
+            flexShrink={0}
+            mb={1}
+          />
 
           <Text fontSize="11px">
             +41 76 819 32 73
@@ -295,52 +366,63 @@ function MobileFooter() {
           href="mailto:info@alpenautomobile.ch"
           align="center"
           gap={1.5}
-          color="whiteAlpha.850"
+          minH="30px"
+          color="whiteAlpha.900"
           whiteSpace="nowrap"
           textDecoration="none"
           _hover={{
             color: 'white',
             textDecoration: 'none',
           }}
+          _focusVisible={{
+            outline: '2px solid',
+            outlineColor: 'whiteAlpha.700',
+            outlineOffset: '2px',
+          }}
         >
-          <Box color={RED}>
-            <FiMail size={11} />
-          </Box>
+          <Icon
+            as={FiMail}
+            color={RED}
+            boxSize="13px"
+            mb={1}
+          />
 
-          <Text fontSize="11px">
+          <Text fontSize="11.5px">
             info@alpenautomobile.ch
           </Text>
         </Flex>
       </Flex>
 
-      {/* Second row: legal links */}
-      <HStack
+      {/* Social and legal row */}
+      <Flex
+        align="center"
         justify="center"
-        spacing={3}
-        mt={2}
+        flexWrap="wrap"
+        columnGap={3}
+        rowGap={1}
       >
-         <HStack
-          justify="center"
-          spacing={4}
-          mr={2}
-        >
+        <HStack spacing={1}>
           <SocialLink
             href="https://wa.me/41768193273"
             label="WhatsApp"
+            size={{ base: '30px' }}
           >
-            <Box color="#25D366">
-              <FaWhatsapp size={14} />
-            </Box>
+            <Icon
+              as={FaWhatsapp}
+              color="#25D366"
+              boxSize="17px"
+            />
           </SocialLink>
 
           <SocialLink
             href="https://www.instagram.com/alpen_automobile"
             label="Instagram"
+            size={{ base: '30px' }}
           >
             <Image
               src="/instagram.png"
-              alt="Instagram"
-              boxSize="12px"
+              alt=""
+              boxSize="14px"
               objectFit="contain"
             />
           </SocialLink>
@@ -348,49 +430,80 @@ function MobileFooter() {
           <SocialLink
             href="https://www.youtube.com/@alpenautomobile"
             label="YouTube"
+            size={{ base: '30px' }}
           >
-            <Box color="#ff0000">
-              <FaYoutube size={15} />
-            </Box>
+            <Icon
+              as={FaYoutube}
+              color="#ff0000"
+              boxSize="19px"
+            />
           </SocialLink>
         </HStack>
-        <Link
-          as={RouterLink}
-          to="/impressum"
-          color="whiteAlpha.650"
-          fontSize="11px"
-          whiteSpace="nowrap"
-          textUnderlineOffset="3px"
-          _hover={{
-            color: 'white',
-            textDecoration: 'underline',
-          }}
-        >
-          Impressum
-        </Link>
 
-        <Text
-          color="whiteAlpha.350"
-          fontSize="8px"
-        >
-          |
-        </Text>
+        <Box
+          w="1px"
+          h="12px"
+          bg="whiteAlpha.300"
+          flexShrink={0}
+        />
 
-        <Link
-          as={RouterLink}
-          to="/datenschutz"
-          color="whiteAlpha.650"
-          fontSize="11px"
-          whiteSpace="nowrap"
-          textUnderlineOffset="3px"
-          _hover={{
-            color: 'white',
-            textDecoration: 'underline',
-          }}
-        >
-          Datenschutz
-        </Link>
-      </HStack>
+        <HStack spacing={3}>
+          <Link
+            as={RouterLink}
+            to="/impressum"
+            display="inline-flex"
+            alignItems="center"
+            minH="34px"
+            color="whiteAlpha.900"
+            fontSize="11.5px"
+            whiteSpace="nowrap"
+            textDecoration="none"
+            _hover={{
+              color: 'white',
+              textDecoration: 'underline',
+              textUnderlineOffset: '3px',
+            }}
+            _focusVisible={{
+              outline: '2px solid',
+              outlineColor: 'whiteAlpha.700',
+              outlineOffset: '2px',
+            }}
+          >
+            Impressum
+          </Link>
+
+           <Box
+            w="1px"
+            h="12px"
+            bg="whiteAlpha.300"
+            flexShrink={0}
+          />
+
+          <Link
+            as={RouterLink}
+            to="/datenschutz"
+            display="inline-flex"
+            alignItems="center"
+            minH="34px"
+            color="whiteAlpha.900"
+            fontSize="11.5px"
+            whiteSpace="nowrap"
+            textDecoration="none"
+            _hover={{
+              color: 'white',
+              textDecoration: 'underline',
+              textUnderlineOffset: '3px',
+            }}
+            _focusVisible={{
+              outline: '2px solid',
+              outlineColor: 'whiteAlpha.700',
+              outlineOffset: '2px',
+            }}
+          >
+            Datenschutz
+          </Link>
+        </HStack>
+      </Flex>
     </Box>
   )
 }
@@ -410,6 +523,12 @@ export default function Footer({
       }}
       bottom={stickyOnMobile ? 0 : undefined}
       mt="auto"
+      pb={{
+        base: stickyOnMobile
+          ? 'env(safe-area-inset-bottom)'
+          : 0,
+        md: 0,
+      }}
       bg="
         radial-gradient(
           circle at 50% 0%,
@@ -425,14 +544,16 @@ export default function Footer({
         )
       "
       borderTop="1px solid rgba(255,255,255,0.09)"
-      boxShadow="0 -10px 28px rgba(0,0,0,0.35)"
+      boxShadow="0 -8px 24px rgba(0,0,0,0.3)"
     >
       <Container
-        maxW="100%"
+        maxW="1600px"
         px={{
           base: 4,
-          md: '3%',
-          lg: '4%',
+          sm: 5,
+          md: 8,
+          lg: 10,
+          xl: 12,
         }}
       >
         <MobileFooter />
