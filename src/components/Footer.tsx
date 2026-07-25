@@ -384,7 +384,7 @@ function MobileFooter() {
             as={FiMail}
             color={RED}
             boxSize="13px"
-            mb={1}
+            mb={0.5}
           />
 
           <Text fontSize="11.5px">
