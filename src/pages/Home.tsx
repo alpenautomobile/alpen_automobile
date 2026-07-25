@@ -58,15 +58,31 @@ export default function Home() {
         >
           <Container
             maxW="100%"
-            px={{ base: 4, md: '6%' }}
+            px={{
+              base: 4,
+              md: 4,
+              lg: '6%',
+            }}
             className="content"
             position="relative"
             zIndex={1}
           >
             <Flex
+              w="100%"
               direction={{ base: 'column', md: 'row' }}
               align="center"
               justify="flex-start"
+              sx={{
+                /*
+                 * iPad portrait range:
+                 * your custom md breakpoint appears to start above the
+                 * iPad width, so the Flex is still a centered column here.
+                 * Force its children to start at the left edge.
+                 */
+                '@media (min-width: 768px) and (max-width: 1023.98px)': {
+                  alignItems: 'flex-start',
+                },
+              }}
             >
               <VStack
                 align="start"
@@ -76,6 +92,18 @@ export default function Home() {
                 position="relative"
                 isolation="isolate"
                 sx={{
+                            /*
+                   * Stretch the text group across the available iPad width.
+                   * This prevents VStack from being horizontally centered
+                   * according to its content width.
+                   */
+                  '@media (min-width: 768px) and (max-width: 1023.98px)': {
+                    width: '100%',
+                    maxWidth: '100%',
+                    marginInlineStart: '0',
+                    marginInlineEnd: '0',
+                    alignSelf: 'flex-start',
+                  },
                   /*
                    * iPad Air 2 only:
                    * use exactly the same overlay size and fade as phones.
