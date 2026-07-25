@@ -76,6 +76,24 @@ export default function Home() {
                 mt={{ base: '-3', md: '4vh', lg: '6vh', xl: '11vh' }}
                 position="relative"
                 isolation="isolate"
+                sx={{
+                  /*
+                   * iPad Air 2 only:
+                   * extend only the right side of the existing overlay so the
+                   * gradient can finish smoothly outside the visible text area.
+                   * All normal Chakra breakpoint values remain unchanged.
+                   */
+                  '@media only screen and (min-device-width: 768px) and (max-device-width: 768px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)': {
+                    '&::before': {
+                      right: '-165px',
+                    },
+                  },
+                  '@media only screen and (min-device-width: 768px) and (max-device-width: 768px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape)': {
+                    '&::before': {
+                      right: '-210px',
+                    },
+                  },
+                }}
                 _before={{
                   content: '""',
                   position: 'absolute',
