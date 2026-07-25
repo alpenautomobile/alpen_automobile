@@ -49,7 +49,7 @@ body {
   padding-bottom: 0;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .app-shell {
     min-height: 100vh;
     height: 100vh;
@@ -62,7 +62,7 @@ body {
   }
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 1023.98px) {
   html, body, #root {
     overflow-y: auto;
   }
@@ -204,7 +204,7 @@ a { text-decoration: none; }
   }
 }
 
-@media (min-width: 768px) and (max-width: 1279.98px) {
+@media (min-width: 1024px) and (max-width: 1279.98px) {
   body {
     background: #000000;
   }

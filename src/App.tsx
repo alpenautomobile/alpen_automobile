@@ -38,7 +38,7 @@ export default function App() {
   }, [])
 
   useEffect(() => {
-    const isMobile = window.matchMedia('(max-width: 768px)').matches
+    const isMobile = window.matchMedia('(max-width: 1023px)').matches
 
     if (isMobile) {
       setIsLoading(true)
