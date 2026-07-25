@@ -30,9 +30,6 @@ type SocialLinkProps = {
 
 const RED = '#b21a18'
 
-const LINK_TRANSITION =
-  'transform 160ms ease, background-color 160ms ease, opacity 160ms ease, color 160ms ease'
-
 const LINK_HOVER = {
   transform: 'scale(1.04)',
   textDecoration: 'none',
@@ -74,7 +71,6 @@ function DesktopFooter() {
   return (
     <Box
       display={{ base: 'none', md: 'block' }}
-      py={0.5}
     >
       <Box
         display="grid"
@@ -510,7 +506,7 @@ export default function Footer({
   stickyOnMobile = false,
 }: FooterProps) {
   return (
-    <Box
+ <Box
       as="footer"
       width="100%"
       color="white"
@@ -545,14 +541,8 @@ export default function Footer({
       boxShadow="0 -8px 24px rgba(0,0,0,0.3)"
     >
       <Container
-        maxW="1600px"
-        px={{
-          base: 4,
-          sm: 5,
-          md: 8,
-          lg: 10,
-          xl: 12,
-        }}
+        maxW="100%"
+        px={{ base: 4, md: '6%' }}
       >
         <MobileFooter />
         <DesktopFooter />
