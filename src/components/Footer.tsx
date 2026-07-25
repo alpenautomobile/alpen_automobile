@@ -30,6 +30,14 @@ type SocialLinkProps = {
 
 const RED = '#b21a18'
 
+const LINK_TRANSITION =
+  'transform 160ms ease, background-color 160ms ease, opacity 160ms ease, color 160ms ease'
+
+const LINK_HOVER = {
+  transform: 'scale(1.04)',
+  textDecoration: 'none',
+}
+
 function SocialLink({
   href,
   label,
@@ -49,12 +57,8 @@ function SocialLink({
       boxSize={size}
       borderRadius="full"
       flexShrink={0}
-      transition="transform 160ms ease, background-color 160ms ease, opacity 160ms ease"
-      _hover={{
-        transform: 'translateY(-1px)',
-        bg: 'whiteAlpha.100',
-        opacity: 0.92,
-      }}
+      
+      _hover={LINK_HOVER}
       _focusVisible={{
         outline: '2px solid',
         outlineColor: 'whiteAlpha.700',
@@ -142,11 +146,10 @@ function DesktopFooter() {
             color="whiteAlpha.800"
             whiteSpace="nowrap"
             textDecoration="none"
-            transition="color 160ms ease"
-            _hover={{
-              color: 'white',
-              textDecoration: 'none',
-            }}
+            px={2}
+            borderRadius="md"
+            
+            _hover={LINK_HOVER}
             _focusVisible={{
               outline: '2px solid',
               outlineColor: 'whiteAlpha.700',
@@ -181,11 +184,10 @@ function DesktopFooter() {
             color="whiteAlpha.800"
             whiteSpace="nowrap"
             textDecoration="none"
-            transition="color 160ms ease"
-            _hover={{
-              color: 'white',
-              textDecoration: 'none',
-            }}
+            px={2}
+            borderRadius="md"
+            
+            _hover={LINK_HOVER}
             _focusVisible={{
               outline: '2px solid',
               outlineColor: 'whiteAlpha.700',
@@ -263,17 +265,16 @@ function DesktopFooter() {
             display="inline-flex"
             alignItems="center"
             minH="36px"
-            color="whiteAlpha.700"
+            color="whiteAlpha.900"
             fontSize={{ md: '12px', xl: '13px' }}
             textDecoration="none"
-            transition="color 160ms ease"
-            _hover={{
-              color: 'white',
-              textDecoration: 'none',
-            }}
+            px={2}
+            borderRadius="md"
+            
+            _hover={LINK_HOVER}
             _focusVisible={{
               outline: '2px solid',
-              outlineColor: 'whiteAlpha.700',
+              outlineColor: 'whiteAlpha.100',
               outlineOffset: '3px',
             }}
           >
@@ -293,17 +294,16 @@ function DesktopFooter() {
             display="inline-flex"
             alignItems="center"
             minH="36px"
-            color="whiteAlpha.700"
+            color="whiteAlpha.900"
             fontSize={{ md: '12px', xl: '13px' }}
             textDecoration="none"
-            transition="color 160ms ease"
-            _hover={{
-              color: 'white',
-              textDecoration: 'none',
-            }}
+            px={2}
+            borderRadius="md"
+            
+            _hover={LINK_HOVER}
             _focusVisible={{
               outline: '2px solid',
-              outlineColor: 'whiteAlpha.700',
+              outlineColor: 'whiteAlpha.500',
               outlineOffset: '3px',
             }}
           >
@@ -326,7 +326,7 @@ function MobileFooter() {
         align="center"
         justify="center"
         flexWrap="wrap"
-        columnGap={6}
+        columnGap={5}
         rowGap={1}
       >
         <Flex
@@ -338,10 +338,10 @@ function MobileFooter() {
           color="whiteAlpha.900"
           whiteSpace="nowrap"
           textDecoration="none"
-          _hover={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
+          px={2}
+          borderRadius="md"
+          
+          _hover={LINK_HOVER}
           _focusVisible={{
             outline: '2px solid',
             outlineColor: 'whiteAlpha.700',
@@ -370,10 +370,10 @@ function MobileFooter() {
           color="whiteAlpha.900"
           whiteSpace="nowrap"
           textDecoration="none"
-          _hover={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
+          px={2}
+          borderRadius="md"
+          
+          _hover={LINK_HOVER}
           _focusVisible={{
             outline: '2px solid',
             outlineColor: 'whiteAlpha.700',
@@ -398,7 +398,7 @@ function MobileFooter() {
         align="center"
         justify="center"
         flexWrap="wrap"
-        columnGap={3}
+        columnGap={2}
         rowGap={1}
       >
         <HStack spacing={1}>
@@ -458,11 +458,10 @@ function MobileFooter() {
             fontSize="11.5px"
             whiteSpace="nowrap"
             textDecoration="none"
-            _hover={{
-              color: 'white',
-              textDecoration: 'underline',
-              textUnderlineOffset: '3px',
-            }}
+            px={2}
+            borderRadius="md"
+            
+            _hover={LINK_HOVER}
             _focusVisible={{
               outline: '2px solid',
               outlineColor: 'whiteAlpha.700',
@@ -489,11 +488,10 @@ function MobileFooter() {
             fontSize="11.5px"
             whiteSpace="nowrap"
             textDecoration="none"
-            _hover={{
-              color: 'white',
-              textDecoration: 'underline',
-              textUnderlineOffset: '3px',
-            }}
+            px={2}
+            borderRadius="md"
+            
+            _hover={LINK_HOVER}
             _focusVisible={{
               outline: '2px solid',
               outlineColor: 'whiteAlpha.700',
