@@ -9,6 +9,7 @@ import {
   Flex,
   HStack,
   Image,
+  Icon,
 } from '@chakra-ui/react'
 import { FiPhone, FiMail } from 'react-icons/fi'
 import { FaWhatsapp, FaYoutube } from 'react-icons/fa'
@@ -163,7 +164,7 @@ export default function Contact() {
                   <FaWhatsapp size={18} />
                 </Box>
 
-                <Text color="white" fontSize="sm">
+                <Text color="white" fontSize={{ base: 'sm', md: 'md'}}>
                   WhatsApp schreiben
                 </Text>
               </Box>
@@ -188,7 +189,7 @@ export default function Contact() {
                   <FiPhone size={18} />
                 </Box>
 
-                <Text color="white" fontSize="sm">
+                <Text color="white" fontSize={{ base: 'sm', md: 'md'}}>
                   +41 76 819 32 73
                 </Text>
               </Box>
@@ -213,14 +214,14 @@ export default function Contact() {
                   <FiMail size={18} />
                 </Box>
 
-                <Text color="white" fontSize="sm">
+                <Text color="white" fontSize={{ base: 'sm', md: 'md'}} >
                   info@alpenautomobile.ch
                 </Text>
               </Box>
             </VStack>
 
             {/* Social media */}
-            <Box mt={9}>
+            <Box mt={12}>
               <Heading
                 fontSize={{ base: 'md', md: 'lg' }}
                 color="white"
@@ -237,7 +238,7 @@ export default function Contact() {
                   <Image
                     src="/instagram.png"
                     alt="Instagram"
-                    boxSize="16px"
+                    boxSize={{ base: '20px', md: '24px' }}
                     objectFit="contain"
                   />
                 </SocialLink>
@@ -246,9 +247,11 @@ export default function Contact() {
                   href="https://www.youtube.com/@alpenautomobile"
                   label="YouTube"
                 >
-                  <Box color="#ff0000">
-                    <FaYoutube size={21} />
-                  </Box>
+                  <Icon
+                    as={FaYoutube}
+                    boxSize={{ base: '31px', md: '34px' }}
+                    color="#ff0000"
+                  />
                 </SocialLink>
               </HStack>
             </Box>
