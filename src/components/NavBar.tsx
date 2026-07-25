@@ -216,13 +216,24 @@ export default function NavBar() {
                   content: '""',
                   position: 'absolute',
                   bottom: 0,
-                  left: '5%',
-                  width: '90%',
+
+                  // iPhone: 90%
+                  // Larger phones and tablets: wider
+                  left: {
+                    base: '5%',
+                    sm: '2.5%',
+                    md: '2%',
+                  },
+                  width: {
+                    base: '90%',
+                    sm: '95%',
+                    md: '96%',
+                  },
+
                   height: '1px',
                   background:
                     'linear-gradient(90deg, transparent, rgba(255,255,255,0.7), transparent)',
-                  boxShadow:
-                    '0 1px 8px rgba(255,255,255,0.18)',
+                  boxShadow: '0 1px 8px rgba(255,255,255,0.18)',
                 }}
               >
                 <Image
