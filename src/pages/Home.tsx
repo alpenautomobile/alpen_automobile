@@ -73,7 +73,7 @@ export default function Home() {
                 align="start"
                 spacing={4}
                 maxW={{ base: '100%', md: '650px' }}
-                mt={{ base: -2, lg: '11vh' }}
+                mt={{ base: '-3', lg: '11vh' }}
                 position="relative"
                 isolation="isolate"
                 _before={{
@@ -193,7 +193,7 @@ export default function Home() {
                   eine nachvollziehbare Historie und eine vollständige Dokumentation.
                 </Text>
 
-                <Flex pt={{ base: 14, md: 6 }}>
+                <Flex pt={{ base: 16, md: 6 }}>
                   <Button
                     as={RouterLink}
                     to="/inventory"
