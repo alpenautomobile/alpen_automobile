@@ -86,11 +86,19 @@ export default function Home() {
                   '@media only screen and (min-device-width: 768px) and (max-device-width: 768px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)': {
                     '&::before': {
                       right: '-165px',
+
+                      // Move the complete overlay slightly to the right.
+                      // This corrects the left-shifted shadow on iPad Air 2.
+                      transform: 'translateX(28px)',
                     },
                   },
                   '@media only screen and (min-device-width: 768px) and (max-device-width: 768px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape)': {
                     '&::before': {
                       right: '-210px',
+
+                      // Landscape uses the lg left value, so it needs
+                      // a slightly larger right shift.
+                      transform: 'translateX(44px)',
                     },
                   },
                 }}
