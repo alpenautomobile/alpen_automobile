@@ -72,8 +72,8 @@ export default function Home() {
               <VStack
                 align="start"
                 spacing={4}
-                maxW={{ base: '100%', md: '650px' }}
-                mt={{ base: '-3', lg: '11vh' }}
+                maxW={{ base: '100%', md: '560px', lg: '600px', xl: '650px' }}
+                mt={{ base: '-3', md: '4vh', lg: '6vh', xl: '11vh' }}
                 position="relative"
                 isolation="isolate"
                 _before={{
@@ -81,12 +81,33 @@ export default function Home() {
                   position: 'absolute',
                   zIndex: -1,
 
-                  // Smaller overlay on phone.
-                  // Desktop values remain exactly as before.
-                  top: { base: '-45px', md: '-130px' },
-                  bottom: { base: '-55px', md: '-130px' },
-                  left: { base: '-16px', md: '-7vw' },
-                  right: { base: '-25px', md: '-180px' },
+                  // Phone: compact overlay
+                  // iPad / iPad mini (portrait and landscape): medium overlay
+                  // Desktop from xl upward: original large overlay
+                  top: {
+                    base: '-45px',
+                    md: '-85px',
+                    lg: '-100px',
+                    xl: '-130px',
+                  },
+                  bottom: {
+                    base: '-55px',
+                    md: '-90px',
+                    lg: '-105px',
+                    xl: '-130px',
+                  },
+                  left: {
+                    base: '-16px',
+                    md: '-5vw',
+                    lg: '-6vw',
+                    xl: '-7vw',
+                  },
+                  right: {
+                    base: '-25px',
+                    md: '-110px',
+                    lg: '-140px',
+                    xl: '-180px',
+                  },
 
                   background: {
                     base: `
@@ -102,6 +123,26 @@ export default function Home() {
                     md: `
                       linear-gradient(
                         90deg,
+                        rgba(0, 0, 0, 0.62) 0%,
+                        rgba(0, 0, 0, 0.52) 32%,
+                        rgba(0, 0, 0, 0.32) 57%,
+                        rgba(0, 0, 0, 0.11) 78%,
+                        transparent 100%
+                      )
+                    `,
+                    lg: `
+                      linear-gradient(
+                        90deg,
+                        rgba(0, 0, 0, 0.64) 0%,
+                        rgba(0, 0, 0, 0.54) 32%,
+                        rgba(0, 0, 0, 0.34) 56%,
+                        rgba(0, 0, 0, 0.12) 77%,
+                        transparent 100%
+                      )
+                    `,
+                    xl: `
+                      linear-gradient(
+                        90deg,
                         rgba(0, 0, 0, 0.68) 0%,
                         rgba(0, 0, 0, 0.58) 32%,
                         rgba(0, 0, 0, 0.38) 55%,
@@ -111,22 +152,53 @@ export default function Home() {
                     `,
                   },
 
-                  // Smooth fading at the top and bottom.
+                  // Separate masks make the overlay fade smoothly
+                  // at the top and bottom on every screen size.
                   WebkitMaskImage: {
                     base: `
                       linear-gradient(
                         to bottom,
                         transparent 0%,
-                        rgba(0, 0, 0, 0.2) 10%,
-                        rgba(0, 0, 0, 0.7) 24%,
-                        black 38%,
-                        black 66%,
-                        rgba(0, 0, 0, 0.7) 80%,
-                        rgba(0, 0, 0, 0.2) 82%,
+                        rgba(0, 0, 0, 0.18) 10%,
+                        rgba(0, 0, 0, 0.68) 25%,
+                        black 40%,
+                        black 64%,
+                        rgba(0, 0, 0, 0.68) 80%,
+                        rgba(0, 0, 0, 0.18) 92%,
                         transparent 100%
                       )
                     `,
                     md: `
+                      linear-gradient(
+                        to bottom,
+                        transparent 0%,
+                        rgba(0, 0, 0, 0.12) 8%,
+                        rgba(0, 0, 0, 0.52) 21%,
+                        rgba(0, 0, 0, 0.88) 34%,
+                        black 43%,
+                        black 61%,
+                        rgba(0, 0, 0, 0.88) 70%,
+                        rgba(0, 0, 0, 0.52) 82%,
+                        rgba(0, 0, 0, 0.12) 93%,
+                        transparent 100%
+                      )
+                    `,
+                    lg: `
+                      linear-gradient(
+                        to bottom,
+                        transparent 0%,
+                        rgba(0, 0, 0, 0.12) 8%,
+                        rgba(0, 0, 0, 0.56) 22%,
+                        rgba(0, 0, 0, 0.9) 35%,
+                        black 43%,
+                        black 61%,
+                        rgba(0, 0, 0, 0.9) 70%,
+                        rgba(0, 0, 0, 0.56) 82%,
+                        rgba(0, 0, 0, 0.12) 93%,
+                        transparent 100%
+                      )
+                    `,
+                    xl: `
                       linear-gradient(
                         to bottom,
                         transparent 0%,
@@ -146,16 +218,46 @@ export default function Home() {
                       linear-gradient(
                         to bottom,
                         transparent 0%,
-                        rgba(0, 0, 0, 0.2) 10%,
-                        rgba(0, 0, 0, 0.7) 24%,
-                        black 38%,
-                        black 66%,
-                        rgba(0, 0, 0, 0.7) 80%,
-                        rgba(0, 0, 0, 0.2) 85%,
+                        rgba(0, 0, 0, 0.18) 10%,
+                        rgba(0, 0, 0, 0.68) 25%,
+                        black 40%,
+                        black 64%,
+                        rgba(0, 0, 0, 0.68) 80%,
+                        rgba(0, 0, 0, 0.18) 92%,
                         transparent 100%
                       )
                     `,
                     md: `
+                      linear-gradient(
+                        to bottom,
+                        transparent 0%,
+                        rgba(0, 0, 0, 0.12) 8%,
+                        rgba(0, 0, 0, 0.52) 21%,
+                        rgba(0, 0, 0, 0.88) 34%,
+                        black 43%,
+                        black 61%,
+                        rgba(0, 0, 0, 0.88) 70%,
+                        rgba(0, 0, 0, 0.52) 82%,
+                        rgba(0, 0, 0, 0.12) 93%,
+                        transparent 100%
+                      )
+                    `,
+                    lg: `
+                      linear-gradient(
+                        to bottom,
+                        transparent 0%,
+                        rgba(0, 0, 0, 0.12) 8%,
+                        rgba(0, 0, 0, 0.56) 22%,
+                        rgba(0, 0, 0, 0.9) 35%,
+                        black 43%,
+                        black 61%,
+                        rgba(0, 0, 0, 0.9) 70%,
+                        rgba(0, 0, 0, 0.56) 82%,
+                        rgba(0, 0, 0, 0.12) 93%,
+                        transparent 100%
+                      )
+                    `,
+                    xl: `
                       linear-gradient(
                         to bottom,
                         transparent 0%,
@@ -175,7 +277,7 @@ export default function Home() {
               >
                 <Heading
                   as="h1"
-                  fontSize={{ base: '3xl', md: '5xl' }}
+                  fontSize={{ base: '3xl', md: '4xl', xl: '5xl' }}
                   lineHeight="short"
                   color="white"
                   // textShadow="0 2px 10px rgba(0,0,0,0.65)"
@@ -184,7 +286,7 @@ export default function Home() {
                 </Heading>
 
                 <Text
-                  fontSize={{ base: 'sm', md: 'lg' }}
+                  fontSize={{ base: 'sm', md: 'md', xl: 'lg' }}
                   lineHeight={{ base: '1.7', md: '1.65' }}
                   color="white"
                   maxW="640px"
@@ -193,7 +295,7 @@ export default function Home() {
                   eine nachvollziehbare Historie und eine vollständige Dokumentation.
                 </Text>
 
-                <Flex pt={{ base: 16, md: 6 }}>
+                <Flex pt={{ base: 16, md: 8, xl: 6 }}>
                   <Button
                     as={RouterLink}
                     to="/inventory"
