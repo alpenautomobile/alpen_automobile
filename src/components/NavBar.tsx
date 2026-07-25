@@ -86,11 +86,11 @@ export default function NavBar() {
             _focus={{ boxShadow: 'none' }}
           >
             <Image
-              src="/header_logo_1.png"
+              src="/header_logo_5.png"
               alt="Alpen"
               className="logo"
-              h={{ base: '27px', md: '34px' }}
-              w={{ base: '83px', md: '128px' }}
+              h={{ base: '24px', md: '30px' }}
+              w={{ base: '88px', md: '116px' }}
             />
           </Link>
 
