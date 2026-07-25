@@ -226,7 +226,7 @@ export default function Contact() {
                 color="white"
                 mb={6}
               >
-                Folgen Sie uns
+                Folgen Sie mir auf Social Media
               </Heading>
 
               <HStack spacing={5}>
