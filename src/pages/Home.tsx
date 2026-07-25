@@ -44,7 +44,7 @@ export default function Home() {
       <Box
         className="page"
         position="relative"
-        bgImage={{ base: "url('/homepage_mobile_version.png')", md: "url('/homepage_desktop_version.png')" }}
+        bgImage={{ base: "url('/homepage_mobile_version_2.png')", md: "url('/homepage_desktop_version.png')" }}
         bgSize="cover"
         bgPosition="center"
         bgRepeat="no-repeat"
@@ -94,7 +94,7 @@ export default function Home() {
                         90deg,
                         rgba(0, 0, 0, 0.58) 0%,
                         rgba(0, 0, 0, 0.48) 34%,
-                        rgba(0, 0, 0, 0.27) 62%,
+                        rgba(0, 0, 0, 0.27) 60%,
                         rgba(0, 0, 0, 0.08) 82%,
                         transparent 100%
                       )
@@ -122,7 +122,7 @@ export default function Home() {
                         black 38%,
                         black 66%,
                         rgba(0, 0, 0, 0.7) 80%,
-                        rgba(0, 0, 0, 0.2) 92%,
+                        rgba(0, 0, 0, 0.2) 82%,
                         transparent 100%
                       )
                     `,
@@ -151,7 +151,7 @@ export default function Home() {
                         black 38%,
                         black 66%,
                         rgba(0, 0, 0, 0.7) 80%,
-                        rgba(0, 0, 0, 0.2) 92%,
+                        rgba(0, 0, 0, 0.2) 85%,
                         transparent 100%
                       )
                     `,
@@ -178,7 +178,7 @@ export default function Home() {
                   fontSize={{ base: '3xl', md: '5xl' }}
                   lineHeight="short"
                   color="white"
-                  textShadow="0 2px 10px rgba(0,0,0,0.65)"
+                  // textShadow="0 2px 10px rgba(0,0,0,0.65)"
                 >
                   Fahrzeuge, die überzeugen.
                 </Heading>
@@ -187,7 +187,7 @@ export default function Home() {
                   fontSize={{ base: 'sm', md: 'lg' }}
                   lineHeight={{ base: '1.7', md: '1.65' }}
                   color="white"
-                  textShadow="0 2px 8px rgba(0,0,0,0.75)"
+
                   maxW="640px"
                 >
                   Jedes Fahrzeug erfüllt hohe Ausstattungsstandards, verfügt über
