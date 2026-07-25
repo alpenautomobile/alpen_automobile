@@ -79,26 +79,18 @@ export default function Home() {
                 sx={{
                   /*
                    * iPad Air 2 only:
-                   * extend only the right side of the existing overlay so the
-                   * gradient can finish smoothly outside the visible text area.
-                   * All normal Chakra breakpoint values remain unchanged.
+                   * correct only the left edge of the overlay.
+                   * No transform is used, and all other devices keep
+                   * the existing Chakra breakpoint values.
                    */
                   '@media only screen and (min-device-width: 768px) and (max-device-width: 768px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)': {
                     '&::before': {
-                      right: '-165px',
-
-                      // Move the complete overlay slightly to the right.
-                      // This corrects the left-shifted shadow on iPad Air 2.
-                      transform: 'translateX(28px)',
+                      left: '-8px',
                     },
                   },
                   '@media only screen and (min-device-width: 768px) and (max-device-width: 768px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape)': {
                     '&::before': {
-                      right: '-210px',
-
-                      // Landscape uses the lg left value, so it needs
-                      // a slightly larger right shift.
-                      transform: 'translateX(44px)',
+                      left: '-12px',
                     },
                   },
                 }}
