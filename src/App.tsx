@@ -82,7 +82,7 @@ export default function App() {
           aria-live="polite"
         >
           <img
-            src="/logo_design_5.png"
+            src="/loading_page_logo.png"
             alt="Alpen loading logo"
             className="page-loader__logo"
           />

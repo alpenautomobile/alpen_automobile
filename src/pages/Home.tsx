@@ -44,7 +44,7 @@ export default function Home() {
       <Box
         className="page"
         position="relative"
-        bgImage={{ base: "url('/mobile_version_1.png')", md: "url('/desktop_version_1.png')" }}
+        bgImage={{ base: "url('/homepage_mobile_version.png')", md: "url('/homepage_desktop_version.png')" }}
         bgSize="cover"
         bgPosition="center"
         bgRepeat="no-repeat"
@@ -57,7 +57,13 @@ export default function Home() {
           zIndex="2"
           pt={{ base: '80px', md: '24px' }}
         >
-          <Container maxW="100%" px={{ base: 4, md: '6%' }} className="content">
+          <Container
+            maxW="100%"
+            px={{ base: 4, md: '6%' }}
+            className="content"
+            position="relative"
+            zIndex={1}
+          >
             <Flex
               direction={{ base: 'column', md: 'row' }}
               align="center"
@@ -68,20 +74,127 @@ export default function Home() {
                 spacing={4}
                 maxW={{ base: '100%', md: '650px' }}
                 mt={{ base: -2, lg: '11vh' }}
+                position="relative"
+                isolation="isolate"
+                _before={{
+                  content: '""',
+                  position: 'absolute',
+                  zIndex: -1,
+
+                  // Smaller overlay on phone.
+                  // Desktop values remain exactly as before.
+                  top: { base: '-45px', md: '-130px' },
+                  bottom: { base: '-55px', md: '-130px' },
+                  left: { base: '-16px', md: '-7vw' },
+                  right: { base: '-25px', md: '-180px' },
+
+                  background: {
+                    base: `
+                      linear-gradient(
+                        90deg,
+                        rgba(0, 0, 0, 0.58) 0%,
+                        rgba(0, 0, 0, 0.48) 34%,
+                        rgba(0, 0, 0, 0.27) 62%,
+                        rgba(0, 0, 0, 0.08) 82%,
+                        transparent 100%
+                      )
+                    `,
+                    md: `
+                      linear-gradient(
+                        90deg,
+                        rgba(0, 0, 0, 0.68) 0%,
+                        rgba(0, 0, 0, 0.58) 32%,
+                        rgba(0, 0, 0, 0.38) 55%,
+                        rgba(0, 0, 0, 0.14) 75%,
+                        transparent 100%
+                      )
+                    `,
+                  },
+
+                  // Smooth fading at the top and bottom.
+                  WebkitMaskImage: {
+                    base: `
+                      linear-gradient(
+                        to bottom,
+                        transparent 0%,
+                        rgba(0, 0, 0, 0.2) 10%,
+                        rgba(0, 0, 0, 0.7) 24%,
+                        black 38%,
+                        black 66%,
+                        rgba(0, 0, 0, 0.7) 80%,
+                        rgba(0, 0, 0, 0.2) 92%,
+                        transparent 100%
+                      )
+                    `,
+                    md: `
+                      linear-gradient(
+                        to bottom,
+                        transparent 0%,
+                        rgba(0, 0, 0, 0.15) 8%,
+                        rgba(0, 0, 0, 0.65) 22%,
+                        black 38%,
+                        black 62%,
+                        rgba(0, 0, 0, 0.65) 78%,
+                        rgba(0, 0, 0, 0.15) 92%,
+                        transparent 100%
+                      )
+                    `,
+                  },
+
+                  maskImage: {
+                    base: `
+                      linear-gradient(
+                        to bottom,
+                        transparent 0%,
+                        rgba(0, 0, 0, 0.2) 10%,
+                        rgba(0, 0, 0, 0.7) 24%,
+                        black 38%,
+                        black 66%,
+                        rgba(0, 0, 0, 0.7) 80%,
+                        rgba(0, 0, 0, 0.2) 92%,
+                        transparent 100%
+                      )
+                    `,
+                    md: `
+                      linear-gradient(
+                        to bottom,
+                        transparent 0%,
+                        rgba(0, 0, 0, 0.15) 8%,
+                        rgba(0, 0, 0, 0.65) 22%,
+                        black 38%,
+                        black 62%,
+                        rgba(0, 0, 0, 0.65) 78%,
+                        rgba(0, 0, 0, 0.15) 92%,
+                        transparent 100%
+                      )
+                    `,
+                  },
+
+                  pointerEvents: 'none',
+                }}
               >
-                <Heading as="h1" fontSize={{ base: '3xl', md: '5xl' }} lineHeight="short" color="white">Fahrzeuge, die überzeugen.</Heading>
+                <Heading
+                  as="h1"
+                  fontSize={{ base: '3xl', md: '5xl' }}
+                  lineHeight="short"
+                  color="white"
+                  textShadow="0 2px 10px rgba(0,0,0,0.65)"
+                >
+                  Fahrzeuge, die überzeugen.
+                </Heading>
 
                 <Text
                   fontSize={{ base: 'sm', md: 'lg' }}
-                  color="whiteAlpha.900"
+                  lineHeight={{ base: '1.7', md: '1.65' }}
+                  color="white"
+                  textShadow="0 2px 8px rgba(0,0,0,0.75)"
+                  maxW="640px"
                 >
-                  Jedes Fahrzeug erfüllt hohe Ausstattungsstandards, 
-                  verfügt über eine nachvollziehbare Historie 
-                  und eine vollständige Dokumentation.
-
+                  Jedes Fahrzeug erfüllt hohe Ausstattungsstandards, verfügt über
+                  eine nachvollziehbare Historie und eine vollständige Dokumentation.
                 </Text>
 
-                <Flex pt={{ base: 12, md: 6 }} >
+                <Flex pt={{ base: 12, md: 6 }}>
                   <Button
                     as={RouterLink}
                     to="/inventory"
@@ -96,7 +209,9 @@ export default function Home() {
                         borderRadius="full"
                         border="1px solid rgba(255,255,255,0.9)"
                         transition="transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease"
-                        _groupHover={{ transform: 'translateX(3px) scale(1.08)' }}
+                        _groupHover={{
+                          transform: 'translateX(3px) scale(1.08)',
+                        }}
                       >
                         <FiChevronRight size="16px" color="white" />
                       </Box>

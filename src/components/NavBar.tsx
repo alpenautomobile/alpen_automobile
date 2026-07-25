@@ -226,7 +226,7 @@ export default function NavBar() {
                 }}
               >
                 <Image
-                  src="/logo_design_5.png"
+                  src="/loading_page_logo.png"
                   alt="Alpen"
                   h="40px"
                   w="auto"
