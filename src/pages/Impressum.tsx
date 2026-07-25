@@ -20,11 +20,10 @@ function LegalSectionHeader({ title }: { title: string }) {
       <Flex align="center" gap={4}>
         <Box
           w="4px"
-          h={{ base: '27px', md: '32px' }}
+          h={{ base: '26px', md: '32px' }}
           bg="#b21a18"
           borderRadius="full"
           flexShrink={0}
-          boxShadow="0 0 14px rgba(178,26,24,0.3)"
         />
 
         <Heading
@@ -89,8 +88,7 @@ export default function Impressum() {
     <Box
       as="main"
       position="relative"
-      h="100%"
-      minH={0}
+      minH="100vh"
       w="100%"
       bg="#000000"
       color="white"
@@ -103,15 +101,15 @@ export default function Impressum() {
         pointerEvents="none"
         bg="
           radial-gradient(
-            circle at 78% 12%,
+            circle at 75% 20%,
             rgba(255,255,255,0.035),
             transparent 30%
           ),
           linear-gradient(
             180deg,
-            #151515 0%,
-            #222222 48%,
-            #171717 100%
+            #000000 0%,
+            #282828 45%,
+            #000000 100%
           )
         "
       />
@@ -129,8 +127,8 @@ export default function Impressum() {
 
         <Text
           maxW="760px"
-          color="rgba(255,255,255,0.68)"
-          fontSize={{ base: 'sm', md: 'lg' }}
+          color="whiteAlpha.850"
+          fontSize={{ base: 'sm', md: 'md' }}
           lineHeight="1.7"
           mb={{ base: 8, md: 10 }}
         >

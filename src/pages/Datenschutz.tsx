@@ -18,11 +18,10 @@ function LegalSectionHeader({ title }: { title: string }) {
           <Flex align="center" gap={4}>
         <Box
           w="4px"
-          h={{ base: '27px', md: '32px' }}
+          h={{ base: '26px', md: '32px' }}
           bg="#b21a18"
           borderRadius="full"
           flexShrink={0}
-          boxShadow="0 0 14px rgba(178,26,24,0.3)"
         />
 
         <Heading
@@ -122,8 +121,7 @@ export default function Datenschutz() {
     <Box
       as="main"
       position="relative"
-      h="100%"
-      minH={0}
+      minH="100vh"
       w="100%"
       bg="#000000"
       color="white"
@@ -136,15 +134,15 @@ export default function Datenschutz() {
         pointerEvents="none"
         bg="
           radial-gradient(
-            circle at 78% 12%,
+            circle at 75% 20%,
             rgba(255,255,255,0.035),
             transparent 30%
           ),
           linear-gradient(
             180deg,
-            #151515 0%,
-            #222222 48%,
-            #171717 100%
+            #000000 0%,
+            #282828 45%,
+            #000000 100%
           )
         "
       />
@@ -165,8 +163,8 @@ export default function Datenschutz() {
           mb={{ base: 8, md: 10 }}
         >
           <Text
-            color="rgba(255,255,255,0.72)"
-            fontSize={{ base: 'sm', md: 'lg' }}
+            color="whiteAlpha.850"
+            fontSize={{ base: 'sm', md: 'md' }}
             lineHeight="1.75"
             mb={4}
           >
@@ -176,7 +174,7 @@ export default function Datenschutz() {
           </Text>
 
           <Text
-            color="rgba(255,255,255,0.58)"
+            color="whiteAlpha.750"
             fontSize={{ base: 'sm', md: '15px' }}
             lineHeight="1.75"
           >
