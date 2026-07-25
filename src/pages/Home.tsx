@@ -1,4 +1,3 @@
-import React from 'react'
 import {
   Box,
   Button,
@@ -79,18 +78,54 @@ export default function Home() {
                 sx={{
                   /*
                    * iPad Air 2 only:
-                   * correct only the left edge of the overlay.
-                   * No transform is used, and all other devices keep
-                   * the existing Chakra breakpoint values.
+                   * use exactly the same overlay size and fade as phones.
+                   * All other devices keep the existing Chakra breakpoint values.
                    */
-                  '@media only screen and (min-device-width: 768px) and (max-device-width: 768px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)': {
+                  '@media only screen and (device-width: 768px) and (device-height: 1024px) and (-webkit-min-device-pixel-ratio: 2)': {
                     '&::before': {
-                      left: '-8px',
-                    },
-                  },
-                  '@media only screen and (min-device-width: 768px) and (max-device-width: 768px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape)': {
-                    '&::before': {
-                      left: '-12px',
+                      top: '-45px',
+                      bottom: '-55px',
+                      left: '-16px',
+                      right: '-25px',
+
+                      background: `
+                        linear-gradient(
+                          90deg,
+                          rgba(0, 0, 0, 0.58) 0%,
+                          rgba(0, 0, 0, 0.48) 34%,
+                          rgba(0, 0, 0, 0.27) 60%,
+                          rgba(0, 0, 0, 0.08) 82%,
+                          transparent 100%
+                        )
+                      `,
+
+                      WebkitMaskImage: `
+                        linear-gradient(
+                          to bottom,
+                          transparent 0%,
+                          rgba(0, 0, 0, 0.18) 10%,
+                          rgba(0, 0, 0, 0.68) 25%,
+                          black 40%,
+                          black 64%,
+                          rgba(0, 0, 0, 0.68) 80%,
+                          rgba(0, 0, 0, 0.18) 92%,
+                          transparent 100%
+                        )
+                      `,
+
+                      maskImage: `
+                        linear-gradient(
+                          to bottom,
+                          transparent 0%,
+                          rgba(0, 0, 0, 0.18) 10%,
+                          rgba(0, 0, 0, 0.68) 25%,
+                          black 40%,
+                          black 64%,
+                          rgba(0, 0, 0, 0.68) 80%,
+                          rgba(0, 0, 0, 0.18) 92%,
+                          transparent 100%
+                        )
+                      `,
                     },
                   },
                 }}
