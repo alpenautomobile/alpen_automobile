@@ -44,7 +44,7 @@ export default function Home() {
       <Box
         className="page"
         position="relative"
-        bgImage={{ base: "url('/homepage_mobile_version_2.png')", md: "url('/homepage_desktop_version.png')" }}
+        bgImage={{ base: "url('/homepage_mobile_version.png')", md: "url('/homepage_desktop_version.png')" }}
         bgSize="cover"
         bgPosition="center"
         bgRepeat="no-repeat"
@@ -55,7 +55,7 @@ export default function Home() {
           className="contentBox"
           position="relative"
           zIndex="2"
-          pt={{ base: '80px', md: '24px' }}
+          pt={{ base: '65px', md: '24px' }}
         >
           <Container
             maxW="100%"
@@ -187,14 +187,13 @@ export default function Home() {
                   fontSize={{ base: 'sm', md: 'lg' }}
                   lineHeight={{ base: '1.7', md: '1.65' }}
                   color="white"
-
                   maxW="640px"
                 >
                   Jedes Fahrzeug erfüllt hohe Ausstattungsstandards, verfügt über
                   eine nachvollziehbare Historie und eine vollständige Dokumentation.
                 </Text>
 
-                <Flex pt={{ base: 12, md: 6 }}>
+                <Flex pt={{ base: 14, md: 6 }}>
                   <Button
                     as={RouterLink}
                     to="/inventory"
