@@ -64,6 +64,7 @@ body {
 
 @media (max-width: 1023.98px) {
   html, body, #root {
+    height: auto;
     overflow-y: auto;
   }
 
