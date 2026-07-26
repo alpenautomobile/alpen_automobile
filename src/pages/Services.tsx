@@ -256,7 +256,7 @@ export default function Services() {
         maxW="100%"
         px={{ base: 4, md: '6%' }}
         pt={{ base: 5, md: 10 }}
-        pb={{ base: 8, md: 0 }}
+        pb={{ base: 8, md: 2 }}
       >
         <SimpleGrid
           columns={1}

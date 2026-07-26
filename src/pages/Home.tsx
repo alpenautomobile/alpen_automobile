@@ -4,13 +4,18 @@ import {
   Container,
   Flex,
   Heading,
+  Icon,
   SimpleGrid,
   Text,
-  Icon,
   VStack,
 } from '@chakra-ui/react'
 import { Link as RouterLink } from 'react-router-dom'
-import { FiCheckCircle, FiSearch, FiUser, FiChevronRight } from 'react-icons/fi'
+import {
+  FiCheckCircle,
+  FiChevronRight,
+  FiSearch,
+  FiUser,
+} from 'react-icons/fi'
 
 const features = [
   {
@@ -30,31 +35,64 @@ const features = [
     icon: FiUser,
     text:
       'Als persönlicher Ansprechpartner begleite ich jeden Kunden individuell von Erstkontakt bis Auslieferung. Ihre Zufriedenheit ist mein wichtigster Anspruch.',
-  }
+  },
 ]
 
 const UNIFIED_HOVER = {
   transform: 'translateX(2px) scale(1.04)',
 }
 
+/*
+ * Applies only to touch-capable tablets in landscape orientation.
+ * Phone and normal desktop layouts are not changed.
+ */
+const IPAD_LANDSCAPE =
+  '@media (min-width: 768px) and (max-width: 1366px) and (orientation: landscape) and (any-pointer: coarse)'
+
 export default function Home() {
   return (
-    <Box minH="100vh" bg="white" display="flex" flexDirection="column">
+    <Box
+      minH="100vh"
+      bg="white"
+      display="flex"
+      flexDirection="column"
+    >
+      {/* Hero section */}
       <Box
         className="page"
         position="relative"
-        bgImage={{ base: "url('/homepage_mobile_version.png')", sm: "url('/homepage_ipad_version.png')", md: "url('/homepage_desktop_version.png')" }}
+        bgImage={{
+          base: "url('/homepage_mobile_version.png')",
+          sm: "url('/homepage_ipad_version.png')",
+          md: "url('/homepage_desktop_version.png')",
+        }}
         bgSize="cover"
         bgPosition="center"
         bgRepeat="no-repeat"
-        h={{ base: '55vh', sm: '33vh', md: '55vh' }}
+        h={{
+          base: '55vh',
+          sm: '33vh',
+          md: '55vh',
+        }}
         minH="400px"
       >
         <Box
           className="contentBox"
           position="relative"
           zIndex="2"
-          pt={{ base: '65px', sm: '70px', md: '24px' }}
+          pt={{
+            base: '65px',
+            sm: '70px',
+            md: '24px',
+          }}
+          sx={{
+            [IPAD_LANDSCAPE]: {
+              height: '100%',
+              paddingTop: 0,
+              display: 'flex',
+              alignItems: 'center',
+            },
+          }}
         >
           <Container
             maxW="100%"
@@ -66,48 +104,70 @@ export default function Home() {
             className="content"
             position="relative"
             zIndex={1}
+            sx={{
+              [IPAD_LANDSCAPE]: {
+                width: '100%',
+                height: '100%',
+              },
+            }}
           >
             <Flex
               w="100%"
-              direction={{ base: 'column', md: 'row' }}
+              direction={{
+                base: 'column',
+                md: 'row',
+              }}
               align="center"
               justify="flex-start"
               sx={{
                 /*
-                 * iPad portrait range:
-                 * your custom md breakpoint appears to start above the
-                 * iPad width, so the Flex is still a centered column here.
-                 * Force its children to start at the left edge.
+                 * Original iPad portrait behaviour.
                  */
                 '@media (min-width: 768px) and (max-width: 1023.98px)': {
                   alignItems: 'flex-start',
+                },
+
+                /*
+                 * iPad landscape only.
+                 */
+                [IPAD_LANDSCAPE]: {
+                  height: '100%',
+                  alignItems: 'center',
+                  justifyContent: 'flex-start',
                 },
               }}
             >
               <VStack
                 align="start"
                 spacing={4}
-                maxW={{ base: '100%', md: '560px', lg: '600px', xl: '650px' }}
-                mt={{ base: '-3', md: '4vh', lg: '6vh', xl: '11vh' }}
+                maxW={{
+                  base: '100%',
+                  md: '560px',
+                  lg: '600px',
+                  xl: '650px',
+                }}
+                mt={{
+                  base: '-3',
+                  md: '4vh',
+                  lg: '6vh',
+                  xl: '11vh',
+                }}
                 position="relative"
                 isolation="isolate"
                 sx={{
-                            /*
-                   * Stretch the text group across the available iPad width.
-                   * This prevents VStack from being horizontally centered
-                   * according to its content width.
+                  /*
+                   * Original iPad portrait behaviour.
                    */
                   '@media (min-width: 768px) and (max-width: 1023.98px)': {
                     width: '100%',
                     maxWidth: '100%',
-                    marginInlineStart: '0',
-                    marginInlineEnd: '0',
+                    marginInlineStart: 0,
+                    marginInlineEnd: 0,
                     alignSelf: 'flex-start',
                   },
+
                   /*
-                   * iPad Air 2 only:
-                   * use exactly the same overlay size and fade as phones.
-                   * All other devices keep the existing Chakra breakpoint values.
+                   * Original iPad Air 2 overlay.
                    */
                   '@media only screen and (device-width: 768px) and (device-height: 1024px) and (-webkit-min-device-pixel-ratio: 2)': {
                     '&::before': {
@@ -156,33 +216,99 @@ export default function Home() {
                       `,
                     },
                   },
+
+                  /*
+                   * iPad landscape only.
+                   * This rule comes after the portrait rules so it overrides
+                   * them only when the iPad is rotated.
+                   */
+                  [IPAD_LANDSCAPE]: {
+                    width: '54%',
+                    maxWidth: '560px',
+                    marginTop: 0,
+                    marginLeft: 0,
+                    marginRight: 0,
+                    alignSelf: 'center',
+                    alignItems: 'flex-start',
+                    textAlign: 'left',
+
+                    '&::before': {
+                      top: '-75px',
+                      bottom: '-80px',
+                      left: '-6vw',
+                      right: '-110px',
+
+                      background: `
+                        linear-gradient(
+                          90deg,
+                          rgba(0, 0, 0, 0.64) 0%,
+                          rgba(0, 0, 0, 0.54) 32%,
+                          rgba(0, 0, 0, 0.34) 57%,
+                          rgba(0, 0, 0, 0.12) 78%,
+                          transparent 100%
+                        )
+                      `,
+
+                      WebkitMaskImage: `
+                        linear-gradient(
+                          to bottom,
+                          transparent 0%,
+                          rgba(0, 0, 0, 0.12) 8%,
+                          rgba(0, 0, 0, 0.56) 22%,
+                          rgba(0, 0, 0, 0.9) 35%,
+                          black 43%,
+                          black 61%,
+                          rgba(0, 0, 0, 0.9) 70%,
+                          rgba(0, 0, 0, 0.56) 82%,
+                          rgba(0, 0, 0, 0.12) 93%,
+                          transparent 100%
+                        )
+                      `,
+
+                      maskImage: `
+                        linear-gradient(
+                          to bottom,
+                          transparent 0%,
+                          rgba(0, 0, 0, 0.12) 8%,
+                          rgba(0, 0, 0, 0.56) 22%,
+                          rgba(0, 0, 0, 0.9) 35%,
+                          black 43%,
+                          black 61%,
+                          rgba(0, 0, 0, 0.9) 70%,
+                          rgba(0, 0, 0, 0.56) 82%,
+                          rgba(0, 0, 0, 0.12) 93%,
+                          transparent 100%
+                        )
+                      `,
+                    },
+                  },
                 }}
                 _before={{
                   content: '""',
                   position: 'absolute',
                   zIndex: -1,
 
-                  // Phone: compact overlay
-                  // iPad / iPad mini (portrait and landscape): medium overlay
-                  // Desktop from xl upward: original large overlay
                   top: {
                     base: '-45px',
                     md: '-85px',
                     lg: '-100px',
                     xl: '-130px',
                   },
+
                   bottom: {
                     base: '-55px',
                     md: '-90px',
                     lg: '-105px',
                     xl: '-130px',
                   },
+
                   left: {
                     base: '-16px',
                     md: '-5vw',
                     lg: '-6vw',
                     xl: '-7vw',
                   },
+
                   right: {
                     base: '-25px',
                     md: '-110px',
@@ -201,6 +327,7 @@ export default function Home() {
                         transparent 100%
                       )
                     `,
+
                     md: `
                       linear-gradient(
                         90deg,
@@ -211,6 +338,7 @@ export default function Home() {
                         transparent 100%
                       )
                     `,
+
                     lg: `
                       linear-gradient(
                         90deg,
@@ -221,6 +349,7 @@ export default function Home() {
                         transparent 100%
                       )
                     `,
+
                     xl: `
                       linear-gradient(
                         90deg,
@@ -233,8 +362,6 @@ export default function Home() {
                     `,
                   },
 
-                  // Separate masks make the overlay fade smoothly
-                  // at the top and bottom on every screen size.
                   WebkitMaskImage: {
                     base: `
                       linear-gradient(
@@ -249,6 +376,7 @@ export default function Home() {
                         transparent 100%
                       )
                     `,
+
                     md: `
                       linear-gradient(
                         to bottom,
@@ -264,6 +392,7 @@ export default function Home() {
                         transparent 100%
                       )
                     `,
+
                     lg: `
                       linear-gradient(
                         to bottom,
@@ -279,6 +408,7 @@ export default function Home() {
                         transparent 100%
                       )
                     `,
+
                     xl: `
                       linear-gradient(
                         to bottom,
@@ -308,6 +438,7 @@ export default function Home() {
                         transparent 100%
                       )
                     `,
+
                     md: `
                       linear-gradient(
                         to bottom,
@@ -323,6 +454,7 @@ export default function Home() {
                         transparent 100%
                       )
                     `,
+
                     lg: `
                       linear-gradient(
                         to bottom,
@@ -338,6 +470,7 @@ export default function Home() {
                         transparent 100%
                       )
                     `,
+
                     xl: `
                       linear-gradient(
                         to bottom,
@@ -358,25 +491,50 @@ export default function Home() {
               >
                 <Heading
                   as="h1"
-                  fontSize={{ base: '3xl', sm: '4xl', md: '4xl', xl: '5xl' }}
+                  fontSize={{
+                    base: '3xl',
+                    sm: '4xl',
+                    md: '4xl',
+                    xl: '5xl',
+                  }}
                   lineHeight="short"
                   color="white"
-                  // textShadow="0 2px 10px rgba(0,0,0,0.65)"
                 >
                   Fahrzeuge, die überzeugen.
                 </Heading>
 
                 <Text
-                  fontSize={{ base: 'sm', sm: 'md', md: 'md', xl: 'lg' }}
-                  lineHeight={{ base: '1.7', md: '1.65' }}
+                  fontSize={{
+                    base: 'sm',
+                    sm: 'md',
+                    md: 'md',
+                    xl: 'lg',
+                  }}
+                  lineHeight={{
+                    base: '1.7',
+                    md: '1.65',
+                  }}
                   color="white"
                   maxW="640px"
                 >
-                  Jedes Fahrzeug erfüllt hohe Ausstattungsstandards, verfügt über
-                  eine nachvollziehbare Historie und eine vollständige Dokumentation.
+                  Jedes Fahrzeug erfüllt hohe
+                  Ausstattungsstandards, verfügt über eine
+                  nachvollziehbare Historie und eine vollständige
+                  Dokumentation.
                 </Text>
 
-                <Flex pt={{ base: 16, md: 8, xl: 6 }}>
+                <Flex
+                  pt={{
+                    base: 16,
+                    md: 8,
+                    xl: 6,
+                  }}
+                  sx={{
+                    [IPAD_LANDSCAPE]: {
+                      paddingTop: '24px',
+                    },
+                  }}
+                >
                   <Button
                     as={RouterLink}
                     to="/inventory"
@@ -392,16 +550,23 @@ export default function Home() {
                         border="1px solid rgba(255,255,255,0.9)"
                         transition="transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease"
                         _groupHover={{
-                          transform: 'translateX(3px) scale(1.08)',
+                          transform:
+                            'translateX(3px) scale(1.08)',
                         }}
                       >
-                        <FiChevronRight size="16px" color="white" />
+                        <FiChevronRight
+                          size="16px"
+                          color="white"
+                        />
                       </Box>
                     }
                     iconSpacing={4}
                     bg="#b21a18"
                     color="white"
-                    fontSize={{ base: 'sm', md: '0.88rem' }}
+                    fontSize={{
+                      base: 'sm',
+                      md: '0.88rem',
+                    }}
                     textTransform="uppercase"
                     letterSpacing="0.18em"
                     px={4}
@@ -412,7 +577,9 @@ export default function Home() {
                     border="1px solid rgba(255,255,255,0.15)"
                     boxShadow="0 10px 18px rgba(0,0,0,0.2)"
                     _hover={UNIFIED_HOVER}
-                    _active={{ bg: '#8a1212' }}
+                    _active={{
+                      bg: '#8a1212',
+                    }}
                   >
                     Fahrzeugbestand
                   </Button>
@@ -423,6 +590,7 @@ export default function Home() {
         </Box>
       </Box>
 
+      {/* Features section */}
       <Box
         bg="white"
         width="100%"
@@ -433,10 +601,36 @@ export default function Home() {
           maxW="100%"
           h="100%"
           flex="1"
-          px={{ base: 4, md: '6%' }}
-          py={{ base: 4, md: 10 }}
+          px={{
+            base: 4,
+            md: '6%',
+          }}
+          py={{
+            base: 4,
+            md: 10,
+          }}
         >
-          <SimpleGrid templateColumns={{ base: '1fr', md: 'repeat(3, minmax(0, 1fr))' }} spacing={{ base: 6, lg: '26px' }} w="full">
+          <SimpleGrid
+            templateColumns={{
+              base: '1fr',
+              md: 'repeat(3, minmax(0, 1fr))',
+            }}
+            spacing={{
+              base: 6,
+              lg: '26px',
+            }}
+            w="full"
+            sx={{
+              /*
+               * iPad landscape only:
+               * one feature per row.
+               */
+              [IPAD_LANDSCAPE]: {
+                gridTemplateColumns: 'minmax(0, 1fr)',
+                rowGap: '24px',
+              },
+            }}
+          >
             {features.map((feature) => {
               const FeatureIcon = feature.icon
 
@@ -446,25 +640,68 @@ export default function Home() {
                   w="full"
                   minW={0}
                   px={0}
-                  py={{ base: 6, lg: 0 }}
+                  py={{
+                    base: 6,
+                    lg: 0,
+                  }}
                   borderColor="gray.200"
+                  sx={{
+                    [IPAD_LANDSCAPE]: {
+                      paddingTop: '24px',
+                      paddingBottom: '24px',
+                    },
+                  }}
                 >
-                  <Flex direction="column" align={{ base: 'center', md: 'flex-start' }} gap={6}>
+                  <Flex
+                    direction="column"
+                    align={{
+                      base: 'center',
+                      md: 'flex-start',
+                    }}
+                    gap={6}
+                    sx={{
+                      [IPAD_LANDSCAPE]: {
+                        alignItems: 'center',
+                      },
+                    }}
+                  >
                     <Icon
                       as={FeatureIcon}
-                      boxSize={{ base: '34px', md: '34px' }}
+                      boxSize={{
+                        base: '34px',
+                        md: '34px',
+                      }}
                       color="gray.900"
                       flexShrink={0}
                     />
 
-                    <Box w="full">
+                    <Box
+                      w="full"
+                      sx={{
+                        [IPAD_LANDSCAPE]: {
+                          maxWidth: '680px',
+                          marginInline: 'auto',
+                        },
+                      }}
+                    >
                       <Heading
                         as="h3"
-                        fontSize={{ base: 'md', md: 'xl' }}
+                        fontSize={{
+                          base: 'md',
+                          md: 'xl',
+                        }}
                         fontWeight="600"
                         mb={3}
                         color="gray.900"
-                        textAlign={{ base: 'center', md: 'left' }}
+                        textAlign={{
+                          base: 'center',
+                          md: 'left',
+                        }}
+                        sx={{
+                          [IPAD_LANDSCAPE]: {
+                            textAlign: 'center',
+                          },
+                        }}
                       >
                         {feature.title}
                       </Heading>
@@ -474,15 +711,34 @@ export default function Home() {
                         h="2px"
                         bg="red.500"
                         mb={3}
-                        mx={{ base: 'auto', md: '0' }}
+                        mx={{
+                          base: 'auto',
+                          md: 0,
+                        }}
+                        sx={{
+                          [IPAD_LANDSCAPE]: {
+                            marginInline: 'auto',
+                          },
+                        }}
                       />
 
                       <Text
-                        fontSize={{ base: 'sm', md: 'md' }}
+                        fontSize={{
+                          base: 'sm',
+                          md: 'md',
+                        }}
                         lineHeight="1.7"
                         color="gray.700"
                         whiteSpace="pre-line"
-                        textAlign={{ base: 'center', md: 'left' }}
+                        textAlign={{
+                          base: 'center',
+                          md: 'left',
+                        }}
+                        sx={{
+                          [IPAD_LANDSCAPE]: {
+                            textAlign: 'center',
+                          },
+                        }}
                       >
                         {feature.text}
                       </Text>

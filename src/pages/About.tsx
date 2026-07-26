@@ -128,7 +128,7 @@ export default function About() {
               w="72px"
               h="1px"
               bg="whiteAlpha.400"
-              mb={{ base: 5, md: 8 }}
+              mb={{ base: 5, sm: 5, md: 8 }}
             />
 
             {/* Mobile image */}
