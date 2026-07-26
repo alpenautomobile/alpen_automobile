@@ -101,16 +101,16 @@ export default function NavBar() {
           <HStack
             as="ul"
             className="nav-links"
-            spacing={{ base: 8, md: 16 }}
+            spacing={{ md: 8, lg: 12, xl: 16 }}
             listStyleType="none"
             p={0}
             flex="1"
             minW={0}
-            ml={{ md: 28 }}
-            overflowX="auto"
+            ml={{ md: 10, lg: 20, xl: 28 }}
             whiteSpace="nowrap"
             justify="flex-start"
             display={{ base: 'none', md: 'flex' }}
+            overflow="visible"
           >
             {navItems.map((item) => {
               const isActive =
@@ -148,7 +148,7 @@ export default function NavBar() {
             })}
           </HStack>
 
-          <Show below="md">
+          <Show below="sm">
             <Button
               aria-label="Open menu"
               rightIcon={
