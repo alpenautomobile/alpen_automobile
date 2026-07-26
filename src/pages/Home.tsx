@@ -43,18 +43,18 @@ export default function Home() {
       <Box
         className="page"
         position="relative"
-        bgImage={{ base: "url('/homepage_mobile_version.png')", md: "url('/homepage_desktop_version.png')" }}
+        bgImage={{ base: "url('/homepage_mobile_version.png')", sm: "url('/homepage_ipad_version.png')", md: "url('/homepage_desktop_version.png')" }}
         bgSize="cover"
         bgPosition="center"
         bgRepeat="no-repeat"
-        h={{ base: '55vh', md: '55vh' }}
+        h={{ base: '55vh', sm: '33vh', md: '55vh' }}
         minH="400px"
       >
         <Box
           className="contentBox"
           position="relative"
           zIndex="2"
-          pt={{ base: '65px', md: '24px' }}
+          pt={{ base: '65px', sm: '70px', md: '24px' }}
         >
           <Container
             maxW="100%"
@@ -358,7 +358,7 @@ export default function Home() {
               >
                 <Heading
                   as="h1"
-                  fontSize={{ base: '3xl', md: '4xl', xl: '5xl' }}
+                  fontSize={{ base: '3xl', sm: '4xl', md: '4xl', xl: '5xl' }}
                   lineHeight="short"
                   color="white"
                   // textShadow="0 2px 10px rgba(0,0,0,0.65)"
@@ -367,7 +367,7 @@ export default function Home() {
                 </Heading>
 
                 <Text
-                  fontSize={{ base: 'sm', md: 'md', xl: 'lg' }}
+                  fontSize={{ base: 'sm', sm: 'md', md: 'md', xl: 'lg' }}
                   lineHeight={{ base: '1.7', md: '1.65' }}
                   color="white"
                   maxW="640px"
