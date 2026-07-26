@@ -35,6 +35,13 @@ const LINK_HOVER = {
   textDecoration: 'none',
 }
 
+/*
+ * Only affects touch devices in landscape orientation
+ * with typical iPad landscape widths.
+ */
+const IPAD_LANDSCAPE_QUERY =
+  '@media screen and (orientation: landscape) and (min-width: 900px) and (max-width: 1366px) and (any-pointer: coarse)'
+
 function SocialLink({
   href,
   label,
@@ -54,7 +61,7 @@ function SocialLink({
       boxSize={size}
       borderRadius="full"
       flexShrink={0}
-      
+      transition="transform 0.2s ease"
       _hover={LINK_HOVER}
       _focusVisible={{
         outline: '2px solid',
@@ -69,9 +76,7 @@ function SocialLink({
 
 function DesktopFooter() {
   return (
-    <Box
-      display={{ base: 'none', md: 'block' }}
-    >
+    <Box display={{ base: 'none', md: 'block' }}>
       <Box
         display="grid"
         width="100%"
@@ -92,14 +97,65 @@ function DesktopFooter() {
           lg: 10,
           xl: 12,
         }}
+        rowGap={{
+          md: 1,
+          xl: 0,
+        }}
         py={1.5}
-        // rowGap={{
-        //   md: 3,
-        //   xl: 0,
-        // }}
+        sx={{
+          [IPAD_LANDSCAPE_QUERY]: {
+            gridTemplateAreas: '"brand contact social legal"',
+            gridTemplateColumns:
+              'max-content minmax(0, 1fr) max-content max-content',
+            columnGap: '8px',
+            rowGap: 0,
+
+            '& .footer-brand': {
+              gap: '6px',
+            },
+
+            '& .footer-brand img': {
+              width: '52px',
+              height: '26px',
+            },
+
+            '& .footer-brand p': {
+              fontSize: '11px',
+            },
+
+            '& .footer-contact': {
+              justifyContent: 'center',
+              gap: 0,
+            },
+
+            '& .footer-contact > a': {
+              paddingInline: '4px',
+            },
+
+            '& .footer-contact p': {
+              fontSize: '11px',
+            },
+
+            '& .footer-social': {
+              justifySelf: 'center',
+              gap: '2px',
+            },
+
+            '& .footer-legal': {
+              justifySelf: 'end',
+              gap: '2px',
+            },
+
+            '& .footer-legal > a': {
+              paddingInline: '4px',
+              fontSize: '11px',
+            },
+          },
+        }}
       >
         {/* Logo and copyright */}
         <Flex
+          className="footer-brand"
           gridArea="brand"
           align="center"
           gap={2}
@@ -108,7 +164,7 @@ function DesktopFooter() {
           <Image
             src="/footer_logo.png"
             alt="Alpen Automobile"
-            w='60px'
+            w="60px"
             h="30px"
             mb={1}
           />
@@ -126,6 +182,7 @@ function DesktopFooter() {
 
         {/* Contact */}
         <Flex
+          className="footer-contact"
           gridArea="contact"
           align="center"
           justify={{ md: 'flex-end', xl: 'flex-start' }}
@@ -143,7 +200,7 @@ function DesktopFooter() {
             textDecoration="none"
             px={2}
             borderRadius="md"
-            
+            transition="transform 0.2s ease"
             _hover={LINK_HOVER}
             _focusVisible={{
               outline: '2px solid',
@@ -156,6 +213,7 @@ function DesktopFooter() {
               color={RED}
               boxSize="14px"
               mb={0.5}
+              flexShrink={0}
             />
 
             <Text fontSize={{ md: '12px', xl: '13px' }}>
@@ -181,7 +239,7 @@ function DesktopFooter() {
             textDecoration="none"
             px={2}
             borderRadius="md"
-            
+            transition="transform 0.2s ease"
             _hover={LINK_HOVER}
             _focusVisible={{
               outline: '2px solid',
@@ -204,6 +262,7 @@ function DesktopFooter() {
 
         {/* Social links */}
         <HStack
+          className="footer-social"
           gridArea="social"
           justifySelf={{ md: 'start', xl: 'center' }}
           spacing={{ md: 2, xl: 3 }}
@@ -216,7 +275,7 @@ function DesktopFooter() {
             <Icon
               as={FaWhatsapp}
               color="#25D366"
-              boxSize='19px'
+              boxSize="19px"
             />
           </SocialLink>
 
@@ -228,7 +287,7 @@ function DesktopFooter() {
             <Image
               src="/instagram.png"
               alt=""
-              boxSize='17px'
+              boxSize="17px"
               objectFit="contain"
             />
           </SocialLink>
@@ -241,13 +300,14 @@ function DesktopFooter() {
             <Icon
               as={FaYoutube}
               color="#ff0000"
-              boxSize='21px'
+              boxSize="21px"
             />
           </SocialLink>
         </HStack>
 
-        {/* Legal */}
+        {/* Legal links */}
         <Flex
+          className="footer-legal"
           gridArea="legal"
           align="center"
           justifySelf="end"
@@ -265,7 +325,7 @@ function DesktopFooter() {
             textDecoration="none"
             px={2}
             borderRadius="md"
-            
+            transition="transform 0.2s ease"
             _hover={LINK_HOVER}
             _focusVisible={{
               outline: '2px solid',
@@ -294,7 +354,7 @@ function DesktopFooter() {
             textDecoration="none"
             px={2}
             borderRadius="md"
-            
+            transition="transform 0.2s ease"
             _hover={LINK_HOVER}
             _focusVisible={{
               outline: '2px solid',
@@ -335,7 +395,7 @@ function MobileFooter() {
           textDecoration="none"
           px={2}
           borderRadius="md"
-          
+          transition="transform 0.2s ease"
           _hover={LINK_HOVER}
           _focusVisible={{
             outline: '2px solid',
@@ -367,7 +427,7 @@ function MobileFooter() {
           textDecoration="none"
           px={2}
           borderRadius="md"
-          
+          transition="transform 0.2s ease"
           _hover={LINK_HOVER}
           _focusVisible={{
             outline: '2px solid',
@@ -379,7 +439,7 @@ function MobileFooter() {
             as={FiMail}
             color={RED}
             boxSize="13px"
-            // mb={0.5}
+            flexShrink={0}
           />
 
           <Text fontSize="11.5px">
@@ -455,7 +515,7 @@ function MobileFooter() {
             textDecoration="none"
             px={2}
             borderRadius="md"
-            
+            transition="transform 0.2s ease"
             _hover={LINK_HOVER}
             _focusVisible={{
               outline: '2px solid',
@@ -466,7 +526,7 @@ function MobileFooter() {
             Impressum
           </Link>
 
-           <Box
+          <Box
             w="1px"
             h="12px"
             bg="whiteAlpha.300"
@@ -485,7 +545,7 @@ function MobileFooter() {
             textDecoration="none"
             px={2}
             borderRadius="md"
-            
+            transition="transform 0.2s ease"
             _hover={LINK_HOVER}
             _focusVisible={{
               outline: '2px solid',
@@ -505,7 +565,7 @@ export default function Footer({
   stickyOnMobile = false,
 }: FooterProps) {
   return (
- <Box
+    <Box
       as="footer"
       width="100%"
       color="white"
@@ -522,11 +582,11 @@ export default function Footer({
           : 0,
         md: 0,
       }}
-      bg="
+      bg={`
         radial-gradient(
           circle at 50% 0%,
-          rgba(255,255,255,0.035) 0%,
-          rgba(255,255,255,0.012) 38%,
+          rgba(255, 255, 255, 0.035) 0%,
+          rgba(255, 255, 255, 0.012) 38%,
           transparent 72%
         ),
         linear-gradient(
@@ -535,7 +595,7 @@ export default function Footer({
           #050506 45%,
           #000000 100%
         )
-      "
+      `}
       borderTop="1px solid rgba(255,255,255,0.09)"
       boxShadow="0 -8px 24px rgba(0,0,0,0.3)"
     >
