@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom'
 
 import Home from './pages/Home'
-import Inventory from './pages/Inventory_original'
+import Inventory from './pages/Inventory'
 import Services from './pages/Services'
 import Contact from './pages/Contact'
 import About from './pages/About'
