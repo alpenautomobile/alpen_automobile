@@ -50,28 +50,38 @@ const vehicle = {
 const galleryImages = [
   {
     id: 1,
-    src: '/card1.jpg',
-    alt: 'BMW M330d Außenansicht mit geöffneten Türen',
+    src: '/current/card_1.jpg',
+    alt: 'Audi RS Q3 Frontansicht',
   },
   {
     id: 2,
-    src: '/card2.jpg',
-    alt: 'BMW M330d Seitenansicht',
+    src: '/current/card_2.jpg',
+    alt: 'Audi RS Q3 Frontansicht schräg',
   },
   {
     id: 3,
-    src: '/card3.jpg',
-    alt: 'BMW M330d Innenraum',
+    src: '/current/card_3.jpg',
+    alt: 'Audi RS Q3 Heckansicht schräg',
   },
   {
     id: 4,
-    src: '/card1.jpg',
-    alt: 'BMW M330d Außenansicht',
+    src: '/current/card_4.jpg',
+    alt: 'Audi RS Q3 Heckansicht',
   },
   {
     id: 5,
-    src: '/card2.jpg',
-    alt: 'BMW M330d weitere Ansicht',
+    src: '/current/card_5.jpg',
+    alt: 'Audi RS Q3 Seitenansicht',
+  },
+  {
+    id: 6,
+    src: '/current/card_6.jpg',
+    alt: 'Audi RS Q3 Cockpit und Fahrersitz',
+  },
+  {
+    id: 7,
+    src: '/current/card_7.jpg',
+    alt: 'Audi RS Q3 Innenraum vorn',
   },
 ]
 
@@ -355,7 +365,7 @@ export default function Inventory() {
               className="inventory-main-photo"
               src={selectedImage.src}
               alt={selectedImage.alt}
-              objectFit="cover"
+              objectFit="contain"
               objectPosition="center"
               w="100%"
               h="100%"
