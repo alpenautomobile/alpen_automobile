@@ -31,9 +31,9 @@ import {
 import { LuExpand } from 'react-icons/lu'
 
 const vehicle = {
-  title: 'BMW M330d xDrive SAG Touring',
-  subtitle: 'M-Sport Pro Individual',
-  price: 57900,
+  title: 'AUDI RS Q3 2.5 TFSI quattro S-Tronic',
+  subtitle: 'Panorama | Alcantara/Leder | B&O | AHK | 360° Kamera',
+  price: 43990,
   year: '2021',
   km: "42'000 KM",
   transmission: 'Automatik',
@@ -513,7 +513,7 @@ export default function Inventory() {
           >
             <Button
               as="a"
-              href="mailto:info@alpenautomobile.ch ?subject=Fahrzeuganfrage%3A%20BMW%20M330d%20xDrive%20SAG%20Touring"
+              href="mailto:info@alpenautomobile.ch?subject=Fahrzeuganfrage%3A%20AUDI%20RS%20Q3%202.5%20TFSI%20quattro%20S-Tronic"
               w="100%"
               h="46px"
               bg="#b21a18"
@@ -707,7 +707,7 @@ export default function Inventory() {
               >
                 <Button
                   as="a"
-                  href="mailto:info@alpenautomobile.ch?subject=Fahrzeuganfrage%3A%20BMW%20M330d%20xDrive%20SAG%20Touring"
+                  href="mailto:info@alpenautomobile.ch?subject=Fahrzeuganfrage%3A%20AUDI%20RS%20Q3%202.5%20TFSI%20quattro%20S-Tronic"
                   w="100%"
                   h="52px"
                   borderRadius="6px"
