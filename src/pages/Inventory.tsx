@@ -45,7 +45,7 @@ const vehicle = {
   condition: 'Occasion',
   registration: '04.2021',
   autoScoutUrl:
-    'https://www.autoscout24.ch/de/20980140?utm_source=app_share&utm_medium=social-network&utm_campaign=as24_share_ios',
+    'https://www.autoscout24.ch/de/d/20980140?utm_source=app_share&utm_medium=social-network&utm_campaign=as24_share_ios',
 }
 
 const galleryImages = [
