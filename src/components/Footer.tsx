@@ -23,8 +23,7 @@ type SocialLinkProps = {
   children: React.ReactNode
   size: {
     base?: string
-    md?: string
-    xl?: string
+    lg?: string
   }
 }
 
@@ -76,31 +75,21 @@ function SocialLink({
 
 function DesktopFooter() {
   return (
-    <Box display={{ base: 'none', md: 'block' }}>
+    <Box display={{ base: 'none', lg: 'block' }}>
       <Box
         display="grid"
         width="100%"
         alignItems="center"
         gridTemplateAreas={{
-          md: `
-            "brand contact"
-            "social legal"
-          `,
-          xl: '"brand contact social legal"',
+          lg: '"brand contact social legal"',
         }}
         gridTemplateColumns={{
-          md: 'minmax(240px, 1fr) minmax(400px, 1.45fr)',
-          xl: 'minmax(260px, 1.15fr) minmax(430px, 1.65fr) auto auto',
+          lg: 'minmax(220px, max-content) minmax(0, 1fr) max-content max-content',
         }}
         columnGap={{
-          md: 8,
-          lg: 10,
-          xl: 12,
+          lg: 4,
         }}
-        rowGap={{
-          md: 1,
-          xl: 0,
-        }}
+        rowGap={0}
         py={1.5}
         sx={{
           [IPAD_LANDSCAPE_QUERY]: {
@@ -171,7 +160,7 @@ function DesktopFooter() {
 
           <Text
             color="whiteAlpha.900"
-            fontSize={{ md: '12px', xl: '13px' }}
+            fontSize={{ lg: '12px' }}
             lineHeight="1.45"
             whiteSpace="nowrap"
             mt={0.5}
@@ -185,8 +174,8 @@ function DesktopFooter() {
           className="footer-contact"
           gridArea="contact"
           align="center"
-          justify={{ md: 'flex-end', xl: 'flex-start' }}
-          gap={{ md: 4, lg: 5, xl: 6 }}
+          justify={{ lg: 'flex-start' }}
+          gap={{ lg: 4 }}
           minW={0}
         >
           <Flex
@@ -216,7 +205,7 @@ function DesktopFooter() {
               flexShrink={0}
             />
 
-            <Text fontSize={{ md: '12px', xl: '13px' }}>
+            <Text fontSize={{ lg: '12px' }}>
               +41 76 819 32 73
             </Text>
           </Flex>
@@ -254,7 +243,7 @@ function DesktopFooter() {
               flexShrink={0}
             />
 
-            <Text fontSize={{ md: '12px', xl: '13px' }}>
+            <Text fontSize={{ lg: '12px' }}>
               info@alpenautomobile.ch
             </Text>
           </Flex>
@@ -264,13 +253,13 @@ function DesktopFooter() {
         <HStack
           className="footer-social"
           gridArea="social"
-          justifySelf={{ md: 'start', xl: 'center' }}
-          spacing={{ md: 2, xl: 3 }}
+          justifySelf={{ lg: 'center' }}
+          spacing={{ lg: 2 }}
         >
           <SocialLink
             href="https://wa.me/41768193273"
             label="WhatsApp"
-            size={{ md: '34px', xl: '36px' }}
+            size={{ lg: '34px' }}
           >
             <Icon
               as={FaWhatsapp}
@@ -282,7 +271,7 @@ function DesktopFooter() {
           <SocialLink
             href="https://www.instagram.com/alpen_automobile"
             label="Instagram"
-            size={{ md: '34px', xl: '36px' }}
+            size={{ lg: '34px' }}
           >
             <Image
               src="/instagram.png"
@@ -295,7 +284,7 @@ function DesktopFooter() {
           <SocialLink
             href="https://www.youtube.com/@alpenautomobile"
             label="YouTube"
-            size={{ md: '34px', xl: '36px' }}
+            size={{ lg: '34px' }}
           >
             <Icon
               as={FaYoutube}
@@ -311,7 +300,7 @@ function DesktopFooter() {
           gridArea="legal"
           align="center"
           justifySelf="end"
-          gap={{ md: 4, xl: 5 }}
+          gap={{ lg: 4 }}
           whiteSpace="nowrap"
         >
           <Link
@@ -321,7 +310,7 @@ function DesktopFooter() {
             alignItems="center"
             minH="36px"
             color="whiteAlpha.900"
-            fontSize={{ md: '12px', xl: '13px' }}
+            fontSize={{ lg: '12px' }}
             textDecoration="none"
             px={2}
             borderRadius="md"
@@ -350,7 +339,7 @@ function DesktopFooter() {
             alignItems="center"
             minH="36px"
             color="whiteAlpha.900"
-            fontSize={{ md: '12px', xl: '13px' }}
+            fontSize={{ lg: '12px' }}
             textDecoration="none"
             px={2}
             borderRadius="md"
@@ -373,7 +362,7 @@ function DesktopFooter() {
 function MobileFooter() {
   return (
     <Box
-      display={{ base: 'block', md: 'none' }}
+      display={{ base: 'block', lg: 'none' }}
       py={2}
     >
       {/* Contact row */}
@@ -600,7 +589,7 @@ export default function Footer({
       boxShadow="0 -8px 24px rgba(0,0,0,0.3)"
     >
       <Container
-        maxW="100%"
+        maxW="1600px"
         px={{ base: 4, md: '6%' }}
       >
         <MobileFooter />

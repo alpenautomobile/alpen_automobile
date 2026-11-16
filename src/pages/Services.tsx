@@ -111,8 +111,8 @@ function DesktopStepCard({ step }: { step: ServiceStep }) {
   return (
     <Flex
       align="center"
-      minH={{ xl: '116px', '2xl': '124px' }}
-      px={{ xl: 5, '2xl': 6 }}
+      minH={{ lg: '116px' }}
+      px={{ lg: 5 }}
       py={5}
       bg="rgba(255,255,255,0.018)"
       border="1px solid rgba(255,255,255,0.15)"
@@ -125,7 +125,7 @@ function DesktopStepCard({ step }: { step: ServiceStep }) {
       }}
     >
       <Circle
-        size={{ xl: '48px', '2xl': '52px' }}
+        size={{ lg: '48px' }}
         bg="#c91414"
         color="white"
         fontSize={{ base: 'sm', md: 'md'}}
@@ -137,15 +137,15 @@ function DesktopStepCard({ step }: { step: ServiceStep }) {
       </Circle>
 
       <Circle
-        size={{ xl: '56px', '2xl': '62px' }}
-        ml={{ xl: 4, '2xl': 5 }}
+        size={{ lg: '56px' }}
+        ml={{ lg: 4 }}
         border="1px solid rgba(255,255,255,0.23)"
         color="whiteAlpha.900"
         flexShrink={0}
       >
         <Box
           as={Icon}
-          boxSize={{ xl: 6, '2xl': 7 }}
+          boxSize={{ lg: 6 }}
           strokeWidth="1.7"
         />
       </Circle>
@@ -154,7 +154,7 @@ function DesktopStepCard({ step }: { step: ServiceStep }) {
         h="52px"
         w="1px"
         bg="rgba(255,255,255,0.16)"
-        mx={{ xl: 4, '2xl': 5 }}
+        mx={{ lg: 4 }}
         flexShrink={0}
       />
 
@@ -253,16 +253,16 @@ export default function Services() {
         position="relative"
         zIndex={1}
         w="100%"
-        maxW="100%"
+        maxW="1600px"
         px={{ base: 4, md: '6%' }}
         pt={{ base: 5, md: 10 }}
         pb={{ base: 8, md: 2 }}
       >
         <SimpleGrid
           columns={1}
-          spacing={{ base: 8, lg: 10, xl: 14 }}
+          spacing={{ base: 8, lg: 10 }}
           alignItems="start"
-          mb={{ base: 8, md: 10, xl: 14 }}
+          mb={{ base: 8, md: 10 }}
         >
           <Box maxW={{ base: '100%', lg: '760px' }}>
             <SectionHeader title="Fahrzeugbeschaffung" />
@@ -288,7 +288,7 @@ export default function Services() {
           </Box>
         </SimpleGrid>
 
-        <Box mb={{ base: 5, md: 6, xl: 8 }}>
+        <Box mb={{ base: 5, md: 6 }}>
           <Heading
             as="h2"
             fontSize={{ base: 'md', md: 'xl'}}
@@ -300,7 +300,7 @@ export default function Services() {
         </Box>
 
         <SimpleGrid
-          display={{ base: 'none', xl: 'grid' }}
+          display={{ base: 'none', lg: 'grid' }}
           columns={3}
           spacing={6}
           mt={5}
@@ -314,7 +314,7 @@ export default function Services() {
         </SimpleGrid>
 
         <SimpleGrid
-          display={{ base: 'grid', xl: 'none' }}
+          display={{ base: 'grid', lg: 'none' }}
           columns={{ base: 1, md: 2 }}
           spacing={3}
           mt={5}

@@ -10,9 +10,9 @@
   --bp-base: 0px;
   --bp-sm: 480px;
   --bp-md: 1024px;
-  --bp-lg: 992px;
-  --bp-xl: 1280px;
-  --bp-2xl: 1536px;
+  --bp-lg: 1280px;
+  --bp-xl: 1440px;
+  --bp-2xl: 1920px;
 }
 
 html, body, #root {
@@ -50,9 +50,8 @@ body {
 }
 
 /*
- * Only lock the page on larger desktop screens with a mouse/trackpad.
- * iPhones and all iPads remain vertically scrollable, including
- * iPad mini / iPad portrait / iPad landscape / iPad Pro landscape.
+ * Keep the desktop shell fixed while allowing long page content to scroll
+ * inside the main region. Touch devices remain vertically scrollable.
  */
 @media (min-width: 1280px) and (hover: hover) and (pointer: fine) {
   html,
@@ -70,7 +69,7 @@ body {
 
   .page-content {
     min-height: 0;
-    overflow-y: hidden;
+    overflow-y: auto;
     padding-bottom: 40px;
   }
 }

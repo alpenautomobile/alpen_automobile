@@ -32,19 +32,20 @@ import { LuExpand } from 'react-icons/lu'
 
 const vehicle = {
   title: 'AUDI RS Q3 2.5 TFSI quattro S-Tronic',
-  subtitle: 'Panorama | Alcantara/Leder | B&O | AHK | 360° Kamera',
-  price: 43990,
+  subtitle:
+    '04.2021 | Halbautomatisch | Benzin | SUV / Geländewagen | 400 PS | Grau | Occasion',
+  price: 43800,
   year: '2021',
-  km: "42'000 KM",
-  transmission: 'Automatik',
-  fuel: 'Diesel',
-  body: 'Kombi',
-  drive: 'xDrive (Allrad)',
-  power: '265 PS (195 kW)',
-  seats: '5 / 5',
-  registration: '04 / 2021',
+  transmission: 'Halbautomatisch',
+  fuel: 'Benzin',
+  body: 'SUV / Geländewagen',
+  drive: 'quattro (Allrad)',
+  power: '400 PS',
+  color: 'Grau',
+  condition: 'Occasion',
+  registration: '04.2021',
   autoScoutUrl:
-    'https://www.autoscout24.ch/de/d/bmw-330d-xdrive-touring-12345678',
+    'https://www.autoscout24.ch/de/20980140?utm_source=app_share&utm_medium=social-network&utm_campaign=as24_share_ios',
 }
 
 const galleryImages = [
@@ -312,7 +313,7 @@ export default function Inventory() {
         position="relative"
         zIndex={1}
         w="100%"
-        maxW="100%"
+        maxW="1600px"
         px={{ base: 4, md: '6%' }}
         pt={{ base: 5, md: 10 }}
         pb={{ base: 8, md: 0 }}
@@ -645,7 +646,7 @@ export default function Inventory() {
                   whiteSpace="nowrap"
                   mb={4}
                 >
-                  CHF {vehicle.price.toLocaleString('de-CH')}
+                  CHF {vehicle.price.toLocaleString('de-CH')}.–
                 </Text>
 
                 <Box

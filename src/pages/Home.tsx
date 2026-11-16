@@ -95,7 +95,7 @@ export default function Home() {
           }}
         >
           <Container
-            maxW="100%"
+            maxW="1600px"
             px={{
               base: 4,
               md: 4,
@@ -598,7 +598,7 @@ export default function Home() {
         display="flex"
       >
         <Container
-          maxW="100%"
+          maxW="1600px"
           h="100%"
           flex="1"
           px={{

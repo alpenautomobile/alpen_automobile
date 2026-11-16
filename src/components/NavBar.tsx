@@ -89,7 +89,7 @@ export default function NavBar() {
       }}
     >
       <Container
-        maxW="100%"
+        maxW="1600px"
         px={{
           base: 4,
           md: '6%',
@@ -137,7 +137,6 @@ export default function NavBar() {
             className="nav-links"
             spacing={{
               lg: 8,
-              xl: 16,
             }}
             listStyleType="none"
             p={0}
@@ -146,7 +145,6 @@ export default function NavBar() {
             minW={0}
             ml={{
               lg: 10,
-              xl: 28,
             }}
             whiteSpace="nowrap"
             justify="flex-start"
@@ -179,7 +177,6 @@ export default function NavBar() {
                     display="inline-block"
                     fontSize={{
                       lg: 'sm',
-                      xl: 'md',
                     }}
                     fontWeight="600"
                     transition="transform 0.2s ease"

@@ -73,7 +73,7 @@ export default function About() {
         position="relative"
         zIndex={1}
         w="100%"
-        maxW="100%"
+        maxW="1600px"
         px={{ base: 4, md: '6%' }}
         pt={{ base: 5, md: 10 }}
         pb={{ base: 8, md: 0 }}
@@ -82,7 +82,7 @@ export default function About() {
 
         <SimpleGrid
           columns={{ base: 1, lg: 2 }}
-          spacing={{ base: 9, lg: 14, xl: 20 }}
+          spacing={{ base: 9, lg: 14 }}
           alignItems="start"
         >
           {/* Text */}
